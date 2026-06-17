@@ -1,0 +1,12 @@
+C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\FDS.exe.config
+C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\FDS.exe
+C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\FDS.pdb
+C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\FDS.xml
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.vbproj.AssemblyReference.cache
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form1.resources
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Resources.resources
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.vbproj.GenerateResource.cache
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.vbproj.CoreCompileInputs.cache
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.exe
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.xml
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.pdb
