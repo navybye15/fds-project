@@ -37,6 +37,11 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.CONTRACT_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.HISTORY_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -53,6 +58,11 @@ FDS
 </summary>
 </member>
 <member name="P:FDS.My.Resources.Resources.SECURITY_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.UNIT_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

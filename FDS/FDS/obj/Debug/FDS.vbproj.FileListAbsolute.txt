@@ -10,3 +10,6 @@ C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.vbproj.CoreCompileInputs.
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.exe
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.xml
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.pdb
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form2.resources
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form3.resources
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form4.resources
