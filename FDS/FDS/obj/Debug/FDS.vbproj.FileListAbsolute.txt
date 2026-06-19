@@ -13,3 +13,4 @@ C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.pdb
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form2.resources
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form3.resources
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form4.resources
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form5.resources

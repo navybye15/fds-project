@@ -104,6 +104,30 @@
     <Compile Include="Form4.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form5.Designer.vb">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.vb">
+      <DependentUpon>Form6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.vb">
+      <DependentUpon>Form7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.vb">
+      <DependentUpon>Form8.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,6 +156,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -179,6 +215,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CONTRACT-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ISA-RMS-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DASHBOARD-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dashboard-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HOUSE-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TENANTS-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEASES-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BILLING-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAYMENT-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REPORT-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TOTAL-UNITS-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UNPAID-BILL-LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COLLECTED-LOGO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

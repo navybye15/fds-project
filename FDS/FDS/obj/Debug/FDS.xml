@@ -47,6 +47,11 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.ISA_RMS_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.PROFILE_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
