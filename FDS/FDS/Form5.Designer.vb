@@ -28,9 +28,9 @@ Partial Class Form5
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.usernametxt = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.passwordtxt = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,13 +99,13 @@ Partial Class Form5
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Username"
         '
-        'TextBox1
+        'usernametxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(482, 375)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(269, 30)
-        Me.TextBox1.TabIndex = 13
+        Me.usernametxt.Location = New System.Drawing.Point(482, 375)
+        Me.usernametxt.Multiline = True
+        Me.usernametxt.Name = "usernametxt"
+        Me.usernametxt.Size = New System.Drawing.Size(269, 30)
+        Me.usernametxt.TabIndex = 13
         '
         'Label4
         '
@@ -116,15 +116,15 @@ Partial Class Form5
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(235, 18)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Username"
+        Me.Label4.Text = "Password"
         '
-        'TextBox2
+        'passwordtxt
         '
-        Me.TextBox2.Location = New System.Drawing.Point(482, 449)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(269, 30)
-        Me.TextBox2.TabIndex = 13
+        Me.passwordtxt.Location = New System.Drawing.Point(482, 449)
+        Me.passwordtxt.Multiline = True
+        Me.passwordtxt.Name = "passwordtxt"
+        Me.passwordtxt.Size = New System.Drawing.Size(269, 30)
+        Me.passwordtxt.TabIndex = 13
         '
         'Button2
         '
@@ -158,8 +158,8 @@ Partial Class Form5
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1248, 818)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.passwordtxt)
+        Me.Controls.Add(Me.usernametxt)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -183,8 +183,8 @@ Partial Class Form5
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents usernametxt As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents passwordtxt As TextBox
     Friend WithEvents Button2 As Button
 End Class

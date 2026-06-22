@@ -31,13 +31,17 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label34 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -47,30 +51,31 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
+        Me.statuslbl = New System.Windows.Forms.Label()
+        Me.monthlylbl = New System.Windows.Forms.Label()
+        Me.govIdlbl = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
+        Me.floorlbl = New System.Windows.Forms.Label()
+        Me.emergencylbl = New System.Windows.Forms.Label()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
+        Me.typelbl = New System.Windows.Forms.Label()
+        Me.contactlbl = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
+        Me.unitNumlbl = New System.Windows.Forms.Label()
+        Me.fullNamelbl = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
@@ -85,25 +90,21 @@ Partial Class Form1
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.namelbl = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -227,6 +228,19 @@ Partial Class Form1
         Me.Label34.TabIndex = 9
         Me.Label34.Text = "Outstanding Report"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
+        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
         'Label21
         '
         Me.Label21.BackColor = System.Drawing.SystemColors.Menu
@@ -293,6 +307,32 @@ Partial Class Form1
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "Lease Ends"
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
+        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
+        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
         'Label18
         '
         Me.Label18.BackColor = System.Drawing.SystemColors.Menu
@@ -303,6 +343,19 @@ Partial Class Form1
         Me.Label18.Size = New System.Drawing.Size(151, 18)
         Me.Label18.TabIndex = 3
         Me.Label18.Text = "Last Payment"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
+        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabStop = False
         '
         'Label14
         '
@@ -395,33 +448,45 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(283, 100)
         Me.Label6.TabIndex = 3
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.FDS.My.Resources.Resources.rentalhouse1
+        Me.PictureBox1.Location = New System.Drawing.Point(19, 22)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(283, 244)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Panel4
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
         Me.Panel4.Controls.Add(Me.Label61)
-        Me.Panel4.Controls.Add(Me.Label63)
-        Me.Panel4.Controls.Add(Me.Label60)
-        Me.Panel4.Controls.Add(Me.Label46)
+        Me.Panel4.Controls.Add(Me.statuslbl)
+        Me.Panel4.Controls.Add(Me.monthlylbl)
+        Me.Panel4.Controls.Add(Me.govIdlbl)
         Me.Panel4.Controls.Add(Me.Label42)
         Me.Panel4.Controls.Add(Me.Label38)
         Me.Panel4.Controls.Add(Me.Label62)
         Me.Panel4.Controls.Add(Me.Label59)
         Me.Panel4.Controls.Add(Me.Label33)
-        Me.Panel4.Controls.Add(Me.Label58)
-        Me.Panel4.Controls.Add(Me.Label45)
+        Me.Panel4.Controls.Add(Me.floorlbl)
+        Me.Panel4.Controls.Add(Me.emergencylbl)
         Me.Panel4.Controls.Add(Me.Label41)
         Me.Panel4.Controls.Add(Me.Label37)
         Me.Panel4.Controls.Add(Me.Label57)
         Me.Panel4.Controls.Add(Me.Label32)
-        Me.Panel4.Controls.Add(Me.Label56)
-        Me.Panel4.Controls.Add(Me.Label44)
+        Me.Panel4.Controls.Add(Me.typelbl)
+        Me.Panel4.Controls.Add(Me.contactlbl)
         Me.Panel4.Controls.Add(Me.Label40)
         Me.Panel4.Controls.Add(Me.Label36)
         Me.Panel4.Controls.Add(Me.Label55)
         Me.Panel4.Controls.Add(Me.Label31)
-        Me.Panel4.Controls.Add(Me.Label54)
-        Me.Panel4.Controls.Add(Me.Label43)
+        Me.Panel4.Controls.Add(Me.unitNumlbl)
+        Me.Panel4.Controls.Add(Me.fullNamelbl)
         Me.Panel4.Controls.Add(Me.Label39)
         Me.Panel4.Controls.Add(Me.Label35)
         Me.Panel4.Controls.Add(Me.Label53)
@@ -441,6 +506,7 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.Label47)
         Me.Panel4.Controls.Add(Me.Label24)
         Me.Panel4.Controls.Add(Me.Label23)
+        Me.Panel4.Controls.Add(Me.namelbl)
         Me.Panel4.Controls.Add(Me.Label22)
         Me.Panel4.Location = New System.Drawing.Point(317, 118)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -458,41 +524,41 @@ Partial Class Form1
         Me.Label61.Size = New System.Drawing.Size(842, 1)
         Me.Label61.TabIndex = 14
         '
-        'Label63
+        'statuslbl
         '
-        Me.Label63.BackColor = System.Drawing.Color.White
-        Me.Label63.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label63.Location = New System.Drawing.Point(708, 529)
-        Me.Label63.Name = "Label63"
-        Me.Label63.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label63.Size = New System.Drawing.Size(151, 18)
-        Me.Label63.TabIndex = 9
-        Me.Label63.Text = "Status"
+        Me.statuslbl.BackColor = System.Drawing.Color.White
+        Me.statuslbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statuslbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.statuslbl.Location = New System.Drawing.Point(708, 529)
+        Me.statuslbl.Name = "statuslbl"
+        Me.statuslbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.statuslbl.Size = New System.Drawing.Size(151, 18)
+        Me.statuslbl.TabIndex = 9
+        Me.statuslbl.Text = "Status"
         '
-        'Label60
+        'monthlylbl
         '
-        Me.Label60.BackColor = System.Drawing.Color.White
-        Me.Label60.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label60.Location = New System.Drawing.Point(708, 494)
-        Me.Label60.Name = "Label60"
-        Me.Label60.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label60.Size = New System.Drawing.Size(151, 18)
-        Me.Label60.TabIndex = 9
-        Me.Label60.Text = "Monthly Rate"
+        Me.monthlylbl.BackColor = System.Drawing.Color.White
+        Me.monthlylbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.monthlylbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.monthlylbl.Location = New System.Drawing.Point(708, 494)
+        Me.monthlylbl.Name = "monthlylbl"
+        Me.monthlylbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.monthlylbl.Size = New System.Drawing.Size(151, 18)
+        Me.monthlylbl.TabIndex = 9
+        Me.monthlylbl.Text = "Monthly Rate"
         '
-        'Label46
+        'govIdlbl
         '
-        Me.Label46.BackColor = System.Drawing.Color.White
-        Me.Label46.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label46.Location = New System.Drawing.Point(708, 291)
-        Me.Label46.Name = "Label46"
-        Me.Label46.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label46.Size = New System.Drawing.Size(151, 18)
-        Me.Label46.TabIndex = 9
-        Me.Label46.Text = "Gov. ID"
+        Me.govIdlbl.BackColor = System.Drawing.Color.White
+        Me.govIdlbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.govIdlbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.govIdlbl.Location = New System.Drawing.Point(708, 291)
+        Me.govIdlbl.Name = "govIdlbl"
+        Me.govIdlbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.govIdlbl.Size = New System.Drawing.Size(151, 18)
+        Me.govIdlbl.TabIndex = 9
+        Me.govIdlbl.Text = "Gov. ID"
         '
         'Label42
         '
@@ -551,29 +617,29 @@ Partial Class Form1
         Me.Label33.TabIndex = 9
         Me.Label33.Text = "Gov. ID"
         '
-        'Label58
+        'floorlbl
         '
-        Me.Label58.BackColor = System.Drawing.Color.White
-        Me.Label58.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label58.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label58.Location = New System.Drawing.Point(708, 459)
-        Me.Label58.Name = "Label58"
-        Me.Label58.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label58.Size = New System.Drawing.Size(151, 18)
-        Me.Label58.TabIndex = 9
-        Me.Label58.Text = "Floor/Location"
+        Me.floorlbl.BackColor = System.Drawing.Color.White
+        Me.floorlbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.floorlbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.floorlbl.Location = New System.Drawing.Point(708, 459)
+        Me.floorlbl.Name = "floorlbl"
+        Me.floorlbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.floorlbl.Size = New System.Drawing.Size(151, 18)
+        Me.floorlbl.TabIndex = 9
+        Me.floorlbl.Text = "Floor/Location"
         '
-        'Label45
+        'emergencylbl
         '
-        Me.Label45.BackColor = System.Drawing.Color.White
-        Me.Label45.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label45.Location = New System.Drawing.Point(708, 256)
-        Me.Label45.Name = "Label45"
-        Me.Label45.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label45.Size = New System.Drawing.Size(151, 18)
-        Me.Label45.TabIndex = 9
-        Me.Label45.Text = "Emergency Contact"
+        Me.emergencylbl.BackColor = System.Drawing.Color.White
+        Me.emergencylbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emergencylbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.emergencylbl.Location = New System.Drawing.Point(708, 256)
+        Me.emergencylbl.Name = "emergencylbl"
+        Me.emergencylbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.emergencylbl.Size = New System.Drawing.Size(151, 18)
+        Me.emergencylbl.TabIndex = 9
+        Me.emergencylbl.Text = "Emergency Contact"
         '
         'Label41
         '
@@ -621,29 +687,29 @@ Partial Class Form1
         Me.Label32.TabIndex = 9
         Me.Label32.Text = "Emergency Contact"
         '
-        'Label56
+        'typelbl
         '
-        Me.Label56.BackColor = System.Drawing.Color.White
-        Me.Label56.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label56.Location = New System.Drawing.Point(708, 424)
-        Me.Label56.Name = "Label56"
-        Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label56.Size = New System.Drawing.Size(151, 18)
-        Me.Label56.TabIndex = 9
-        Me.Label56.Text = "Type"
+        Me.typelbl.BackColor = System.Drawing.Color.White
+        Me.typelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.typelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.typelbl.Location = New System.Drawing.Point(708, 424)
+        Me.typelbl.Name = "typelbl"
+        Me.typelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.typelbl.Size = New System.Drawing.Size(151, 18)
+        Me.typelbl.TabIndex = 9
+        Me.typelbl.Text = "Type"
         '
-        'Label44
+        'contactlbl
         '
-        Me.Label44.BackColor = System.Drawing.Color.White
-        Me.Label44.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label44.Location = New System.Drawing.Point(708, 221)
-        Me.Label44.Name = "Label44"
-        Me.Label44.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label44.Size = New System.Drawing.Size(151, 18)
-        Me.Label44.TabIndex = 9
-        Me.Label44.Text = "Contact No."
+        Me.contactlbl.BackColor = System.Drawing.Color.White
+        Me.contactlbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contactlbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.contactlbl.Location = New System.Drawing.Point(708, 221)
+        Me.contactlbl.Name = "contactlbl"
+        Me.contactlbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.contactlbl.Size = New System.Drawing.Size(151, 18)
+        Me.contactlbl.TabIndex = 9
+        Me.contactlbl.Text = "Contact No."
         '
         'Label40
         '
@@ -691,29 +757,29 @@ Partial Class Form1
         Me.Label31.TabIndex = 9
         Me.Label31.Text = "Contact No."
         '
-        'Label54
+        'unitNumlbl
         '
-        Me.Label54.BackColor = System.Drawing.Color.White
-        Me.Label54.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label54.Location = New System.Drawing.Point(708, 388)
-        Me.Label54.Name = "Label54"
-        Me.Label54.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label54.Size = New System.Drawing.Size(151, 18)
-        Me.Label54.TabIndex = 9
-        Me.Label54.Text = "Unit Number"
+        Me.unitNumlbl.BackColor = System.Drawing.Color.White
+        Me.unitNumlbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitNumlbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.unitNumlbl.Location = New System.Drawing.Point(708, 388)
+        Me.unitNumlbl.Name = "unitNumlbl"
+        Me.unitNumlbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.unitNumlbl.Size = New System.Drawing.Size(151, 18)
+        Me.unitNumlbl.TabIndex = 9
+        Me.unitNumlbl.Text = "Unit Number"
         '
-        'Label43
+        'fullNamelbl
         '
-        Me.Label43.BackColor = System.Drawing.Color.White
-        Me.Label43.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label43.Location = New System.Drawing.Point(708, 185)
-        Me.Label43.Name = "Label43"
-        Me.Label43.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label43.Size = New System.Drawing.Size(151, 18)
-        Me.Label43.TabIndex = 9
-        Me.Label43.Text = "Full Name"
+        Me.fullNamelbl.BackColor = System.Drawing.Color.White
+        Me.fullNamelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fullNamelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.fullNamelbl.Location = New System.Drawing.Point(708, 185)
+        Me.fullNamelbl.Name = "fullNamelbl"
+        Me.fullNamelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.fullNamelbl.Size = New System.Drawing.Size(151, 18)
+        Me.fullNamelbl.TabIndex = 9
+        Me.fullNamelbl.Text = "Full Name"
         '
         'Label39
         '
@@ -863,6 +929,32 @@ Partial Class Form1
         Me.Label25.TabIndex = 10
         Me.Label25.Text = "My Profile"
         '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.White
+        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox7.Image = Global.FDS.My.Resources.Resources.UNIT_LOGO
+        Me.PictureBox7.Location = New System.Drawing.Point(72, 335)
+        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(39, 36)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 9
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.White
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Image = Global.FDS.My.Resources.Resources.PROFILE_LOGO
+        Me.PictureBox6.Location = New System.Drawing.Point(72, 132)
+        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(39, 36)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 9
+        Me.PictureBox6.TabStop = False
+        '
         'Label47
         '
         Me.Label47.BackColor = System.Drawing.Color.White
@@ -902,99 +994,19 @@ Partial Class Form1
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(41, 43)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(134, 22)
+        Me.Label22.Size = New System.Drawing.Size(70, 22)
         Me.Label22.TabIndex = 9
-        Me.Label22.Text = "Hello, Name"
+        Me.Label22.Text = "Hello,"
         '
-        'PictureBox2
+        'namelbl
         '
-        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
-        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
-        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
-        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
-        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.FDS.My.Resources.Resources.rentalhouse1
-        Me.PictureBox1.Location = New System.Drawing.Point(19, 22)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(283, 244)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.White
-        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox7.Image = Global.FDS.My.Resources.Resources.UNIT_LOGO
-        Me.PictureBox7.Location = New System.Drawing.Point(72, 335)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(39, 36)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 9
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.White
-        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Image = Global.FDS.My.Resources.Resources.PROFILE_LOGO
-        Me.PictureBox6.Location = New System.Drawing.Point(72, 132)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(39, 36)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 9
-        Me.PictureBox6.TabStop = False
+        Me.namelbl.Font = New System.Drawing.Font("Goudy Old Style", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.namelbl.ForeColor = System.Drawing.Color.Black
+        Me.namelbl.Location = New System.Drawing.Point(107, 43)
+        Me.namelbl.Name = "namelbl"
+        Me.namelbl.Size = New System.Drawing.Size(134, 22)
+        Me.namelbl.TabIndex = 9
+        Me.namelbl.Text = "Name"
         '
         'Form1
         '
@@ -1009,12 +1021,12 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1064,25 +1076,25 @@ Partial Class Form1
     Friend WithEvents Label34 As Label
     Friend WithEvents Label33 As Label
     Friend WithEvents Label32 As Label
-    Friend WithEvents Label46 As Label
+    Friend WithEvents govIdlbl As Label
     Friend WithEvents Label42 As Label
     Friend WithEvents Label38 As Label
-    Friend WithEvents Label45 As Label
+    Friend WithEvents emergencylbl As Label
     Friend WithEvents Label41 As Label
     Friend WithEvents Label37 As Label
-    Friend WithEvents Label44 As Label
+    Friend WithEvents contactlbl As Label
     Friend WithEvents Label40 As Label
     Friend WithEvents Label36 As Label
-    Friend WithEvents Label43 As Label
+    Friend WithEvents fullNamelbl As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label35 As Label
-    Friend WithEvents Label60 As Label
+    Friend WithEvents monthlylbl As Label
     Friend WithEvents Label59 As Label
-    Friend WithEvents Label58 As Label
+    Friend WithEvents floorlbl As Label
     Friend WithEvents Label57 As Label
-    Friend WithEvents Label56 As Label
+    Friend WithEvents typelbl As Label
     Friend WithEvents Label55 As Label
-    Friend WithEvents Label54 As Label
+    Friend WithEvents unitNumlbl As Label
     Friend WithEvents Label53 As Label
     Friend WithEvents Label52 As Label
     Friend WithEvents Label51 As Label
@@ -1093,5 +1105,6 @@ Partial Class Form1
     Friend WithEvents Label47 As Label
     Friend WithEvents Label61 As Label
     Friend WithEvents Label62 As Label
-    Friend WithEvents Label63 As Label
+    Friend WithEvents statuslbl As Label
+    Friend WithEvents namelbl As Label
 End Class

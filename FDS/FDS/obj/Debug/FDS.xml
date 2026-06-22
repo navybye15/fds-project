@@ -27,6 +27,11 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.BILLING_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.CALENDAR_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -37,7 +42,17 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.COLLECTED_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.CONTRACT_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.DASHBOARD_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -47,7 +62,27 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.HOUSE_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.icons8_dashboard_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.ISA_RMS_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.LEASES_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.PAYMENT_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -62,12 +97,32 @@ FDS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.REPORT_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.SECURITY_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:FDS.My.Resources.Resources.TENANTS_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.TOTAL_UNITS_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:FDS.My.Resources.Resources.UNIT_LOGO">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FDS.My.Resources.Resources.UNPAID_BILL_LOGO">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

@@ -1,5 +1,12 @@
 ﻿Public Class Form6
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click, Label29.Click, Label32.Click, Label31.Click, Label30.Click
+
+    Private Sub Form6_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub loadOverviewData()
+
+
 
     End Sub
 End Class
