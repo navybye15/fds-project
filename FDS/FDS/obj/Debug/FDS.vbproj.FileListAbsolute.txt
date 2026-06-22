@@ -48,3 +48,4 @@ C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\capan\repos\fds-project\FDS\FDS\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.vbproj.Up2Date
+C:\Users\capan\repos\fds-project\FDS\FDS\obj\Debug\FDS.Form9.resources
