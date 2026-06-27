@@ -1,1 +1,7 @@
 .vs/
+
+# Visual Studio generated files
+**/obj/
+**/bin/
+*.cache
+*.user
