@@ -3,7 +3,7 @@ Imports System.Web.UI.WebControls
 Imports MySql.Data.MySqlClient
 Public Class Form5
 
-    Public connStr As String = "Server=localhost;Port=3307;Database=isarms_db;Uid=root;Pwd="
+    Public connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd="
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button1.Enabled = False
     End Sub

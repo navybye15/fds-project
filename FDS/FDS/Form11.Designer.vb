@@ -38,7 +38,7 @@ Partial Class Form11
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1248, 818)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form11"
         Me.Text = "Form11"
