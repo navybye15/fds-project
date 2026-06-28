@@ -33,43 +33,42 @@ Partial Class Form7
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.statusCmb = New System.Windows.Forms.ComboBox()
+        Me.typeCmb = New System.Windows.Forms.ComboBox()
+        Me.Statuslbl = New System.Windows.Forms.Label()
+        Me.Typelbl = New System.Windows.Forms.Label()
+        Me.floorTxt = New System.Windows.Forms.TextBox()
+        Me.Loclbl = New System.Windows.Forms.Label()
+        Me.monthlyRateTxt = New System.Windows.Forms.TextBox()
+        Me.Monthlylbl = New System.Windows.Forms.Label()
         Me.unitNumbertxt = New System.Windows.Forms.TextBox()
         Me.UnitNumberlbl = New System.Windows.Forms.Label()
-        Me.Typelbl = New System.Windows.Forms.Label()
-        Me.Typecombo = New System.Windows.Forms.ComboBox()
-        Me.Loclbl = New System.Windows.Forms.Label()
-        Me.Locationtxt = New System.Windows.Forms.TextBox()
-        Me.Monthlylbl = New System.Windows.Forms.Label()
-        Me.Monthlytxt = New System.Windows.Forms.TextBox()
-        Me.Statuslbl = New System.Windows.Forms.Label()
-        Me.Statuscombo = New System.Windows.Forms.ComboBox()
+        Me.addUnitBtn = New System.Windows.Forms.Button()
+        Me.deleteBtn = New System.Windows.Forms.Button()
+        Me.saveBtn = New System.Windows.Forms.Button()
+        Me.UnitsGrid = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.totalUnitsLbl = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,13 +77,19 @@ Partial Class Form7
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.UnitsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.PictureBox9)
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label16)
         Me.Panel3.Controls.Add(Me.Label12)
@@ -215,136 +220,6 @@ Partial Class Form7
         Me.Label23.TabIndex = 9
         Me.Label23.Text = "Management Portal"
         '
-        'Label14
-        '
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(22, 441)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(93, 20)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "PROPERTIES"
-        '
-        'Label10
-        '
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(22, 254)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(93, 20)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "PROPERTIES"
-        '
-        'Label17
-        '
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(22, 577)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(93, 20)
-        Me.Label17.TabIndex = 0
-        Me.Label17.Text = "ANALYTICS"
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(22, 169)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(93, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "OVERVIEW"
-        '
-        'Panel1
-        '
-        Me.Panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(320, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(929, 81)
-        Me.Panel1.TabIndex = 20
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(23, 19)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(195, 22)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Units"
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(25, 45)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 20)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Manage all rental units"
-        '
-        'Panel4
-        '
-        Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Statuscombo)
-        Me.Panel4.Controls.Add(Me.Typecombo)
-        Me.Panel4.Controls.Add(Me.Statuslbl)
-        Me.Panel4.Controls.Add(Me.Typelbl)
-        Me.Panel4.Controls.Add(Me.Locationtxt)
-        Me.Panel4.Controls.Add(Me.Loclbl)
-        Me.Panel4.Controls.Add(Me.Monthlytxt)
-        Me.Panel4.Controls.Add(Me.Monthlylbl)
-        Me.Panel4.Controls.Add(Me.unitNumbertxt)
-        Me.Panel4.Controls.Add(Me.UnitNumberlbl)
-        Me.Panel4.Controls.Add(Me.Button3)
-        Me.Panel4.Controls.Add(Me.Button2)
-        Me.Panel4.Controls.Add(Me.Button1)
-        Me.Panel4.Controls.Add(Me.DataGridView1)
-        Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Location = New System.Drawing.Point(317, 85)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(932, 733)
-        Me.Panel4.TabIndex = 22
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Location = New System.Drawing.Point(36, 31)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(863, 106)
-        Me.Panel2.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(26, 25)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(195, 22)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "All Units"
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(30, 55)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(116, 20)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "TOTAL"
-        '
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -358,6 +233,16 @@ Partial Class Form7
         Me.PictureBox5.TabIndex = 0
         Me.PictureBox5.TabStop = False
         '
+        'Label14
+        '
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label14.Location = New System.Drawing.Point(22, 441)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(93, 20)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "PROPERTIES"
+        '
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -370,6 +255,16 @@ Partial Class Form7
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 0
         Me.PictureBox7.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label10.Location = New System.Drawing.Point(22, 254)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(93, 20)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "PROPERTIES"
         '
         'PictureBox4
         '
@@ -396,6 +291,26 @@ Partial Class Form7
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 0
         Me.PictureBox6.TabStop = False
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label17.Location = New System.Drawing.Point(22, 577)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(93, 20)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "ANALYTICS"
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(22, 169)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(93, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "OVERVIEW"
         '
         'PictureBox3
         '
@@ -447,46 +362,144 @@ Partial Class Form7
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'DataGridView1
+        'Panel1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 131)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(863, 381)
-        Me.DataGridView1.TabIndex = 12
+        Me.Panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Location = New System.Drawing.Point(320, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(929, 81)
+        Me.Panel1.TabIndex = 20
         '
-        'Button1
+        'Label2
         '
-        Me.Button1.Location = New System.Drawing.Point(37, 528)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(125, 31)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Edit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(23, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(195, 22)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Units"
         '
-        'Button2
+        'Label3
         '
-        Me.Button2.BackColor = System.Drawing.Color.Firebrick
-        Me.Button2.ForeColor = System.Drawing.Color.MistyRose
-        Me.Button2.Location = New System.Drawing.Point(168, 528)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(125, 31)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Delete"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(25, 45)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 20)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Manage all rental units"
         '
-        'Button3
+        'Panel4
         '
-        Me.Button3.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.Button3.ForeColor = System.Drawing.Color.PaleGreen
-        Me.Button3.Location = New System.Drawing.Point(299, 528)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(125, 31)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "Add Unit"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.statusCmb)
+        Me.Panel4.Controls.Add(Me.typeCmb)
+        Me.Panel4.Controls.Add(Me.Statuslbl)
+        Me.Panel4.Controls.Add(Me.Typelbl)
+        Me.Panel4.Controls.Add(Me.floorTxt)
+        Me.Panel4.Controls.Add(Me.Loclbl)
+        Me.Panel4.Controls.Add(Me.monthlyRateTxt)
+        Me.Panel4.Controls.Add(Me.Monthlylbl)
+        Me.Panel4.Controls.Add(Me.unitNumbertxt)
+        Me.Panel4.Controls.Add(Me.UnitNumberlbl)
+        Me.Panel4.Controls.Add(Me.addUnitBtn)
+        Me.Panel4.Controls.Add(Me.deleteBtn)
+        Me.Panel4.Controls.Add(Me.saveBtn)
+        Me.Panel4.Controls.Add(Me.UnitsGrid)
+        Me.Panel4.Controls.Add(Me.Panel2)
+        Me.Panel4.Location = New System.Drawing.Point(317, 85)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(932, 733)
+        Me.Panel4.TabIndex = 22
+        '
+        'statusCmb
+        '
+        Me.statusCmb.FormattingEnabled = True
+        Me.statusCmb.Location = New System.Drawing.Point(320, 665)
+        Me.statusCmb.Name = "statusCmb"
+        Me.statusCmb.Size = New System.Drawing.Size(262, 24)
+        Me.statusCmb.TabIndex = 15
+        Me.statusCmb.Visible = False
+        '
+        'typeCmb
+        '
+        Me.typeCmb.FormattingEnabled = True
+        Me.typeCmb.Location = New System.Drawing.Point(320, 598)
+        Me.typeCmb.Name = "typeCmb"
+        Me.typeCmb.Size = New System.Drawing.Size(262, 24)
+        Me.typeCmb.TabIndex = 15
+        Me.typeCmb.Visible = False
+        '
+        'Statuslbl
+        '
+        Me.Statuslbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Statuslbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Statuslbl.Location = New System.Drawing.Point(317, 642)
+        Me.Statuslbl.Name = "Statuslbl"
+        Me.Statuslbl.Size = New System.Drawing.Size(106, 20)
+        Me.Statuslbl.TabIndex = 0
+        Me.Statuslbl.Text = "Status"
+        Me.Statuslbl.Visible = False
+        '
+        'Typelbl
+        '
+        Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Typelbl.Location = New System.Drawing.Point(317, 575)
+        Me.Typelbl.Name = "Typelbl"
+        Me.Typelbl.Size = New System.Drawing.Size(106, 20)
+        Me.Typelbl.TabIndex = 0
+        Me.Typelbl.Text = "Type"
+        Me.Typelbl.Visible = False
+        '
+        'floorTxt
+        '
+        Me.floorTxt.Location = New System.Drawing.Point(604, 598)
+        Me.floorTxt.Multiline = True
+        Me.floorTxt.Name = "floorTxt"
+        Me.floorTxt.Size = New System.Drawing.Size(262, 24)
+        Me.floorTxt.TabIndex = 14
+        Me.floorTxt.Visible = False
+        '
+        'Loclbl
+        '
+        Me.Loclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Loclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Loclbl.Location = New System.Drawing.Point(601, 575)
+        Me.Loclbl.Name = "Loclbl"
+        Me.Loclbl.Size = New System.Drawing.Size(149, 20)
+        Me.Loclbl.TabIndex = 0
+        Me.Loclbl.Text = "Floor / Location"
+        Me.Loclbl.Visible = False
+        '
+        'monthlyRateTxt
+        '
+        Me.monthlyRateTxt.Location = New System.Drawing.Point(37, 665)
+        Me.monthlyRateTxt.Multiline = True
+        Me.monthlyRateTxt.Name = "monthlyRateTxt"
+        Me.monthlyRateTxt.Size = New System.Drawing.Size(262, 24)
+        Me.monthlyRateTxt.TabIndex = 14
+        Me.monthlyRateTxt.Visible = False
+        '
+        'Monthlylbl
+        '
+        Me.Monthlylbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Monthlylbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Monthlylbl.Location = New System.Drawing.Point(34, 642)
+        Me.Monthlylbl.Name = "Monthlylbl"
+        Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
+        Me.Monthlylbl.TabIndex = 0
+        Me.Monthlylbl.Text = "Monthly Rate  (₱)"
+        Me.Monthlylbl.Visible = False
         '
         'unitNumbertxt
         '
@@ -508,85 +521,100 @@ Partial Class Form7
         Me.UnitNumberlbl.Text = "Unit Number"
         Me.UnitNumberlbl.Visible = False
         '
-        'Typelbl
+        'addUnitBtn
         '
-        Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Typelbl.Location = New System.Drawing.Point(317, 575)
-        Me.Typelbl.Name = "Typelbl"
-        Me.Typelbl.Size = New System.Drawing.Size(106, 20)
-        Me.Typelbl.TabIndex = 0
-        Me.Typelbl.Text = "Type"
-        Me.Typelbl.Visible = False
+        Me.addUnitBtn.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.addUnitBtn.ForeColor = System.Drawing.Color.PaleGreen
+        Me.addUnitBtn.Location = New System.Drawing.Point(299, 528)
+        Me.addUnitBtn.Name = "addUnitBtn"
+        Me.addUnitBtn.Size = New System.Drawing.Size(125, 31)
+        Me.addUnitBtn.TabIndex = 13
+        Me.addUnitBtn.Text = "Add Unit"
+        Me.addUnitBtn.UseVisualStyleBackColor = False
         '
-        'Typecombo
+        'deleteBtn
         '
-        Me.Typecombo.FormattingEnabled = True
-        Me.Typecombo.Location = New System.Drawing.Point(320, 598)
-        Me.Typecombo.Name = "Typecombo"
-        Me.Typecombo.Size = New System.Drawing.Size(262, 24)
-        Me.Typecombo.TabIndex = 15
-        Me.Typecombo.Visible = False
+        Me.deleteBtn.BackColor = System.Drawing.Color.Firebrick
+        Me.deleteBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.deleteBtn.Location = New System.Drawing.Point(168, 528)
+        Me.deleteBtn.Name = "deleteBtn"
+        Me.deleteBtn.Size = New System.Drawing.Size(125, 31)
+        Me.deleteBtn.TabIndex = 13
+        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.UseVisualStyleBackColor = False
         '
-        'Loclbl
+        'saveBtn
         '
-        Me.Loclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Loclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Loclbl.Location = New System.Drawing.Point(601, 575)
-        Me.Loclbl.Name = "Loclbl"
-        Me.Loclbl.Size = New System.Drawing.Size(149, 20)
-        Me.Loclbl.TabIndex = 0
-        Me.Loclbl.Text = "Floor / Location"
-        Me.Loclbl.Visible = False
+        Me.saveBtn.Location = New System.Drawing.Point(37, 528)
+        Me.saveBtn.Name = "saveBtn"
+        Me.saveBtn.Size = New System.Drawing.Size(125, 31)
+        Me.saveBtn.TabIndex = 13
+        Me.saveBtn.Text = "Save"
+        Me.saveBtn.UseVisualStyleBackColor = True
         '
-        'Locationtxt
+        'UnitsGrid
         '
-        Me.Locationtxt.Location = New System.Drawing.Point(604, 598)
-        Me.Locationtxt.Multiline = True
-        Me.Locationtxt.Name = "Locationtxt"
-        Me.Locationtxt.Size = New System.Drawing.Size(262, 24)
-        Me.Locationtxt.TabIndex = 14
-        Me.Locationtxt.Visible = False
+        Me.UnitsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.UnitsGrid.Location = New System.Drawing.Point(36, 131)
+        Me.UnitsGrid.Name = "UnitsGrid"
+        Me.UnitsGrid.RowHeadersWidth = 51
+        Me.UnitsGrid.RowTemplate.Height = 24
+        Me.UnitsGrid.Size = New System.Drawing.Size(863, 381)
+        Me.UnitsGrid.TabIndex = 12
         '
-        'Monthlylbl
+        'Panel2
         '
-        Me.Monthlylbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Monthlylbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Monthlylbl.Location = New System.Drawing.Point(34, 642)
-        Me.Monthlylbl.Name = "Monthlylbl"
-        Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
-        Me.Monthlylbl.TabIndex = 0
-        Me.Monthlylbl.Text = "Monthly Rate  (₱)"
-        Me.Monthlylbl.Visible = False
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.totalUnitsLbl)
+        Me.Panel2.Location = New System.Drawing.Point(36, 31)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(863, 106)
+        Me.Panel2.TabIndex = 11
         '
-        'Monthlytxt
+        'Label4
         '
-        Me.Monthlytxt.Location = New System.Drawing.Point(37, 665)
-        Me.Monthlytxt.Multiline = True
-        Me.Monthlytxt.Name = "Monthlytxt"
-        Me.Monthlytxt.Size = New System.Drawing.Size(262, 24)
-        Me.Monthlytxt.TabIndex = 14
-        Me.Monthlytxt.Visible = False
+        Me.Label4.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(26, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(195, 22)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "All Units"
         '
-        'Statuslbl
+        'totalUnitsLbl
         '
-        Me.Statuslbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Statuslbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Statuslbl.Location = New System.Drawing.Point(317, 642)
-        Me.Statuslbl.Name = "Statuslbl"
-        Me.Statuslbl.Size = New System.Drawing.Size(106, 20)
-        Me.Statuslbl.TabIndex = 0
-        Me.Statuslbl.Text = "Status"
-        Me.Statuslbl.Visible = False
+        Me.totalUnitsLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalUnitsLbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.totalUnitsLbl.Location = New System.Drawing.Point(30, 55)
+        Me.totalUnitsLbl.Name = "totalUnitsLbl"
+        Me.totalUnitsLbl.Size = New System.Drawing.Size(116, 20)
+        Me.totalUnitsLbl.TabIndex = 0
+        Me.totalUnitsLbl.Text = "TOTAL"
         '
-        'Statuscombo
+        'Label6
         '
-        Me.Statuscombo.FormattingEnabled = True
-        Me.Statuscombo.Location = New System.Drawing.Point(320, 665)
-        Me.Statuscombo.Name = "Statuscombo"
-        Me.Statuscombo.Size = New System.Drawing.Size(262, 24)
-        Me.Statuscombo.TabIndex = 15
-        Me.Statuscombo.Visible = False
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label6.Location = New System.Drawing.Point(58, 657)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 20)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Expenses"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
+        Me.PictureBox9.Location = New System.Drawing.Point(30, 657)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 23
+        Me.PictureBox9.TabStop = False
         '
         'Form7
         '
@@ -599,10 +627,6 @@ Partial Class Form7
         Me.Name = "Form7"
         Me.Text = "Form7"
         Me.Panel3.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -611,7 +635,12 @@ Partial Class Form7
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        CType(Me.UnitsGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -645,19 +674,21 @@ Partial Class Form7
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Typecombo As ComboBox
+    Friend WithEvents totalUnitsLbl As Label
+    Friend WithEvents UnitsGrid As DataGridView
+    Friend WithEvents addUnitBtn As Button
+    Friend WithEvents deleteBtn As Button
+    Friend WithEvents saveBtn As Button
+    Friend WithEvents typeCmb As ComboBox
     Friend WithEvents Typelbl As Label
     Friend WithEvents unitNumbertxt As TextBox
     Friend WithEvents UnitNumberlbl As Label
-    Friend WithEvents Statuscombo As ComboBox
+    Friend WithEvents statusCmb As ComboBox
     Friend WithEvents Statuslbl As Label
-    Friend WithEvents Locationtxt As TextBox
+    Friend WithEvents floorTxt As TextBox
     Friend WithEvents Loclbl As Label
-    Friend WithEvents Monthlytxt As TextBox
+    Friend WithEvents monthlyRateTxt As TextBox
     Friend WithEvents Monthlylbl As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox9 As PictureBox
 End Class

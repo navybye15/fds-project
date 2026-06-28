@@ -49,11 +49,11 @@ Partial Class Form6
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
+        Me.RecentTenantsGrid = New System.Windows.Forms.DataGridView()
+        Me.collectedLbl = New System.Windows.Forms.Label()
+        Me.unpaidBillsLbl = New System.Windows.Forms.Label()
+        Me.activeTenantsTotalLbl = New System.Windows.Forms.Label()
+        Me.totalUnitsLbl = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -69,10 +69,12 @@ Partial Class Form6
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.activeTenantsLbl = New System.Windows.Forms.Label()
+        Me.dateLbl2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.dateLbl = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,9 +87,10 @@ Partial Class Form6
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -99,6 +102,7 @@ Partial Class Form6
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Label18)
         Me.Panel3.Controls.Add(Me.Label25)
         Me.Panel3.Controls.Add(Me.Label5)
@@ -112,6 +116,7 @@ Partial Class Form6
         Me.Panel3.Controls.Add(Me.PictureBox6)
         Me.Panel3.Controls.Add(Me.Label17)
         Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.PictureBox9)
         Me.Panel3.Controls.Add(Me.PictureBox3)
         Me.Panel3.Controls.Add(Me.PictureBox8)
         Me.Panel3.Controls.Add(Me.PictureBox1)
@@ -371,11 +376,11 @@ Partial Class Form6
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
         Me.Panel4.Controls.Add(Me.Panel5)
-        Me.Panel4.Controls.Add(Me.DataGridView1)
-        Me.Panel4.Controls.Add(Me.Label32)
-        Me.Panel4.Controls.Add(Me.Label31)
-        Me.Panel4.Controls.Add(Me.Label30)
-        Me.Panel4.Controls.Add(Me.Label29)
+        Me.Panel4.Controls.Add(Me.RecentTenantsGrid)
+        Me.Panel4.Controls.Add(Me.collectedLbl)
+        Me.Panel4.Controls.Add(Me.unpaidBillsLbl)
+        Me.Panel4.Controls.Add(Me.activeTenantsTotalLbl)
+        Me.Panel4.Controls.Add(Me.totalUnitsLbl)
         Me.Panel4.Controls.Add(Me.Label28)
         Me.Panel4.Controls.Add(Me.Label26)
         Me.Panel4.Controls.Add(Me.Button8)
@@ -428,59 +433,59 @@ Partial Class Form6
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "Latest Active Tenants"
         '
-        'DataGridView1
+        'RecentTenantsGrid
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 340)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(428, 345)
-        Me.DataGridView1.TabIndex = 15
+        Me.RecentTenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.RecentTenantsGrid.Location = New System.Drawing.Point(36, 340)
+        Me.RecentTenantsGrid.Name = "RecentTenantsGrid"
+        Me.RecentTenantsGrid.RowHeadersWidth = 51
+        Me.RecentTenantsGrid.RowTemplate.Height = 24
+        Me.RecentTenantsGrid.Size = New System.Drawing.Size(428, 345)
+        Me.RecentTenantsGrid.TabIndex = 15
         '
-        'Label32
+        'collectedLbl
         '
-        Me.Label32.BackColor = System.Drawing.Color.White
-        Me.Label32.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.Black
-        Me.Label32.Location = New System.Drawing.Point(756, 213)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(100, 22)
-        Me.Label32.TabIndex = 12
-        Me.Label32.Text = "TOTAL"
+        Me.collectedLbl.BackColor = System.Drawing.Color.White
+        Me.collectedLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.collectedLbl.ForeColor = System.Drawing.Color.Black
+        Me.collectedLbl.Location = New System.Drawing.Point(756, 213)
+        Me.collectedLbl.Name = "collectedLbl"
+        Me.collectedLbl.Size = New System.Drawing.Size(100, 22)
+        Me.collectedLbl.TabIndex = 12
+        Me.collectedLbl.Text = "TOTAL"
         '
-        'Label31
+        'unpaidBillsLbl
         '
-        Me.Label31.BackColor = System.Drawing.Color.White
-        Me.Label31.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.Black
-        Me.Label31.Location = New System.Drawing.Point(541, 213)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(100, 22)
-        Me.Label31.TabIndex = 12
-        Me.Label31.Text = "TOTAL"
+        Me.unpaidBillsLbl.BackColor = System.Drawing.Color.White
+        Me.unpaidBillsLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unpaidBillsLbl.ForeColor = System.Drawing.Color.Black
+        Me.unpaidBillsLbl.Location = New System.Drawing.Point(541, 213)
+        Me.unpaidBillsLbl.Name = "unpaidBillsLbl"
+        Me.unpaidBillsLbl.Size = New System.Drawing.Size(100, 22)
+        Me.unpaidBillsLbl.TabIndex = 12
+        Me.unpaidBillsLbl.Text = "TOTAL"
         '
-        'Label30
+        'activeTenantsTotalLbl
         '
-        Me.Label30.BackColor = System.Drawing.Color.White
-        Me.Label30.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.Black
-        Me.Label30.Location = New System.Drawing.Point(325, 213)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(100, 22)
-        Me.Label30.TabIndex = 12
-        Me.Label30.Text = "TOTAL"
+        Me.activeTenantsTotalLbl.BackColor = System.Drawing.Color.White
+        Me.activeTenantsTotalLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.activeTenantsTotalLbl.ForeColor = System.Drawing.Color.Black
+        Me.activeTenantsTotalLbl.Location = New System.Drawing.Point(325, 213)
+        Me.activeTenantsTotalLbl.Name = "activeTenantsTotalLbl"
+        Me.activeTenantsTotalLbl.Size = New System.Drawing.Size(100, 22)
+        Me.activeTenantsTotalLbl.TabIndex = 12
+        Me.activeTenantsTotalLbl.Text = "TOTAL"
         '
-        'Label29
+        'totalUnitsLbl
         '
-        Me.Label29.BackColor = System.Drawing.Color.White
-        Me.Label29.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.Black
-        Me.Label29.Location = New System.Drawing.Point(110, 213)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(100, 22)
-        Me.Label29.TabIndex = 12
-        Me.Label29.Text = "TOTAL"
+        Me.totalUnitsLbl.BackColor = System.Drawing.Color.White
+        Me.totalUnitsLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalUnitsLbl.ForeColor = System.Drawing.Color.Black
+        Me.totalUnitsLbl.Location = New System.Drawing.Point(110, 213)
+        Me.totalUnitsLbl.Name = "totalUnitsLbl"
+        Me.totalUnitsLbl.Size = New System.Drawing.Size(100, 22)
+        Me.totalUnitsLbl.TabIndex = 12
+        Me.totalUnitsLbl.Text = "TOTAL"
         '
         'Label28
         '
@@ -614,8 +619,8 @@ Partial Class Form6
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label19)
-        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.activeTenantsLbl)
+        Me.Panel2.Controls.Add(Me.dateLbl2)
         Me.Panel2.Location = New System.Drawing.Point(36, 31)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(864, 106)
@@ -631,25 +636,25 @@ Partial Class Form6
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Dashboard"
         '
-        'Label19
+        'activeTenantsLbl
         '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label19.Location = New System.Drawing.Point(179, 51)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(116, 20)
-        Me.Label19.TabIndex = 0
-        Me.Label19.Text = "Active Tenants"
+        Me.activeTenantsLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.activeTenantsLbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.activeTenantsLbl.Location = New System.Drawing.Point(179, 51)
+        Me.activeTenantsLbl.Name = "activeTenantsLbl"
+        Me.activeTenantsLbl.Size = New System.Drawing.Size(116, 20)
+        Me.activeTenantsLbl.TabIndex = 0
+        Me.activeTenantsLbl.Text = "Active Tenants"
         '
-        'Label6
+        'dateLbl2
         '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(30, 55)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(116, 20)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Date"
+        Me.dateLbl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateLbl2.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.dateLbl2.Location = New System.Drawing.Point(30, 55)
+        Me.dateLbl2.Name = "dateLbl2"
+        Me.dateLbl2.Size = New System.Drawing.Size(116, 20)
+        Me.dateLbl2.TabIndex = 0
+        Me.dateLbl2.Text = "Date"
         '
         'Panel1
         '
@@ -657,7 +662,7 @@ Partial Class Form6
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.dateLbl)
         Me.Panel1.Location = New System.Drawing.Point(320, 1)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
@@ -675,15 +680,38 @@ Partial Class Form6
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Dashboard"
         '
+        'dateLbl
+        '
+        Me.dateLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.dateLbl.Location = New System.Drawing.Point(25, 45)
+        Me.dateLbl.Name = "dateLbl"
+        Me.dateLbl.Size = New System.Drawing.Size(93, 20)
+        Me.dateLbl.TabIndex = 0
+        Me.dateLbl.Text = "Date"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
+        Me.PictureBox9.Location = New System.Drawing.Point(30, 658)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 0
+        Me.PictureBox9.TabStop = False
+        '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(25, 45)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label3.Location = New System.Drawing.Point(58, 658)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 20)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Date"
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "Expenses"
         '
         'Form6
         '
@@ -706,9 +734,10 @@ Partial Class Form6
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -738,30 +767,32 @@ Partial Class Form6
     Friend WithEvents Label17 As Label
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents dateLbl As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents activeTenantsLbl As Label
+    Friend WithEvents dateLbl2 As Label
     Friend WithEvents Button8 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label29 As Label
+    Friend WithEvents totalUnitsLbl As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents Label32 As Label
-    Friend WithEvents Label31 As Label
-    Friend WithEvents Label30 As Label
+    Friend WithEvents collectedLbl As Label
+    Friend WithEvents unpaidBillsLbl As Label
+    Friend WithEvents activeTenantsTotalLbl As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents RecentTenantsGrid As DataGridView
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox9 As PictureBox
 End Class

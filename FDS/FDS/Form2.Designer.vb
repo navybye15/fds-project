@@ -32,10 +32,10 @@ Partial Class Form2
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.securityDepositlbl = New System.Windows.Forms.Label()
+        Me.leaseExpirationlbl = New System.Windows.Forms.Label()
+        Me.paymentHistorylbl = New System.Windows.Forms.Label()
+        Me.outstandinglbl = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -47,8 +47,8 @@ Partial Class Form2
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.unitFloorlbl = New System.Windows.Forms.Label()
+        Me.unitCodelbl = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -62,30 +62,30 @@ Partial Class Form2
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
+        Me.tenantValuelbl = New System.Windows.Forms.Label()
         Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
+        Me.unitValuelbl = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
+        Me.leaseStartValuelbl = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
+        Me.leaseEndValuelbl = New System.Windows.Forms.Label()
+        Me.monthlyRentValuelbl = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
+        Me.statuslbl = New System.Windows.Forms.Label()
+        Me.depositlbl = New System.Windows.Forms.Label()
+        Me.rentPricelbl = New System.Windows.Forms.Label()
+        Me.contractDatelbl = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
+        Me.contractStatusValuelbl = New System.Windows.Forms.Label()
+        Me.securityDepositValuelbl = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.unitCodeMainlbl = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,10 +179,10 @@ Partial Class Form2
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Label34)
         Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Controls.Add(Me.Label21)
-        Me.Panel3.Controls.Add(Me.Label17)
-        Me.Panel3.Controls.Add(Me.Label20)
-        Me.Panel3.Controls.Add(Me.Label15)
+        Me.Panel3.Controls.Add(Me.securityDepositlbl)
+        Me.Panel3.Controls.Add(Me.leaseExpirationlbl)
+        Me.Panel3.Controls.Add(Me.paymentHistorylbl)
+        Me.Panel3.Controls.Add(Me.outstandinglbl)
         Me.Panel3.Controls.Add(Me.Label19)
         Me.Panel3.Controls.Add(Me.Label16)
         Me.Panel3.Controls.Add(Me.PictureBox5)
@@ -194,8 +194,8 @@ Partial Class Form2
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.unitFloorlbl)
+        Me.Panel3.Controls.Add(Me.unitCodelbl)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.PictureBox1)
@@ -229,49 +229,49 @@ Partial Class Form2
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'Label21
+        'securityDepositlbl
         '
-        Me.Label21.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label21.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(94, 575)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(187, 22)
-        Me.Label21.TabIndex = 8
-        Me.Label21.Text = "PRICE"
+        Me.securityDepositlbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.securityDepositlbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.securityDepositlbl.ForeColor = System.Drawing.Color.Black
+        Me.securityDepositlbl.Location = New System.Drawing.Point(94, 575)
+        Me.securityDepositlbl.Name = "securityDepositlbl"
+        Me.securityDepositlbl.Size = New System.Drawing.Size(187, 22)
+        Me.securityDepositlbl.TabIndex = 8
+        Me.securityDepositlbl.Text = "PRICE"
         '
-        'Label17
+        'leaseExpirationlbl
         '
-        Me.Label17.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label17.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(94, 398)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(187, 22)
-        Me.Label17.TabIndex = 8
-        Me.Label17.Text = "LEASE EXPIRATION DATE"
+        Me.leaseExpirationlbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.leaseExpirationlbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.leaseExpirationlbl.ForeColor = System.Drawing.Color.Black
+        Me.leaseExpirationlbl.Location = New System.Drawing.Point(94, 398)
+        Me.leaseExpirationlbl.Name = "leaseExpirationlbl"
+        Me.leaseExpirationlbl.Size = New System.Drawing.Size(187, 22)
+        Me.leaseExpirationlbl.TabIndex = 8
+        Me.leaseExpirationlbl.Text = "LEASE EXPIRATION DATE"
         '
-        'Label20
+        'paymentHistorylbl
         '
-        Me.Label20.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label20.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(94, 489)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(187, 22)
-        Me.Label20.TabIndex = 8
-        Me.Label20.Text = "PAYMENT HISTORY"
+        Me.paymentHistorylbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.paymentHistorylbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.paymentHistorylbl.ForeColor = System.Drawing.Color.Black
+        Me.paymentHistorylbl.Location = New System.Drawing.Point(94, 489)
+        Me.paymentHistorylbl.Name = "paymentHistorylbl"
+        Me.paymentHistorylbl.Size = New System.Drawing.Size(187, 22)
+        Me.paymentHistorylbl.TabIndex = 8
+        Me.paymentHistorylbl.Text = "PAYMENT HISTORY"
         '
-        'Label15
+        'outstandinglbl
         '
-        Me.Label15.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label15.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(94, 311)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(187, 22)
-        Me.Label15.TabIndex = 8
-        Me.Label15.Text = "PRICE"
+        Me.outstandinglbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.outstandinglbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.outstandinglbl.ForeColor = System.Drawing.Color.Black
+        Me.outstandinglbl.Location = New System.Drawing.Point(94, 311)
+        Me.outstandinglbl.Name = "outstandinglbl"
+        Me.outstandinglbl.Size = New System.Drawing.Size(187, 22)
+        Me.outstandinglbl.TabIndex = 8
+        Me.outstandinglbl.Text = "PRICE"
         '
         'Label19
         '
@@ -396,25 +396,25 @@ Partial Class Form2
         Me.Label10.Size = New System.Drawing.Size(283, 73)
         Me.Label10.TabIndex = 6
         '
-        'Label9
+        'unitFloorlbl
         '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(32, 236)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(107, 18)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "UNIT FLOOR"
+        Me.unitFloorlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitFloorlbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.unitFloorlbl.Location = New System.Drawing.Point(32, 236)
+        Me.unitFloorlbl.Name = "unitFloorlbl"
+        Me.unitFloorlbl.Size = New System.Drawing.Size(107, 18)
+        Me.unitFloorlbl.TabIndex = 5
+        Me.unitFloorlbl.Text = "UNIT FLOOR"
         '
-        'Label8
+        'unitCodelbl
         '
-        Me.Label8.Font = New System.Drawing.Font("Goudy Old Style", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(32, 203)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(195, 22)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "UNIT CODE"
+        Me.unitCodelbl.Font = New System.Drawing.Font("Goudy Old Style", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitCodelbl.ForeColor = System.Drawing.Color.Black
+        Me.unitCodelbl.Location = New System.Drawing.Point(32, 203)
+        Me.unitCodelbl.Name = "unitCodelbl"
+        Me.unitCodelbl.Size = New System.Drawing.Size(195, 22)
+        Me.unitCodelbl.TabIndex = 4
+        Me.unitCodelbl.Text = "UNIT CODE"
         '
         'Label7
         '
@@ -553,17 +553,17 @@ Partial Class Form2
         Me.Label53.TabIndex = 9
         Me.Label53.Text = "Tenant"
         '
-        'Label54
+        'tenantValuelbl
         '
-        Me.Label54.BackColor = System.Drawing.Color.White
-        Me.Label54.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label54.Location = New System.Drawing.Point(708, 388)
-        Me.Label54.Name = "Label54"
-        Me.Label54.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label54.Size = New System.Drawing.Size(151, 18)
-        Me.Label54.TabIndex = 9
-        Me.Label54.Text = "Tenant"
+        Me.tenantValuelbl.BackColor = System.Drawing.Color.White
+        Me.tenantValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tenantValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.tenantValuelbl.Location = New System.Drawing.Point(708, 388)
+        Me.tenantValuelbl.Name = "tenantValuelbl"
+        Me.tenantValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.tenantValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.tenantValuelbl.TabIndex = 9
+        Me.tenantValuelbl.Text = "Tenant"
         '
         'Label55
         '
@@ -576,17 +576,17 @@ Partial Class Form2
         Me.Label55.TabIndex = 9
         Me.Label55.Text = "Unit"
         '
-        'Label56
+        'unitValuelbl
         '
-        Me.Label56.BackColor = System.Drawing.Color.White
-        Me.Label56.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label56.Location = New System.Drawing.Point(708, 424)
-        Me.Label56.Name = "Label56"
-        Me.Label56.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label56.Size = New System.Drawing.Size(151, 18)
-        Me.Label56.TabIndex = 9
-        Me.Label56.Text = "Unit"
+        Me.unitValuelbl.BackColor = System.Drawing.Color.White
+        Me.unitValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.unitValuelbl.Location = New System.Drawing.Point(708, 424)
+        Me.unitValuelbl.Name = "unitValuelbl"
+        Me.unitValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.unitValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.unitValuelbl.TabIndex = 9
+        Me.unitValuelbl.Text = "Unit"
         '
         'Label57
         '
@@ -599,17 +599,17 @@ Partial Class Form2
         Me.Label57.TabIndex = 9
         Me.Label57.Text = "Lease Start"
         '
-        'Label58
+        'leaseStartValuelbl
         '
-        Me.Label58.BackColor = System.Drawing.Color.White
-        Me.Label58.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label58.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label58.Location = New System.Drawing.Point(708, 459)
-        Me.Label58.Name = "Label58"
-        Me.Label58.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label58.Size = New System.Drawing.Size(151, 18)
-        Me.Label58.TabIndex = 9
-        Me.Label58.Text = "Lease Start"
+        Me.leaseStartValuelbl.BackColor = System.Drawing.Color.White
+        Me.leaseStartValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.leaseStartValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.leaseStartValuelbl.Location = New System.Drawing.Point(708, 459)
+        Me.leaseStartValuelbl.Name = "leaseStartValuelbl"
+        Me.leaseStartValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.leaseStartValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.leaseStartValuelbl.TabIndex = 9
+        Me.leaseStartValuelbl.Text = "Lease Start"
         '
         'Label59
         '
@@ -633,29 +633,29 @@ Partial Class Form2
         Me.Label62.TabIndex = 9
         Me.Label62.Text = "Monthly Rent"
         '
-        'Label60
+        'leaseEndValuelbl
         '
-        Me.Label60.BackColor = System.Drawing.Color.White
-        Me.Label60.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label60.Location = New System.Drawing.Point(708, 494)
-        Me.Label60.Name = "Label60"
-        Me.Label60.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label60.Size = New System.Drawing.Size(151, 18)
-        Me.Label60.TabIndex = 9
-        Me.Label60.Text = "Lease End"
+        Me.leaseEndValuelbl.BackColor = System.Drawing.Color.White
+        Me.leaseEndValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.leaseEndValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.leaseEndValuelbl.Location = New System.Drawing.Point(708, 494)
+        Me.leaseEndValuelbl.Name = "leaseEndValuelbl"
+        Me.leaseEndValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.leaseEndValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.leaseEndValuelbl.TabIndex = 9
+        Me.leaseEndValuelbl.Text = "Lease End"
         '
-        'Label63
+        'monthlyRentValuelbl
         '
-        Me.Label63.BackColor = System.Drawing.Color.White
-        Me.Label63.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label63.Location = New System.Drawing.Point(708, 529)
-        Me.Label63.Name = "Label63"
-        Me.Label63.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label63.Size = New System.Drawing.Size(151, 18)
-        Me.Label63.TabIndex = 9
-        Me.Label63.Text = "Monthly Rent"
+        Me.monthlyRentValuelbl.BackColor = System.Drawing.Color.White
+        Me.monthlyRentValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.monthlyRentValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.monthlyRentValuelbl.Location = New System.Drawing.Point(708, 529)
+        Me.monthlyRentValuelbl.Name = "monthlyRentValuelbl"
+        Me.monthlyRentValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.monthlyRentValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.monthlyRentValuelbl.TabIndex = 9
+        Me.monthlyRentValuelbl.Text = "Monthly Rent"
         '
         'Label61
         '
@@ -672,26 +672,26 @@ Partial Class Form2
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
         Me.Panel4.Controls.Add(Me.Label32)
-        Me.Panel4.Controls.Add(Me.Label30)
-        Me.Panel4.Controls.Add(Me.Label29)
-        Me.Panel4.Controls.Add(Me.Label28)
-        Me.Panel4.Controls.Add(Me.Label27)
+        Me.Panel4.Controls.Add(Me.statuslbl)
+        Me.Panel4.Controls.Add(Me.depositlbl)
+        Me.Panel4.Controls.Add(Me.rentPricelbl)
+        Me.Panel4.Controls.Add(Me.contractDatelbl)
         Me.Panel4.Controls.Add(Me.Label25)
         Me.Panel4.Controls.Add(Me.Label31)
         Me.Panel4.Controls.Add(Me.Label61)
-        Me.Panel4.Controls.Add(Me.Label37)
-        Me.Panel4.Controls.Add(Me.Label36)
-        Me.Panel4.Controls.Add(Me.Label63)
-        Me.Panel4.Controls.Add(Me.Label60)
+        Me.Panel4.Controls.Add(Me.contractStatusValuelbl)
+        Me.Panel4.Controls.Add(Me.securityDepositValuelbl)
+        Me.Panel4.Controls.Add(Me.monthlyRentValuelbl)
+        Me.Panel4.Controls.Add(Me.leaseEndValuelbl)
         Me.Panel4.Controls.Add(Me.Label35)
         Me.Panel4.Controls.Add(Me.Label33)
         Me.Panel4.Controls.Add(Me.Label62)
         Me.Panel4.Controls.Add(Me.Label59)
-        Me.Panel4.Controls.Add(Me.Label58)
+        Me.Panel4.Controls.Add(Me.leaseStartValuelbl)
         Me.Panel4.Controls.Add(Me.Label57)
-        Me.Panel4.Controls.Add(Me.Label56)
+        Me.Panel4.Controls.Add(Me.unitValuelbl)
         Me.Panel4.Controls.Add(Me.Label55)
-        Me.Panel4.Controls.Add(Me.Label54)
+        Me.Panel4.Controls.Add(Me.tenantValuelbl)
         Me.Panel4.Controls.Add(Me.Label53)
         Me.Panel4.Controls.Add(Me.Label52)
         Me.Panel4.Controls.Add(Me.Label51)
@@ -699,7 +699,7 @@ Partial Class Form2
         Me.Panel4.Controls.Add(Me.Label49)
         Me.Panel4.Controls.Add(Me.Label48)
         Me.Panel4.Controls.Add(Me.PictureBox7)
-        Me.Panel4.Controls.Add(Me.Label26)
+        Me.Panel4.Controls.Add(Me.unitCodeMainlbl)
         Me.Panel4.Controls.Add(Me.Label47)
         Me.Panel4.Controls.Add(Me.Label24)
         Me.Panel4.Controls.Add(Me.Label23)
@@ -720,52 +720,52 @@ Partial Class Form2
         Me.Label32.Size = New System.Drawing.Size(842, 1)
         Me.Label32.TabIndex = 17
         '
-        'Label30
+        'statuslbl
         '
-        Me.Label30.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label30.Location = New System.Drawing.Point(362, 260)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(129, 27)
-        Me.Label30.TabIndex = 16
-        Me.Label30.Text = "Status"
-        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.statuslbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.statuslbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statuslbl.ForeColor = System.Drawing.SystemColors.Control
+        Me.statuslbl.Location = New System.Drawing.Point(362, 260)
+        Me.statuslbl.Name = "statuslbl"
+        Me.statuslbl.Size = New System.Drawing.Size(129, 27)
+        Me.statuslbl.TabIndex = 16
+        Me.statuslbl.Text = "Status"
+        Me.statuslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label29
+        'depositlbl
         '
-        Me.Label29.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label29.Location = New System.Drawing.Point(218, 260)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(129, 27)
-        Me.Label29.TabIndex = 16
-        Me.Label29.Text = "Deposit"
-        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.depositlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.depositlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depositlbl.ForeColor = System.Drawing.SystemColors.Control
+        Me.depositlbl.Location = New System.Drawing.Point(218, 260)
+        Me.depositlbl.Name = "depositlbl"
+        Me.depositlbl.Size = New System.Drawing.Size(129, 27)
+        Me.depositlbl.TabIndex = 16
+        Me.depositlbl.Text = "Deposit"
+        Me.depositlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label28
+        'rentPricelbl
         '
-        Me.Label28.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label28.Location = New System.Drawing.Point(74, 260)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(129, 27)
-        Me.Label28.TabIndex = 16
-        Me.Label28.Text = "Rent Price"
-        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.rentPricelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.rentPricelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rentPricelbl.ForeColor = System.Drawing.SystemColors.Control
+        Me.rentPricelbl.Location = New System.Drawing.Point(74, 260)
+        Me.rentPricelbl.Name = "rentPricelbl"
+        Me.rentPricelbl.Size = New System.Drawing.Size(129, 27)
+        Me.rentPricelbl.TabIndex = 16
+        Me.rentPricelbl.Text = "Rent Price"
+        Me.rentPricelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label27
+        'contractDatelbl
         '
-        Me.Label27.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label27.Location = New System.Drawing.Point(74, 227)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(284, 18)
-        Me.Label27.TabIndex = 15
-        Me.Label27.Text = "Starting to End Date Contract"
+        Me.contractDatelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.contractDatelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contractDatelbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.contractDatelbl.Location = New System.Drawing.Point(74, 227)
+        Me.contractDatelbl.Name = "contractDatelbl"
+        Me.contractDatelbl.Size = New System.Drawing.Size(284, 18)
+        Me.contractDatelbl.TabIndex = 15
+        Me.contractDatelbl.Text = "Starting to End Date Contract"
         '
         'Label25
         '
@@ -788,29 +788,29 @@ Partial Class Form2
         Me.Label31.Size = New System.Drawing.Size(842, 1)
         Me.Label31.TabIndex = 14
         '
-        'Label37
+        'contractStatusValuelbl
         '
-        Me.Label37.BackColor = System.Drawing.Color.White
-        Me.Label37.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label37.Location = New System.Drawing.Point(708, 601)
-        Me.Label37.Name = "Label37"
-        Me.Label37.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label37.Size = New System.Drawing.Size(151, 18)
-        Me.Label37.TabIndex = 9
-        Me.Label37.Text = "Contract Status"
+        Me.contractStatusValuelbl.BackColor = System.Drawing.Color.White
+        Me.contractStatusValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.contractStatusValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.contractStatusValuelbl.Location = New System.Drawing.Point(708, 601)
+        Me.contractStatusValuelbl.Name = "contractStatusValuelbl"
+        Me.contractStatusValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.contractStatusValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.contractStatusValuelbl.TabIndex = 9
+        Me.contractStatusValuelbl.Text = "Contract Status"
         '
-        'Label36
+        'securityDepositValuelbl
         '
-        Me.Label36.BackColor = System.Drawing.Color.White
-        Me.Label36.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label36.Location = New System.Drawing.Point(708, 564)
-        Me.Label36.Name = "Label36"
-        Me.Label36.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label36.Size = New System.Drawing.Size(151, 18)
-        Me.Label36.TabIndex = 9
-        Me.Label36.Text = "Securitty Deposit"
+        Me.securityDepositValuelbl.BackColor = System.Drawing.Color.White
+        Me.securityDepositValuelbl.Font = New System.Drawing.Font("Segoe UI Semibold", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.securityDepositValuelbl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.securityDepositValuelbl.Location = New System.Drawing.Point(708, 564)
+        Me.securityDepositValuelbl.Name = "securityDepositValuelbl"
+        Me.securityDepositValuelbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.securityDepositValuelbl.Size = New System.Drawing.Size(151, 18)
+        Me.securityDepositValuelbl.TabIndex = 9
+        Me.securityDepositValuelbl.Text = "Securitty Deposit"
         '
         'Label35
         '
@@ -847,16 +847,16 @@ Partial Class Form2
         Me.PictureBox7.TabIndex = 9
         Me.PictureBox7.TabStop = False
         '
-        'Label26
+        'unitCodeMainlbl
         '
-        Me.Label26.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label26.Font = New System.Drawing.Font("Goudy Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(71, 187)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(302, 33)
-        Me.Label26.TabIndex = 4
-        Me.Label26.Text = "UNIT CODE"
+        Me.unitCodeMainlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.unitCodeMainlbl.Font = New System.Drawing.Font("Goudy Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitCodeMainlbl.ForeColor = System.Drawing.Color.White
+        Me.unitCodeMainlbl.Location = New System.Drawing.Point(71, 187)
+        Me.unitCodeMainlbl.Name = "unitCodeMainlbl"
+        Me.unitCodeMainlbl.Size = New System.Drawing.Size(302, 33)
+        Me.unitCodeMainlbl.TabIndex = 4
+        Me.unitCodeMainlbl.Text = "UNIT CODE"
         '
         'Form2
         '
@@ -895,10 +895,10 @@ Partial Class Form2
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label34 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents securityDepositlbl As Label
+    Friend WithEvents leaseExpirationlbl As Label
+    Friend WithEvents paymentHistorylbl As Label
+    Friend WithEvents outstandinglbl As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label18 As Label
@@ -907,8 +907,8 @@ Partial Class Form2
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents unitFloorlbl As Label
+    Friend WithEvents unitCodelbl As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label22 As Label
@@ -922,27 +922,27 @@ Partial Class Form2
     Friend WithEvents Label51 As Label
     Friend WithEvents Label52 As Label
     Friend WithEvents Label53 As Label
-    Friend WithEvents Label54 As Label
+    Friend WithEvents tenantValuelbl As Label
     Friend WithEvents Label55 As Label
-    Friend WithEvents Label56 As Label
+    Friend WithEvents unitValuelbl As Label
     Friend WithEvents Label57 As Label
-    Friend WithEvents Label58 As Label
+    Friend WithEvents leaseStartValuelbl As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents Label62 As Label
-    Friend WithEvents Label60 As Label
-    Friend WithEvents Label63 As Label
+    Friend WithEvents leaseEndValuelbl As Label
+    Friend WithEvents monthlyRentValuelbl As Label
     Friend WithEvents Label61 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label25 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label28 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label30 As Label
-    Friend WithEvents Label29 As Label
+    Friend WithEvents unitCodeMainlbl As Label
+    Friend WithEvents rentPricelbl As Label
+    Friend WithEvents contractDatelbl As Label
+    Friend WithEvents statuslbl As Label
+    Friend WithEvents depositlbl As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents Label33 As Label
-    Friend WithEvents Label37 As Label
-    Friend WithEvents Label36 As Label
+    Friend WithEvents contractStatusValuelbl As Label
+    Friend WithEvents securityDepositValuelbl As Label
 End Class
