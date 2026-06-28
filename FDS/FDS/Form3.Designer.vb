@@ -31,32 +31,34 @@ Partial Class Form3
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BillingHistoryGrid = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.securityDepositlbl = New System.Windows.Forms.Label()
+        Me.leaseExpirationlbl = New System.Windows.Forms.Label()
+        Me.paymentHistorylbl = New System.Windows.Forms.Label()
+        Me.outstandinglbl = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.unitFloorlbl = New System.Windows.Forms.Label()
+        Me.unitCodelbl = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.BillingHistoryGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,6 +158,7 @@ Partial Class Form3
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
+        Me.Panel4.Controls.Add(Me.BillingHistoryGrid)
         Me.Panel4.Controls.Add(Me.Label23)
         Me.Panel4.Controls.Add(Me.Label22)
         Me.Panel4.Location = New System.Drawing.Point(317, 117)
@@ -163,6 +166,16 @@ Partial Class Form3
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(932, 702)
         Me.Panel4.TabIndex = 11
+        '
+        'BillingHistoryGrid
+        '
+        Me.BillingHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BillingHistoryGrid.Location = New System.Drawing.Point(46, 111)
+        Me.BillingHistoryGrid.Name = "BillingHistoryGrid"
+        Me.BillingHistoryGrid.RowHeadersWidth = 51
+        Me.BillingHistoryGrid.RowTemplate.Height = 24
+        Me.BillingHistoryGrid.Size = New System.Drawing.Size(834, 317)
+        Me.BillingHistoryGrid.TabIndex = 10
         '
         'Panel2
         '
@@ -180,10 +193,10 @@ Partial Class Form3
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Label34)
         Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Controls.Add(Me.Label21)
-        Me.Panel3.Controls.Add(Me.Label17)
-        Me.Panel3.Controls.Add(Me.Label20)
-        Me.Panel3.Controls.Add(Me.Label15)
+        Me.Panel3.Controls.Add(Me.securityDepositlbl)
+        Me.Panel3.Controls.Add(Me.leaseExpirationlbl)
+        Me.Panel3.Controls.Add(Me.paymentHistorylbl)
+        Me.Panel3.Controls.Add(Me.outstandinglbl)
         Me.Panel3.Controls.Add(Me.Label19)
         Me.Panel3.Controls.Add(Me.Label16)
         Me.Panel3.Controls.Add(Me.PictureBox5)
@@ -195,8 +208,8 @@ Partial Class Form3
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.Label12)
         Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.unitFloorlbl)
+        Me.Panel3.Controls.Add(Me.unitCodelbl)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.PictureBox1)
@@ -217,49 +230,62 @@ Partial Class Form3
         Me.Label34.TabIndex = 9
         Me.Label34.Text = "Outstanding Report"
         '
-        'Label21
+        'PictureBox2
         '
-        Me.Label21.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label21.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(94, 575)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(187, 22)
-        Me.Label21.TabIndex = 8
-        Me.Label21.Text = "PRICE"
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
+        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
         '
-        'Label17
+        'securityDepositlbl
         '
-        Me.Label17.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label17.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(94, 398)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(187, 22)
-        Me.Label17.TabIndex = 8
-        Me.Label17.Text = "LEASE EXPIRATION DATE"
+        Me.securityDepositlbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.securityDepositlbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.securityDepositlbl.ForeColor = System.Drawing.Color.Black
+        Me.securityDepositlbl.Location = New System.Drawing.Point(94, 575)
+        Me.securityDepositlbl.Name = "securityDepositlbl"
+        Me.securityDepositlbl.Size = New System.Drawing.Size(187, 22)
+        Me.securityDepositlbl.TabIndex = 8
+        Me.securityDepositlbl.Text = "PRICE"
         '
-        'Label20
+        'leaseExpirationlbl
         '
-        Me.Label20.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label20.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(94, 489)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(187, 22)
-        Me.Label20.TabIndex = 8
-        Me.Label20.Text = "PAYMENT HISTORY"
+        Me.leaseExpirationlbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.leaseExpirationlbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.leaseExpirationlbl.ForeColor = System.Drawing.Color.Black
+        Me.leaseExpirationlbl.Location = New System.Drawing.Point(94, 398)
+        Me.leaseExpirationlbl.Name = "leaseExpirationlbl"
+        Me.leaseExpirationlbl.Size = New System.Drawing.Size(187, 22)
+        Me.leaseExpirationlbl.TabIndex = 8
+        Me.leaseExpirationlbl.Text = "LEASE EXPIRATION DATE"
         '
-        'Label15
+        'paymentHistorylbl
         '
-        Me.Label15.BackColor = System.Drawing.SystemColors.Menu
-        Me.Label15.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(94, 311)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(187, 22)
-        Me.Label15.TabIndex = 8
-        Me.Label15.Text = "PRICE"
+        Me.paymentHistorylbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.paymentHistorylbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.paymentHistorylbl.ForeColor = System.Drawing.Color.Black
+        Me.paymentHistorylbl.Location = New System.Drawing.Point(94, 489)
+        Me.paymentHistorylbl.Name = "paymentHistorylbl"
+        Me.paymentHistorylbl.Size = New System.Drawing.Size(187, 22)
+        Me.paymentHistorylbl.TabIndex = 8
+        Me.paymentHistorylbl.Text = "PAYMENT HISTORY"
+        '
+        'outstandinglbl
+        '
+        Me.outstandinglbl.BackColor = System.Drawing.SystemColors.Menu
+        Me.outstandinglbl.Font = New System.Drawing.Font("Goudy Old Style", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.outstandinglbl.ForeColor = System.Drawing.Color.Black
+        Me.outstandinglbl.Location = New System.Drawing.Point(94, 311)
+        Me.outstandinglbl.Name = "outstandinglbl"
+        Me.outstandinglbl.Size = New System.Drawing.Size(187, 22)
+        Me.outstandinglbl.TabIndex = 8
+        Me.outstandinglbl.Text = "PRICE"
         '
         'Label19
         '
@@ -283,6 +309,32 @@ Partial Class Form3
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "Lease Ends"
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
+        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
+        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
         'Label18
         '
         Me.Label18.BackColor = System.Drawing.SystemColors.Menu
@@ -293,6 +345,19 @@ Partial Class Form3
         Me.Label18.Size = New System.Drawing.Size(151, 18)
         Me.Label18.TabIndex = 3
         Me.Label18.Text = "Last Payment"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
+        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabStop = False
         '
         'Label14
         '
@@ -345,25 +410,25 @@ Partial Class Form3
         Me.Label10.Size = New System.Drawing.Size(283, 73)
         Me.Label10.TabIndex = 6
         '
-        'Label9
+        'unitFloorlbl
         '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(136, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(32, 236)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(107, 18)
-        Me.Label9.TabIndex = 5
-        Me.Label9.Text = "UNIT FLOOR"
+        Me.unitFloorlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitFloorlbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.unitFloorlbl.Location = New System.Drawing.Point(32, 236)
+        Me.unitFloorlbl.Name = "unitFloorlbl"
+        Me.unitFloorlbl.Size = New System.Drawing.Size(107, 18)
+        Me.unitFloorlbl.TabIndex = 5
+        Me.unitFloorlbl.Text = "UNIT FLOOR"
         '
-        'Label8
+        'unitCodelbl
         '
-        Me.Label8.Font = New System.Drawing.Font("Goudy Old Style", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(32, 203)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(195, 22)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "UNIT CODE"
+        Me.unitCodelbl.Font = New System.Drawing.Font("Goudy Old Style", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitCodelbl.ForeColor = System.Drawing.Color.Black
+        Me.unitCodelbl.Location = New System.Drawing.Point(32, 203)
+        Me.unitCodelbl.Name = "unitCodelbl"
+        Me.unitCodelbl.Size = New System.Drawing.Size(195, 22)
+        Me.unitCodelbl.TabIndex = 4
+        Me.unitCodelbl.Text = "UNIT CODE"
         '
         'Label7
         '
@@ -384,58 +449,6 @@ Partial Class Form3
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(283, 100)
         Me.Label6.TabIndex = 3
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
-        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
-        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
-        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
-        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
         '
         'PictureBox1
         '
@@ -462,6 +475,7 @@ Partial Class Form3
         Me.Text = "Form3"
         Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        CType(Me.BillingHistoryGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -485,10 +499,10 @@ Partial Class Form3
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label34 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents securityDepositlbl As Label
+    Friend WithEvents leaseExpirationlbl As Label
+    Friend WithEvents paymentHistorylbl As Label
+    Friend WithEvents outstandinglbl As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents PictureBox5 As PictureBox
@@ -500,9 +514,10 @@ Partial Class Form3
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents unitFloorlbl As Label
+    Friend WithEvents unitCodelbl As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BillingHistoryGrid As DataGridView
 End Class
