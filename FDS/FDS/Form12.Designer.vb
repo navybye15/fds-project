@@ -24,6 +24,7 @@ Partial Class Form12
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -34,15 +35,14 @@ Partial Class Form12
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -50,7 +50,7 @@ Partial Class Form12
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.addTenantBtn = New System.Windows.Forms.Button()
+        Me.addExpenseBtn = New System.Windows.Forms.Button()
         Me.collectedLbl = New System.Windows.Forms.Label()
         Me.unpaidBillsLbl = New System.Windows.Forms.Label()
         Me.activeTenantsTotalLbl = New System.Windows.Forms.Label()
@@ -70,7 +70,19 @@ Partial Class Form12
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.RecentTenantsGrid = New System.Windows.Forms.DataGridView()
+        Me.ExpenseRecGrid = New System.Windows.Forms.DataGridView()
+        Me.deleteBtn = New System.Windows.Forms.Button()
+        Me.saveBtn = New System.Windows.Forms.Button()
+        Me.CategoryCmb = New System.Windows.Forms.ComboBox()
+        Me.Typelbl = New System.Windows.Forms.Label()
+        Me.RecordedTxt = New System.Windows.Forms.TextBox()
+        Me.Loclbl = New System.Windows.Forms.Label()
+        Me.AmtTxt = New System.Windows.Forms.TextBox()
+        Me.Monthlylbl = New System.Windows.Forms.Label()
+        Me.Datetxt = New System.Windows.Forms.TextBox()
+        Me.UnitNumberlbl = New System.Windows.Forms.Label()
+        Me.Desclbl = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +95,7 @@ Partial Class Form12
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -114,10 +126,10 @@ Partial Class Form12
         Me.Panel3.Controls.Add(Me.PictureBox8)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Location = New System.Drawing.Point(3, 3)
+        Me.Panel3.Location = New System.Drawing.Point(3, 0)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(321, 818)
+        Me.Panel3.Size = New System.Drawing.Size(321, 858)
         Me.Panel3.TabIndex = 25
         '
         'Label6
@@ -129,6 +141,19 @@ Partial Class Form12
         Me.Label6.Size = New System.Drawing.Size(93, 20)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Expenses"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
+        Me.PictureBox9.Location = New System.Drawing.Point(30, 662)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 15
+        Me.PictureBox9.TabStop = False
         '
         'Label13
         '
@@ -232,59 +257,6 @@ Partial Class Form12
         Me.Label23.TabIndex = 9
         Me.Label23.Text = "Management Portal"
         '
-        'Label14
-        '
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(22, 441)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(93, 20)
-        Me.Label14.TabIndex = 0
-        Me.Label14.Text = "PROPERTIES"
-        '
-        'Label10
-        '
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label10.Location = New System.Drawing.Point(22, 254)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(93, 20)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "PROPERTIES"
-        '
-        'Label17
-        '
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(22, 577)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(93, 20)
-        Me.Label17.TabIndex = 0
-        Me.Label17.Text = "ANALYTICS"
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(22, 169)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(93, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "OVERVIEW"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
-        Me.PictureBox9.Location = New System.Drawing.Point(30, 662)
-        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 15
-        Me.PictureBox9.TabStop = False
-        '
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -298,6 +270,16 @@ Partial Class Form12
         Me.PictureBox5.TabIndex = 0
         Me.PictureBox5.TabStop = False
         '
+        'Label14
+        '
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label14.Location = New System.Drawing.Point(22, 441)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(93, 20)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "PROPERTIES"
+        '
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -310,6 +292,16 @@ Partial Class Form12
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 0
         Me.PictureBox7.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label10.Location = New System.Drawing.Point(22, 254)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(93, 20)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "PROPERTIES"
         '
         'PictureBox4
         '
@@ -336,6 +328,26 @@ Partial Class Form12
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 0
         Me.PictureBox6.TabStop = False
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label17.Location = New System.Drawing.Point(22, 577)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(93, 20)
+        Me.Label17.TabIndex = 0
+        Me.Label17.Text = "ANALYTICS"
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(22, 169)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(93, 20)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "OVERVIEW"
         '
         'PictureBox3
         '
@@ -394,8 +406,8 @@ Partial Class Form12
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.addTenantBtn)
-        Me.Panel1.Location = New System.Drawing.Point(324, 0)
+        Me.Panel1.Controls.Add(Me.addExpenseBtn)
+        Me.Panel1.Location = New System.Drawing.Point(321, -2)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(929, 81)
@@ -422,16 +434,16 @@ Partial Class Form12
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Track maintenance, repairs, utilities, and misc. costs"
         '
-        'addTenantBtn
+        'addExpenseBtn
         '
-        Me.addTenantBtn.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.addTenantBtn.ForeColor = System.Drawing.Color.PaleGreen
-        Me.addTenantBtn.Location = New System.Drawing.Point(769, 32)
-        Me.addTenantBtn.Name = "addTenantBtn"
-        Me.addTenantBtn.Size = New System.Drawing.Size(125, 31)
-        Me.addTenantBtn.TabIndex = 13
-        Me.addTenantBtn.Text = "Add Expense"
-        Me.addTenantBtn.UseVisualStyleBackColor = False
+        Me.addExpenseBtn.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.addExpenseBtn.ForeColor = System.Drawing.Color.PaleGreen
+        Me.addExpenseBtn.Location = New System.Drawing.Point(769, 32)
+        Me.addExpenseBtn.Name = "addExpenseBtn"
+        Me.addExpenseBtn.Size = New System.Drawing.Size(125, 31)
+        Me.addExpenseBtn.TabIndex = 13
+        Me.addExpenseBtn.Text = "Add Expense"
+        Me.addExpenseBtn.UseVisualStyleBackColor = False
         '
         'collectedLbl
         '
@@ -625,23 +637,145 @@ Partial Class Form12
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "All logged building expenses"
         '
-        'RecentTenantsGrid
+        'ExpenseRecGrid
         '
-        Me.RecentTenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.RecentTenantsGrid.Location = New System.Drawing.Point(358, 309)
-        Me.RecentTenantsGrid.Name = "RecentTenantsGrid"
-        Me.RecentTenantsGrid.RowHeadersWidth = 51
-        Me.RecentTenantsGrid.RowTemplate.Height = 24
-        Me.RecentTenantsGrid.Size = New System.Drawing.Size(862, 345)
-        Me.RecentTenantsGrid.TabIndex = 43
+        Me.ExpenseRecGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ExpenseRecGrid.Location = New System.Drawing.Point(358, 309)
+        Me.ExpenseRecGrid.Name = "ExpenseRecGrid"
+        Me.ExpenseRecGrid.RowHeadersWidth = 51
+        Me.ExpenseRecGrid.RowTemplate.Height = 24
+        Me.ExpenseRecGrid.Size = New System.Drawing.Size(862, 345)
+        Me.ExpenseRecGrid.TabIndex = 43
+        '
+        'deleteBtn
+        '
+        Me.deleteBtn.BackColor = System.Drawing.Color.Firebrick
+        Me.deleteBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.deleteBtn.Location = New System.Drawing.Point(510, 665)
+        Me.deleteBtn.Name = "deleteBtn"
+        Me.deleteBtn.Size = New System.Drawing.Size(125, 31)
+        Me.deleteBtn.TabIndex = 45
+        Me.deleteBtn.Text = "Delete"
+        Me.deleteBtn.UseVisualStyleBackColor = False
+        '
+        'saveBtn
+        '
+        Me.saveBtn.Location = New System.Drawing.Point(379, 665)
+        Me.saveBtn.Name = "saveBtn"
+        Me.saveBtn.Size = New System.Drawing.Size(125, 31)
+        Me.saveBtn.TabIndex = 46
+        Me.saveBtn.Text = "Save"
+        Me.saveBtn.UseVisualStyleBackColor = True
+        '
+        'CategoryCmb
+        '
+        Me.CategoryCmb.FormattingEnabled = True
+        Me.CategoryCmb.Location = New System.Drawing.Point(652, 730)
+        Me.CategoryCmb.Name = "CategoryCmb"
+        Me.CategoryCmb.Size = New System.Drawing.Size(262, 24)
+        Me.CategoryCmb.TabIndex = 56
+        '
+        'Typelbl
+        '
+        Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Typelbl.Location = New System.Drawing.Point(649, 707)
+        Me.Typelbl.Name = "Typelbl"
+        Me.Typelbl.Size = New System.Drawing.Size(106, 20)
+        Me.Typelbl.TabIndex = 48
+        Me.Typelbl.Text = "Category"
+        '
+        'RecordedTxt
+        '
+        Me.RecordedTxt.Location = New System.Drawing.Point(936, 730)
+        Me.RecordedTxt.Multiline = True
+        Me.RecordedTxt.Name = "RecordedTxt"
+        Me.RecordedTxt.Size = New System.Drawing.Size(262, 24)
+        Me.RecordedTxt.TabIndex = 52
+        '
+        'Loclbl
+        '
+        Me.Loclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Loclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Loclbl.Location = New System.Drawing.Point(933, 707)
+        Me.Loclbl.Name = "Loclbl"
+        Me.Loclbl.Size = New System.Drawing.Size(149, 20)
+        Me.Loclbl.TabIndex = 49
+        Me.Loclbl.Text = "Recorded By"
+        '
+        'AmtTxt
+        '
+        Me.AmtTxt.Location = New System.Drawing.Point(369, 797)
+        Me.AmtTxt.Multiline = True
+        Me.AmtTxt.Name = "AmtTxt"
+        Me.AmtTxt.Size = New System.Drawing.Size(262, 24)
+        Me.AmtTxt.TabIndex = 53
+        '
+        'Monthlylbl
+        '
+        Me.Monthlylbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Monthlylbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Monthlylbl.Location = New System.Drawing.Point(366, 774)
+        Me.Monthlylbl.Name = "Monthlylbl"
+        Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
+        Me.Monthlylbl.TabIndex = 50
+        Me.Monthlylbl.Text = "Amount (₱)"
+        '
+        'Datetxt
+        '
+        Me.Datetxt.Location = New System.Drawing.Point(369, 730)
+        Me.Datetxt.Multiline = True
+        Me.Datetxt.Name = "Datetxt"
+        Me.Datetxt.Size = New System.Drawing.Size(262, 24)
+        Me.Datetxt.TabIndex = 54
+        '
+        'UnitNumberlbl
+        '
+        Me.UnitNumberlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnitNumberlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.UnitNumberlbl.Location = New System.Drawing.Point(366, 707)
+        Me.UnitNumberlbl.Name = "UnitNumberlbl"
+        Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
+        Me.UnitNumberlbl.TabIndex = 51
+        Me.UnitNumberlbl.Text = "Date"
+        '
+        'Desclbl
+        '
+        Me.Desclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Desclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Desclbl.Location = New System.Drawing.Point(648, 774)
+        Me.Desclbl.Name = "Desclbl"
+        Me.Desclbl.Size = New System.Drawing.Size(106, 20)
+        Me.Desclbl.TabIndex = 57
+        Me.Desclbl.Text = "Description"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(652, 797)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(546, 24)
+        Me.TextBox1.TabIndex = 58
         '
         'Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1253, 817)
+        Me.ClientSize = New System.Drawing.Size(1253, 858)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Desclbl)
+        Me.Controls.Add(Me.CategoryCmb)
+        Me.Controls.Add(Me.Typelbl)
+        Me.Controls.Add(Me.RecordedTxt)
+        Me.Controls.Add(Me.Loclbl)
+        Me.Controls.Add(Me.AmtTxt)
+        Me.Controls.Add(Me.Monthlylbl)
+        Me.Controls.Add(Me.Datetxt)
+        Me.Controls.Add(Me.UnitNumberlbl)
+        Me.Controls.Add(Me.deleteBtn)
+        Me.Controls.Add(Me.saveBtn)
         Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.RecentTenantsGrid)
+        Me.Controls.Add(Me.ExpenseRecGrid)
         Me.Controls.Add(Me.collectedLbl)
         Me.Controls.Add(Me.unpaidBillsLbl)
         Me.Controls.Add(Me.activeTenantsTotalLbl)
@@ -658,8 +792,8 @@ Partial Class Form12
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "Form12"
         Me.Text = "Form12"
         Me.Panel3.ResumeLayout(False)
@@ -674,8 +808,9 @@ Partial Class Form12
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
-        CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -707,7 +842,7 @@ Partial Class Form12
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents addTenantBtn As Button
+    Friend WithEvents addExpenseBtn As Button
     Friend WithEvents collectedLbl As Label
     Friend WithEvents unpaidBillsLbl As Label
     Friend WithEvents activeTenantsTotalLbl As Label
@@ -727,5 +862,17 @@ Partial Class Form12
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents RecentTenantsGrid As DataGridView
+    Friend WithEvents ExpenseRecGrid As DataGridView
+    Friend WithEvents deleteBtn As Button
+    Friend WithEvents saveBtn As Button
+    Friend WithEvents CategoryCmb As ComboBox
+    Friend WithEvents Typelbl As Label
+    Friend WithEvents RecordedTxt As TextBox
+    Friend WithEvents Loclbl As Label
+    Friend WithEvents AmtTxt As TextBox
+    Friend WithEvents Monthlylbl As Label
+    Friend WithEvents Datetxt As TextBox
+    Friend WithEvents UnitNumberlbl As Label
+    Friend WithEvents Desclbl As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
