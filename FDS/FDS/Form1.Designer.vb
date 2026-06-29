@@ -53,14 +53,24 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.editBtn = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
+        Me.contactTxt = New System.Windows.Forms.TextBox()
+        Me.emergencyTxt = New System.Windows.Forms.TextBox()
         Me.statuslbl = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.monthlylbl = New System.Windows.Forms.Label()
+        Me.govIdTxt = New System.Windows.Forms.TextBox()
         Me.govIdlbl = New System.Windows.Forms.Label()
+        Me.FullNametxt = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
+        Me.UnitNumberlbl = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
+        Me.saveBtn = New System.Windows.Forms.Button()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.floorlbl = New System.Windows.Forms.Label()
         Me.emergencylbl = New System.Windows.Forms.Label()
@@ -464,14 +474,24 @@ Partial Class Form1
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
+        Me.Panel4.Controls.Add(Me.editBtn)
+        Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label61)
+        Me.Panel4.Controls.Add(Me.contactTxt)
+        Me.Panel4.Controls.Add(Me.emergencyTxt)
         Me.Panel4.Controls.Add(Me.statuslbl)
+        Me.Panel4.Controls.Add(Me.Label9)
         Me.Panel4.Controls.Add(Me.monthlylbl)
+        Me.Panel4.Controls.Add(Me.govIdTxt)
         Me.Panel4.Controls.Add(Me.govIdlbl)
+        Me.Panel4.Controls.Add(Me.FullNametxt)
         Me.Panel4.Controls.Add(Me.Label42)
+        Me.Panel4.Controls.Add(Me.Label20)
         Me.Panel4.Controls.Add(Me.Label38)
+        Me.Panel4.Controls.Add(Me.UnitNumberlbl)
         Me.Panel4.Controls.Add(Me.Label62)
         Me.Panel4.Controls.Add(Me.Label59)
+        Me.Panel4.Controls.Add(Me.saveBtn)
         Me.Panel4.Controls.Add(Me.Label33)
         Me.Panel4.Controls.Add(Me.floorlbl)
         Me.Panel4.Controls.Add(Me.emergencylbl)
@@ -514,6 +534,25 @@ Partial Class Form1
         Me.Panel4.Size = New System.Drawing.Size(932, 702)
         Me.Panel4.TabIndex = 3
         '
+        'editBtn
+        '
+        Me.editBtn.Location = New System.Drawing.Point(47, 570)
+        Me.editBtn.Name = "editBtn"
+        Me.editBtn.Size = New System.Drawing.Size(125, 31)
+        Me.editBtn.TabIndex = 25
+        Me.editBtn.Text = "Edit"
+        Me.editBtn.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label8.Location = New System.Drawing.Point(265, 617)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(106, 20)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Contact No."
+        '
         'Label61
         '
         Me.Label61.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -523,6 +562,22 @@ Partial Class Form1
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(842, 1)
         Me.Label61.TabIndex = 14
+        '
+        'contactTxt
+        '
+        Me.contactTxt.Location = New System.Drawing.Point(268, 639)
+        Me.contactTxt.Multiline = True
+        Me.contactTxt.Name = "contactTxt"
+        Me.contactTxt.Size = New System.Drawing.Size(197, 24)
+        Me.contactTxt.TabIndex = 21
+        '
+        'emergencyTxt
+        '
+        Me.emergencyTxt.Location = New System.Drawing.Point(494, 640)
+        Me.emergencyTxt.Multiline = True
+        Me.emergencyTxt.Name = "emergencyTxt"
+        Me.emergencyTxt.Size = New System.Drawing.Size(197, 24)
+        Me.emergencyTxt.TabIndex = 22
         '
         'statuslbl
         '
@@ -536,6 +591,16 @@ Partial Class Form1
         Me.statuslbl.TabIndex = 9
         Me.statuslbl.Text = "Status"
         '
+        'Label9
+        '
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label9.Location = New System.Drawing.Point(491, 617)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(160, 20)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "Emergency Contact"
+        '
         'monthlylbl
         '
         Me.monthlylbl.BackColor = System.Drawing.Color.White
@@ -547,6 +612,14 @@ Partial Class Form1
         Me.monthlylbl.Size = New System.Drawing.Size(151, 18)
         Me.monthlylbl.TabIndex = 9
         Me.monthlylbl.Text = "Monthly Rate"
+        '
+        'govIdTxt
+        '
+        Me.govIdTxt.Location = New System.Drawing.Point(718, 639)
+        Me.govIdTxt.Multiline = True
+        Me.govIdTxt.Name = "govIdTxt"
+        Me.govIdTxt.Size = New System.Drawing.Size(197, 24)
+        Me.govIdTxt.TabIndex = 23
         '
         'govIdlbl
         '
@@ -560,6 +633,14 @@ Partial Class Form1
         Me.govIdlbl.TabIndex = 9
         Me.govIdlbl.Text = "Gov. ID"
         '
+        'FullNametxt
+        '
+        Me.FullNametxt.Location = New System.Drawing.Point(47, 639)
+        Me.FullNametxt.Multiline = True
+        Me.FullNametxt.Name = "FullNametxt"
+        Me.FullNametxt.Size = New System.Drawing.Size(197, 24)
+        Me.FullNametxt.TabIndex = 24
+        '
         'Label42
         '
         Me.Label42.BackColor = System.Drawing.Color.White
@@ -572,6 +653,16 @@ Partial Class Form1
         Me.Label42.TabIndex = 9
         Me.Label42.Text = "Gov. ID"
         '
+        'Label20
+        '
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label20.Location = New System.Drawing.Point(715, 617)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(106, 20)
+        Me.Label20.TabIndex = 17
+        Me.Label20.Text = "Government ID"
+        '
         'Label38
         '
         Me.Label38.BackColor = System.Drawing.Color.White
@@ -583,6 +674,16 @@ Partial Class Form1
         Me.Label38.Size = New System.Drawing.Size(151, 18)
         Me.Label38.TabIndex = 9
         Me.Label38.Text = "Gov. ID"
+        '
+        'UnitNumberlbl
+        '
+        Me.UnitNumberlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnitNumberlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.UnitNumberlbl.Location = New System.Drawing.Point(46, 617)
+        Me.UnitNumberlbl.Name = "UnitNumberlbl"
+        Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
+        Me.UnitNumberlbl.TabIndex = 18
+        Me.UnitNumberlbl.Text = "Full Name"
         '
         'Label62
         '
@@ -605,6 +706,15 @@ Partial Class Form1
         Me.Label59.Size = New System.Drawing.Size(151, 18)
         Me.Label59.TabIndex = 9
         Me.Label59.Text = "Monthly Rate"
+        '
+        'saveBtn
+        '
+        Me.saveBtn.Location = New System.Drawing.Point(222, 570)
+        Me.saveBtn.Name = "saveBtn"
+        Me.saveBtn.Size = New System.Drawing.Size(125, 31)
+        Me.saveBtn.TabIndex = 20
+        Me.saveBtn.Text = "Save"
+        Me.saveBtn.UseVisualStyleBackColor = True
         '
         'Label33
         '
@@ -1027,6 +1137,7 @@ Partial Class Form1
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1107,4 +1218,14 @@ Partial Class Form1
     Friend WithEvents Label62 As Label
     Friend WithEvents statuslbl As Label
     Friend WithEvents namelbl As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents contactTxt As TextBox
+    Friend WithEvents emergencyTxt As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents govIdTxt As TextBox
+    Friend WithEvents FullNametxt As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents UnitNumberlbl As Label
+    Friend WithEvents saveBtn As Button
+    Friend WithEvents editBtn As Button
 End Class

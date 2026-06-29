@@ -36,6 +36,8 @@ Partial Class Form8
         Me.TenantsGrid = New System.Windows.Forms.DataGridView()
         Me.totalTenantsLbl = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -72,10 +74,9 @@ Partial Class Form8
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +88,6 @@ Partial Class Form8
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -104,72 +104,65 @@ Partial Class Form8
         '
         Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Typelbl.Location = New System.Drawing.Point(255, 564)
+        Me.Typelbl.Location = New System.Drawing.Point(255, 584)
         Me.Typelbl.Name = "Typelbl"
         Me.Typelbl.Size = New System.Drawing.Size(106, 20)
         Me.Typelbl.TabIndex = 0
         Me.Typelbl.Text = "Contact No."
-        Me.Typelbl.Visible = False
         '
         'Usernametxt
         '
-        Me.Usernametxt.Location = New System.Drawing.Point(481, 587)
+        Me.Usernametxt.Location = New System.Drawing.Point(481, 607)
         Me.Usernametxt.Multiline = True
         Me.Usernametxt.Name = "Usernametxt"
         Me.Usernametxt.Size = New System.Drawing.Size(197, 24)
         Me.Usernametxt.TabIndex = 14
-        Me.Usernametxt.Visible = False
         '
         'Loclbl
         '
         Me.Loclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Loclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Loclbl.Location = New System.Drawing.Point(478, 564)
+        Me.Loclbl.Location = New System.Drawing.Point(478, 584)
         Me.Loclbl.Name = "Loclbl"
         Me.Loclbl.Size = New System.Drawing.Size(149, 20)
         Me.Loclbl.TabIndex = 0
         Me.Loclbl.Text = "Username"
-        Me.Loclbl.Visible = False
         '
         'Passwordtxt
         '
-        Me.Passwordtxt.Location = New System.Drawing.Point(702, 587)
+        Me.Passwordtxt.Location = New System.Drawing.Point(702, 607)
         Me.Passwordtxt.Multiline = True
         Me.Passwordtxt.Name = "Passwordtxt"
         Me.Passwordtxt.Size = New System.Drawing.Size(197, 24)
         Me.Passwordtxt.TabIndex = 14
-        Me.Passwordtxt.Visible = False
         '
         'Monthlylbl
         '
         Me.Monthlylbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Monthlylbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Monthlylbl.Location = New System.Drawing.Point(699, 564)
+        Me.Monthlylbl.Location = New System.Drawing.Point(699, 584)
         Me.Monthlylbl.Name = "Monthlylbl"
         Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
         Me.Monthlylbl.TabIndex = 0
         Me.Monthlylbl.Text = "Password"
-        Me.Monthlylbl.Visible = False
         '
         'FullNametxt
         '
-        Me.FullNametxt.Location = New System.Drawing.Point(37, 587)
+        Me.FullNametxt.Location = New System.Drawing.Point(37, 607)
         Me.FullNametxt.Multiline = True
         Me.FullNametxt.Name = "FullNametxt"
         Me.FullNametxt.Size = New System.Drawing.Size(197, 24)
         Me.FullNametxt.TabIndex = 14
-        Me.FullNametxt.Visible = False
         '
         'UnitNumberlbl
         '
         Me.UnitNumberlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UnitNumberlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.UnitNumberlbl.Location = New System.Drawing.Point(34, 564)
+        Me.UnitNumberlbl.Location = New System.Drawing.Point(34, 584)
         Me.UnitNumberlbl.Name = "UnitNumberlbl"
         Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
         Me.UnitNumberlbl.TabIndex = 0
         Me.UnitNumberlbl.Text = "Full Name"
-        Me.UnitNumberlbl.Visible = False
         '
         'addTenantBtn
         '
@@ -255,6 +248,29 @@ Partial Class Form8
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 24
+        '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label6.Location = New System.Drawing.Point(58, 662)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 20)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Expenses"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
+        Me.PictureBox9.Location = New System.Drawing.Point(30, 662)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 15
+        Me.PictureBox9.TabStop = False
         '
         'Label13
         '
@@ -569,90 +585,81 @@ Partial Class Form8
         '
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(476, 630)
+        Me.Label19.Location = New System.Drawing.Point(476, 650)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(106, 20)
         Me.Label19.TabIndex = 0
         Me.Label19.Text = "Lease End"
-        Me.Label19.Visible = False
         '
         'contactTxt
         '
-        Me.contactTxt.Location = New System.Drawing.Point(258, 587)
+        Me.contactTxt.Location = New System.Drawing.Point(258, 607)
         Me.contactTxt.Multiline = True
         Me.contactTxt.Name = "contactTxt"
         Me.contactTxt.Size = New System.Drawing.Size(197, 24)
         Me.contactTxt.TabIndex = 14
-        Me.contactTxt.Visible = False
         '
         'emergencyTxt
         '
-        Me.emergencyTxt.Location = New System.Drawing.Point(702, 653)
+        Me.emergencyTxt.Location = New System.Drawing.Point(702, 673)
         Me.emergencyTxt.Multiline = True
         Me.emergencyTxt.Name = "emergencyTxt"
         Me.emergencyTxt.Size = New System.Drawing.Size(197, 24)
         Me.emergencyTxt.TabIndex = 14
-        Me.emergencyTxt.Visible = False
         '
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(699, 630)
+        Me.Label8.Location = New System.Drawing.Point(699, 650)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(160, 20)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Emergency Contact"
-        Me.Label8.Visible = False
         '
         'LeaseEndtxt
         '
-        Me.LeaseEndtxt.Location = New System.Drawing.Point(479, 653)
+        Me.LeaseEndtxt.Location = New System.Drawing.Point(479, 673)
         Me.LeaseEndtxt.Multiline = True
         Me.LeaseEndtxt.Name = "LeaseEndtxt"
         Me.LeaseEndtxt.Size = New System.Drawing.Size(197, 24)
         Me.LeaseEndtxt.TabIndex = 14
-        Me.LeaseEndtxt.Visible = False
         '
         'govIdTxt
         '
-        Me.govIdTxt.Location = New System.Drawing.Point(37, 653)
+        Me.govIdTxt.Location = New System.Drawing.Point(37, 673)
         Me.govIdTxt.Multiline = True
         Me.govIdTxt.Name = "govIdTxt"
         Me.govIdTxt.Size = New System.Drawing.Size(197, 24)
         Me.govIdTxt.TabIndex = 14
-        Me.govIdTxt.Visible = False
         '
         'LeaseStarttxt
         '
-        Me.LeaseStarttxt.Location = New System.Drawing.Point(258, 653)
+        Me.LeaseStarttxt.Location = New System.Drawing.Point(258, 673)
         Me.LeaseStarttxt.Multiline = True
         Me.LeaseStarttxt.Name = "LeaseStarttxt"
         Me.LeaseStarttxt.Size = New System.Drawing.Size(197, 24)
         Me.LeaseStarttxt.TabIndex = 14
-        Me.LeaseStarttxt.Visible = False
         '
         'Label20
         '
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label20.Location = New System.Drawing.Point(30, 630)
+        Me.Label20.Location = New System.Drawing.Point(30, 650)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(106, 20)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Government ID"
-        Me.Label20.Visible = False
         '
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(255, 630)
+        Me.Label7.Location = New System.Drawing.Point(255, 650)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(106, 20)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Lease Start"
-        Me.Label7.Visible = False
         '
         'Panel2
         '
@@ -664,29 +671,6 @@ Partial Class Form8
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(863, 106)
         Me.Panel2.TabIndex = 11
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(58, 662)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 20)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = "Expenses"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
-        Me.PictureBox9.Location = New System.Drawing.Point(30, 662)
-        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 15
-        Me.PictureBox9.TabStop = False
         '
         'Form8
         '
@@ -700,6 +684,7 @@ Partial Class Form8
         Me.Text = "Form8"
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -712,7 +697,6 @@ Partial Class Form8
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

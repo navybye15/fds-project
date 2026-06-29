@@ -3,8 +3,9 @@ Public Class Form7
 
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        loadUnits()
     End Sub
+
     Private Sub loadUnits()
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
         Dim conn As New MySqlConnection(connStr)
@@ -16,8 +17,8 @@ Public Class Form7
             Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM units", conn)
             totalUnitsLbl.Text = cmdTotal.ExecuteScalar().ToString()
 
-            ' === Load sa DataGridView ===
-            Dim query As String = "SELECT unit_number AS 'Unit #', type AS 'Type', floor AS 'Floor', " &
+            ' === Load sa DataGridView (idinagdag ang unit_id para sa internal use) ===
+            Dim query As String = "SELECT unit_id, unit_number AS 'Unit #', type AS 'Type', floor AS 'Floor', " &
                                    "monthly_rate AS 'Monthly Rate', unit_status AS 'Status' FROM units"
 
             Dim cmd As New MySqlCommand(query, conn)
@@ -27,13 +28,25 @@ Public Class Form7
 
             UnitsGrid.DataSource = dt
 
-            conn.Close()
+            ' Itago ang unit_id column sa view pero pwede pa rin i-access sa code
+            If UnitsGrid.Columns.Contains("unit_id") Then
+                UnitsGrid.Columns("unit_id").Visible = False
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
 
     Private Sub addUnitBtn_Click(sender As Object, e As EventArgs) Handles addUnitBtn.Click
+        ' Basic validation muna
+        If String.IsNullOrWhiteSpace(unitNumbertxt.Text) Then
+            MessageBox.Show("Please enter a unit number.")
+            Return
+        End If
+
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
         Dim conn As New MySqlConnection(connStr)
 
@@ -51,13 +64,17 @@ Public Class Form7
             cmd.Parameters.AddWithValue("@unit_status", statusCmb.Text)
 
             cmd.ExecuteNonQuery()
-            conn.Close()
 
             MessageBox.Show("Unit added successfully!")
             clearFields()
             loadUnits()
+        Catch ex As MySqlException When ex.Number = 1062
+            ' Duplicate entry (unit_number ay UNIQUE)
+            MessageBox.Show("That unit number already exists. Please use a different unit number.")
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
 
@@ -87,13 +104,14 @@ Public Class Form7
             cmd.Parameters.AddWithValue("@unit_status", statusCmb.Text)
 
             cmd.ExecuteNonQuery()
-            conn.Close()
 
             MessageBox.Show("Unit updated successfully!")
             clearFields()
             loadUnits()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
 
@@ -104,29 +122,68 @@ Public Class Form7
         End If
 
         Dim confirm = MessageBox.Show("Are you sure you want to delete this unit?", "Confirm Delete", MessageBoxButtons.YesNo)
+        If confirm <> DialogResult.Yes Then Return
 
-        If confirm = DialogResult.Yes Then
-            Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
-            Dim conn As New MySqlConnection(connStr)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
+        Dim conn As New MySqlConnection(connStr)
 
-            Try
-                conn.Open()
+        Try
+            conn.Open()
 
-                Dim selectedUnitNumber = UnitsGrid.SelectedRows(0).Cells("Unit #").Value.ToString()
+            Dim unitId As Integer = Convert.ToInt32(UnitsGrid.SelectedRows(0).Cells("unit_id").Value)
+            Dim selectedUnitNumber = UnitsGrid.SelectedRows(0).Cells("Unit #").Value.ToString()
 
-                Dim cmd As New MySqlCommand("DELETE FROM units WHERE unit_number = @unit_number", conn)
-                cmd.Parameters.AddWithValue("@unit_number", selectedUnitNumber)
+            ' === STEP 1: Check muna kung may related records (bills, leases, expenses) ===
+            Dim checkQuery As String = "SELECT " &
+                "(SELECT COUNT(*) FROM bills WHERE unit_id = @unit_id) AS bill_count, " &
+                "(SELECT COUNT(*) FROM leases WHERE unit_id = @unit_id) AS lease_count, " &
+                "(SELECT COUNT(*) FROM expenses WHERE unit_id = @unit_id) AS expense_count"
 
-                cmd.ExecuteNonQuery()
-                conn.Close()
+            Dim checkCmd As New MySqlCommand(checkQuery, conn)
+            checkCmd.Parameters.AddWithValue("@unit_id", unitId)
 
-                MessageBox.Show("Unit deleted successfully!")
-                clearFields()
-                loadUnits()
-            Catch ex As Exception
-                MessageBox.Show("Error: " & ex.Message)
-            End Try
-        End If
+            Dim billCount As Integer = 0
+            Dim leaseCount As Integer = 0
+            Dim expenseCount As Integer = 0
+
+            Using reader As MySqlDataReader = checkCmd.ExecuteReader()
+                If reader.Read() Then
+                    billCount = Convert.ToInt32(reader("bill_count"))
+                    leaseCount = Convert.ToInt32(reader("lease_count"))
+                    expenseCount = Convert.ToInt32(reader("expense_count"))
+                End If
+            End Using
+
+            ' === STEP 2: Kung may related records, huwag ituloy ang delete ===
+            If billCount > 0 OrElse leaseCount > 0 OrElse expenseCount > 0 Then
+                Dim msg As String = "Cannot delete Unit " & selectedUnitNumber & " because it still has related records:" & vbCrLf
+                If billCount > 0 Then msg &= "- " & billCount & " bill(s)" & vbCrLf
+                If leaseCount > 0 Then msg &= "- " & leaseCount & " lease(s)" & vbCrLf
+                If expenseCount > 0 Then msg &= "- " & expenseCount & " expense(s)" & vbCrLf
+                msg &= vbCrLf & "Please remove or reassign those records first before deleting this unit."
+
+                MessageBox.Show(msg, "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' === STEP 3: Walang related records, ligtas na i-delete ===
+            Dim cmd As New MySqlCommand("DELETE FROM units WHERE unit_id = @unit_id", conn)
+            cmd.Parameters.AddWithValue("@unit_id", unitId)
+            cmd.ExecuteNonQuery()
+
+            MessageBox.Show("Unit deleted successfully!")
+            clearFields()
+            loadUnits()
+
+        Catch ex As MySqlException When ex.Number = 1451
+            ' Fallback safety net kung sakaling may dumaan sa check sa itaas
+            MessageBox.Show("Cannot delete this unit because it is still linked to other records (bills, leases, or expenses).",
+                             "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+        End Try
     End Sub
 
     Private Sub UnitsGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles UnitsGrid.CellClick
@@ -151,6 +208,5 @@ Public Class Form7
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
         Form8.Show()
         Me.Hide()
-
     End Sub
 End Class

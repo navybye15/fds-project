@@ -23,6 +23,8 @@ Partial Class Form7
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -66,9 +68,8 @@ Partial Class Form7
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.totalUnitsLbl = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +82,6 @@ Partial Class Form7
         Me.Panel4.SuspendLayout()
         CType(Me.UnitsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -117,6 +117,29 @@ Partial Class Form7
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 21
+        '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label6.Location = New System.Drawing.Point(58, 657)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(93, 20)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Expenses"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
+        Me.PictureBox9.Location = New System.Drawing.Point(30, 657)
+        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 23
+        Me.PictureBox9.TabStop = False
         '
         'Label13
         '
@@ -428,7 +451,6 @@ Partial Class Form7
         Me.statusCmb.Name = "statusCmb"
         Me.statusCmb.Size = New System.Drawing.Size(262, 24)
         Me.statusCmb.TabIndex = 15
-        Me.statusCmb.Visible = False
         '
         'typeCmb
         '
@@ -437,7 +459,6 @@ Partial Class Form7
         Me.typeCmb.Name = "typeCmb"
         Me.typeCmb.Size = New System.Drawing.Size(262, 24)
         Me.typeCmb.TabIndex = 15
-        Me.typeCmb.Visible = False
         '
         'Statuslbl
         '
@@ -448,7 +469,6 @@ Partial Class Form7
         Me.Statuslbl.Size = New System.Drawing.Size(106, 20)
         Me.Statuslbl.TabIndex = 0
         Me.Statuslbl.Text = "Status"
-        Me.Statuslbl.Visible = False
         '
         'Typelbl
         '
@@ -459,7 +479,6 @@ Partial Class Form7
         Me.Typelbl.Size = New System.Drawing.Size(106, 20)
         Me.Typelbl.TabIndex = 0
         Me.Typelbl.Text = "Type"
-        Me.Typelbl.Visible = False
         '
         'floorTxt
         '
@@ -468,7 +487,6 @@ Partial Class Form7
         Me.floorTxt.Name = "floorTxt"
         Me.floorTxt.Size = New System.Drawing.Size(262, 24)
         Me.floorTxt.TabIndex = 14
-        Me.floorTxt.Visible = False
         '
         'Loclbl
         '
@@ -479,7 +497,6 @@ Partial Class Form7
         Me.Loclbl.Size = New System.Drawing.Size(149, 20)
         Me.Loclbl.TabIndex = 0
         Me.Loclbl.Text = "Floor / Location"
-        Me.Loclbl.Visible = False
         '
         'monthlyRateTxt
         '
@@ -488,7 +505,6 @@ Partial Class Form7
         Me.monthlyRateTxt.Name = "monthlyRateTxt"
         Me.monthlyRateTxt.Size = New System.Drawing.Size(262, 24)
         Me.monthlyRateTxt.TabIndex = 14
-        Me.monthlyRateTxt.Visible = False
         '
         'Monthlylbl
         '
@@ -499,7 +515,6 @@ Partial Class Form7
         Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
         Me.Monthlylbl.TabIndex = 0
         Me.Monthlylbl.Text = "Monthly Rate  (₱)"
-        Me.Monthlylbl.Visible = False
         '
         'unitNumbertxt
         '
@@ -508,7 +523,6 @@ Partial Class Form7
         Me.unitNumbertxt.Name = "unitNumbertxt"
         Me.unitNumbertxt.Size = New System.Drawing.Size(262, 24)
         Me.unitNumbertxt.TabIndex = 14
-        Me.unitNumbertxt.Visible = False
         '
         'UnitNumberlbl
         '
@@ -519,7 +533,6 @@ Partial Class Form7
         Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
         Me.UnitNumberlbl.TabIndex = 0
         Me.UnitNumberlbl.Text = "Unit Number"
-        Me.UnitNumberlbl.Visible = False
         '
         'addUnitBtn
         '
@@ -593,29 +606,6 @@ Partial Class Form7
         Me.totalUnitsLbl.TabIndex = 0
         Me.totalUnitsLbl.Text = "TOTAL"
         '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(58, 657)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 20)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Expenses"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox9.Image = Global.FDS.My.Resources.Resources.REPORT_LOGO
-        Me.PictureBox9.Location = New System.Drawing.Point(30, 657)
-        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(22, 20)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 23
-        Me.PictureBox9.TabStop = False
-        '
         'Form7
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -627,6 +617,7 @@ Partial Class Form7
         Me.Name = "Form7"
         Me.Text = "Form7"
         Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -640,7 +631,6 @@ Partial Class Form7
         Me.Panel4.PerformLayout()
         CType(Me.UnitsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

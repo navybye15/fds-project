@@ -53,7 +53,6 @@ Partial Class Form10
         Me.assignUnitCmb.Name = "assignUnitCmb"
         Me.assignUnitCmb.Size = New System.Drawing.Size(276, 33)
         Me.assignUnitCmb.TabIndex = 33
-        Me.assignUnitCmb.Visible = False
         '
         'Label19
         '
@@ -64,7 +63,6 @@ Partial Class Form10
         Me.Label19.Size = New System.Drawing.Size(185, 47)
         Me.Label19.TabIndex = 17
         Me.Label19.Text = "Lease End"
-        Me.Label19.Visible = False
         '
         'Typelbl
         '
@@ -75,7 +73,6 @@ Partial Class Form10
         Me.Typelbl.Size = New System.Drawing.Size(185, 47)
         Me.Typelbl.TabIndex = 18
         Me.Typelbl.Text = "Contact No."
-        Me.Typelbl.Visible = False
         '
         'contactTxt
         '
@@ -86,7 +83,6 @@ Partial Class Form10
         Me.contactTxt.Name = "contactTxt"
         Me.contactTxt.Size = New System.Drawing.Size(276, 51)
         Me.contactTxt.TabIndex = 31
-        Me.contactTxt.Visible = False
         '
         'Usernametxt
         '
@@ -97,7 +93,6 @@ Partial Class Form10
         Me.Usernametxt.Name = "Usernametxt"
         Me.Usernametxt.Size = New System.Drawing.Size(276, 51)
         Me.Usernametxt.TabIndex = 30
-        Me.Usernametxt.Visible = False
         '
         'Label9
         '
@@ -108,7 +103,6 @@ Partial Class Form10
         Me.Label9.Size = New System.Drawing.Size(228, 47)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Assign Unit"
-        Me.Label9.Visible = False
         '
         'Loclbl
         '
@@ -119,7 +113,6 @@ Partial Class Form10
         Me.Loclbl.Size = New System.Drawing.Size(228, 47)
         Me.Loclbl.TabIndex = 21
         Me.Loclbl.Text = "Username"
-        Me.Loclbl.Visible = False
         '
         'emergencyTxt
         '
@@ -130,7 +123,6 @@ Partial Class Form10
         Me.emergencyTxt.Name = "emergencyTxt"
         Me.emergencyTxt.Size = New System.Drawing.Size(276, 51)
         Me.emergencyTxt.TabIndex = 29
-        Me.emergencyTxt.Visible = False
         '
         'Passwordtxt
         '
@@ -141,7 +133,6 @@ Partial Class Form10
         Me.Passwordtxt.Name = "Passwordtxt"
         Me.Passwordtxt.Size = New System.Drawing.Size(276, 51)
         Me.Passwordtxt.TabIndex = 28
-        Me.Passwordtxt.Visible = False
         '
         'Label8
         '
@@ -152,7 +143,6 @@ Partial Class Form10
         Me.Label8.Size = New System.Drawing.Size(239, 47)
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Emergency Contact"
-        Me.Label8.Visible = False
         '
         'Monthlylbl
         '
@@ -163,7 +153,6 @@ Partial Class Form10
         Me.Monthlylbl.Size = New System.Drawing.Size(239, 47)
         Me.Monthlylbl.TabIndex = 24
         Me.Monthlylbl.Text = "Password"
-        Me.Monthlylbl.Visible = False
         '
         'govIdTxt
         '
@@ -174,7 +163,6 @@ Partial Class Form10
         Me.govIdTxt.Name = "govIdTxt"
         Me.govIdTxt.Size = New System.Drawing.Size(276, 51)
         Me.govIdTxt.TabIndex = 27
-        Me.govIdTxt.Visible = False
         '
         'FullNametxt
         '
@@ -185,7 +173,6 @@ Partial Class Form10
         Me.FullNametxt.Name = "FullNametxt"
         Me.FullNametxt.Size = New System.Drawing.Size(276, 51)
         Me.FullNametxt.TabIndex = 25
-        Me.FullNametxt.Visible = False
         '
         'Label20
         '
@@ -196,7 +183,6 @@ Partial Class Form10
         Me.Label20.Size = New System.Drawing.Size(185, 47)
         Me.Label20.TabIndex = 19
         Me.Label20.Text = "Government ID"
-        Me.Label20.Visible = False
         '
         'Label7
         '
@@ -207,7 +193,6 @@ Partial Class Form10
         Me.Label7.Size = New System.Drawing.Size(185, 47)
         Me.Label7.TabIndex = 22
         Me.Label7.Text = "Lease Start"
-        Me.Label7.Visible = False
         '
         'UnitNumberlbl
         '
@@ -218,7 +203,6 @@ Partial Class Form10
         Me.UnitNumberlbl.Size = New System.Drawing.Size(185, 47)
         Me.UnitNumberlbl.TabIndex = 16
         Me.UnitNumberlbl.Text = "Full Name"
-        Me.UnitNumberlbl.Visible = False
         '
         'createTenantBtn
         '
