@@ -51,10 +51,10 @@ Partial Class Form12
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.addExpenseBtn = New System.Windows.Forms.Button()
-        Me.collectedLbl = New System.Windows.Forms.Label()
-        Me.unpaidBillsLbl = New System.Windows.Forms.Label()
-        Me.activeTenantsTotalLbl = New System.Windows.Forms.Label()
-        Me.totalUnitsLbl = New System.Windows.Forms.Label()
+        Me.misctotalLbl = New System.Windows.Forms.Label()
+        Me.utilitiesLbl = New System.Windows.Forms.Label()
+        Me.maintenanceLbl = New System.Windows.Forms.Label()
+        Me.totalmonthLbl = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -82,7 +82,7 @@ Partial Class Form12
         Me.Datetxt = New System.Windows.Forms.TextBox()
         Me.UnitNumberlbl = New System.Windows.Forms.Label()
         Me.Desclbl = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DescriptionTxt = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -445,49 +445,49 @@ Partial Class Form12
         Me.addExpenseBtn.Text = "Add Expense"
         Me.addExpenseBtn.UseVisualStyleBackColor = False
         '
-        'collectedLbl
+        'misctotalLbl
         '
-        Me.collectedLbl.BackColor = System.Drawing.Color.White
-        Me.collectedLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.collectedLbl.ForeColor = System.Drawing.Color.Black
-        Me.collectedLbl.Location = New System.Drawing.Point(1078, 148)
-        Me.collectedLbl.Name = "collectedLbl"
-        Me.collectedLbl.Size = New System.Drawing.Size(100, 22)
-        Me.collectedLbl.TabIndex = 27
-        Me.collectedLbl.Text = "TOTAL"
+        Me.misctotalLbl.BackColor = System.Drawing.Color.White
+        Me.misctotalLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.misctotalLbl.ForeColor = System.Drawing.Color.Black
+        Me.misctotalLbl.Location = New System.Drawing.Point(1078, 148)
+        Me.misctotalLbl.Name = "misctotalLbl"
+        Me.misctotalLbl.Size = New System.Drawing.Size(100, 22)
+        Me.misctotalLbl.TabIndex = 27
+        Me.misctotalLbl.Text = "TOTAL"
         '
-        'unpaidBillsLbl
+        'utilitiesLbl
         '
-        Me.unpaidBillsLbl.BackColor = System.Drawing.Color.White
-        Me.unpaidBillsLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.unpaidBillsLbl.ForeColor = System.Drawing.Color.Black
-        Me.unpaidBillsLbl.Location = New System.Drawing.Point(863, 148)
-        Me.unpaidBillsLbl.Name = "unpaidBillsLbl"
-        Me.unpaidBillsLbl.Size = New System.Drawing.Size(100, 22)
-        Me.unpaidBillsLbl.TabIndex = 28
-        Me.unpaidBillsLbl.Text = "TOTAL"
+        Me.utilitiesLbl.BackColor = System.Drawing.Color.White
+        Me.utilitiesLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.utilitiesLbl.ForeColor = System.Drawing.Color.Black
+        Me.utilitiesLbl.Location = New System.Drawing.Point(863, 148)
+        Me.utilitiesLbl.Name = "utilitiesLbl"
+        Me.utilitiesLbl.Size = New System.Drawing.Size(100, 22)
+        Me.utilitiesLbl.TabIndex = 28
+        Me.utilitiesLbl.Text = "TOTAL"
         '
-        'activeTenantsTotalLbl
+        'maintenanceLbl
         '
-        Me.activeTenantsTotalLbl.BackColor = System.Drawing.Color.White
-        Me.activeTenantsTotalLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.activeTenantsTotalLbl.ForeColor = System.Drawing.Color.Black
-        Me.activeTenantsTotalLbl.Location = New System.Drawing.Point(647, 148)
-        Me.activeTenantsTotalLbl.Name = "activeTenantsTotalLbl"
-        Me.activeTenantsTotalLbl.Size = New System.Drawing.Size(100, 22)
-        Me.activeTenantsTotalLbl.TabIndex = 29
-        Me.activeTenantsTotalLbl.Text = "TOTAL"
+        Me.maintenanceLbl.BackColor = System.Drawing.Color.White
+        Me.maintenanceLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.maintenanceLbl.ForeColor = System.Drawing.Color.Black
+        Me.maintenanceLbl.Location = New System.Drawing.Point(647, 148)
+        Me.maintenanceLbl.Name = "maintenanceLbl"
+        Me.maintenanceLbl.Size = New System.Drawing.Size(100, 22)
+        Me.maintenanceLbl.TabIndex = 29
+        Me.maintenanceLbl.Text = "TOTAL"
         '
-        'totalUnitsLbl
+        'totalmonthLbl
         '
-        Me.totalUnitsLbl.BackColor = System.Drawing.Color.White
-        Me.totalUnitsLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totalUnitsLbl.ForeColor = System.Drawing.Color.Black
-        Me.totalUnitsLbl.Location = New System.Drawing.Point(432, 148)
-        Me.totalUnitsLbl.Name = "totalUnitsLbl"
-        Me.totalUnitsLbl.Size = New System.Drawing.Size(100, 22)
-        Me.totalUnitsLbl.TabIndex = 30
-        Me.totalUnitsLbl.Text = "TOTAL"
+        Me.totalmonthLbl.BackColor = System.Drawing.Color.White
+        Me.totalmonthLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalmonthLbl.ForeColor = System.Drawing.Color.Black
+        Me.totalmonthLbl.Location = New System.Drawing.Point(432, 148)
+        Me.totalmonthLbl.Name = "totalmonthLbl"
+        Me.totalmonthLbl.Size = New System.Drawing.Size(100, 22)
+        Me.totalmonthLbl.TabIndex = 30
+        Me.totalmonthLbl.Text = "TOTAL"
         '
         'Label28
         '
@@ -749,20 +749,20 @@ Partial Class Form12
         Me.Desclbl.TabIndex = 57
         Me.Desclbl.Text = "Description"
         '
-        'TextBox1
+        'DescriptionTxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(652, 797)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(546, 24)
-        Me.TextBox1.TabIndex = 58
+        Me.DescriptionTxt.Location = New System.Drawing.Point(652, 797)
+        Me.DescriptionTxt.Multiline = True
+        Me.DescriptionTxt.Name = "DescriptionTxt"
+        Me.DescriptionTxt.Size = New System.Drawing.Size(546, 24)
+        Me.DescriptionTxt.TabIndex = 58
         '
         'Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1253, 858)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.DescriptionTxt)
         Me.Controls.Add(Me.Desclbl)
         Me.Controls.Add(Me.CategoryCmb)
         Me.Controls.Add(Me.Typelbl)
@@ -776,10 +776,10 @@ Partial Class Form12
         Me.Controls.Add(Me.saveBtn)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.ExpenseRecGrid)
-        Me.Controls.Add(Me.collectedLbl)
-        Me.Controls.Add(Me.unpaidBillsLbl)
-        Me.Controls.Add(Me.activeTenantsTotalLbl)
-        Me.Controls.Add(Me.totalUnitsLbl)
+        Me.Controls.Add(Me.misctotalLbl)
+        Me.Controls.Add(Me.utilitiesLbl)
+        Me.Controls.Add(Me.maintenanceLbl)
+        Me.Controls.Add(Me.totalmonthLbl)
         Me.Controls.Add(Me.Label28)
         Me.Controls.Add(Me.Label26)
         Me.Controls.Add(Me.Button8)
@@ -843,10 +843,10 @@ Partial Class Form12
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents addExpenseBtn As Button
-    Friend WithEvents collectedLbl As Label
-    Friend WithEvents unpaidBillsLbl As Label
-    Friend WithEvents activeTenantsTotalLbl As Label
-    Friend WithEvents totalUnitsLbl As Label
+    Friend WithEvents misctotalLbl As Label
+    Friend WithEvents utilitiesLbl As Label
+    Friend WithEvents maintenanceLbl As Label
+    Friend WithEvents totalmonthLbl As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Button8 As Button
@@ -874,5 +874,5 @@ Partial Class Form12
     Friend WithEvents Datetxt As TextBox
     Friend WithEvents UnitNumberlbl As Label
     Friend WithEvents Desclbl As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DescriptionTxt As TextBox
 End Class

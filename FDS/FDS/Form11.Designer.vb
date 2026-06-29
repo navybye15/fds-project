@@ -30,7 +30,7 @@ Partial Class Form11
         Me.Typelbl = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateIncurredDtp = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DescriptionTxt = New System.Windows.Forms.TextBox()
         Me.Desclbl = New System.Windows.Forms.Label()
         Me.AmtTxt = New System.Windows.Forms.TextBox()
         Me.Monthlylbl = New System.Windows.Forms.Label()
@@ -123,14 +123,14 @@ Partial Class Form11
         Me.DateIncurredDtp.Size = New System.Drawing.Size(276, 30)
         Me.DateIncurredDtp.TabIndex = 60
         '
-        'TextBox1
+        'DescriptionTxt
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(27, 214)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(556, 37)
-        Me.TextBox1.TabIndex = 62
+        Me.DescriptionTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DescriptionTxt.Location = New System.Drawing.Point(27, 214)
+        Me.DescriptionTxt.Multiline = True
+        Me.DescriptionTxt.Name = "DescriptionTxt"
+        Me.DescriptionTxt.Size = New System.Drawing.Size(556, 37)
+        Me.DescriptionTxt.TabIndex = 62
         '
         'Desclbl
         '
@@ -211,7 +211,7 @@ Partial Class Form11
         Me.Controls.Add(Me.Loclbl)
         Me.Controls.Add(Me.AmtTxt)
         Me.Controls.Add(Me.Monthlylbl)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.DescriptionTxt)
         Me.Controls.Add(Me.Desclbl)
         Me.Controls.Add(Me.DateIncurredDtp)
         Me.Controls.Add(Me.Label1)
@@ -235,7 +235,7 @@ Partial Class Form11
     Friend WithEvents Typelbl As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents DateIncurredDtp As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DescriptionTxt As TextBox
     Friend WithEvents Desclbl As Label
     Friend WithEvents AmtTxt As TextBox
     Friend WithEvents Monthlylbl As Label
