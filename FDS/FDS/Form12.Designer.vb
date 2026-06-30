@@ -639,6 +639,9 @@ Partial Class Form12
         '
         'ExpenseRecGrid
         '
+        Me.ExpenseRecGrid.AllowUserToResizeColumns = False
+        Me.ExpenseRecGrid.AllowUserToResizeRows = False
+        Me.ExpenseRecGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ExpenseRecGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ExpenseRecGrid.Location = New System.Drawing.Point(358, 309)
         Me.ExpenseRecGrid.Name = "ExpenseRecGrid"

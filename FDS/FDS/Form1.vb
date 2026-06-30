@@ -4,7 +4,6 @@ Imports System.Data
 Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Safety check - dapat naka-set na ang TenantId bago dumating dito
         If Session.CurrentTenantID = 0 Then
             MessageBox.Show("Walang naka-login na tenant session. Bumalik sa login.")
             Me.Close()
@@ -12,7 +11,7 @@ Public Class Form1
         End If
 
         loadMyProfile()
-        setEditMode(False) ' disabled muna ang textboxes pagbukas ng form
+        setEditMode(False) 'disabled muna ang textboxes pagbukas ng form
     End Sub
 
     Private Sub loadMyProfile()
@@ -22,12 +21,6 @@ Public Class Form1
         Try
             conn.Open()
 
-            ' Kunin lang ang record ng sariling tenant - WHERE t.tenant_id = @tenant_id
-            ' gamit ang TenantId mula sa session, hindi mula sa user input,
-            ' para hindi makakuha ng info ng ibang tenant.
-            ' NOTE: 'type', 'floor', 'monthly_rate' ang TAMANG column names sa
-            ' 'units' table (kumpirmado via SHOW COLUMNS FROM units;) - hindi
-            ' 'unit_type' / 'floor_location'.
             Dim query As String =
                 "SELECT t.full_name, t.contact_no, t.emergency_contact, t.gov_id, " &
                 "un.unit_number, un.type, un.floor, un.monthly_rate, l.status " &
@@ -91,9 +84,8 @@ Public Class Form1
     End Sub
 
     Private Sub saveBtn_Click(sender As Object, e As EventArgs) Handles saveBtn.Click
-        ' Simpleng validation muna
         If String.IsNullOrWhiteSpace(FullNametxt.Text) OrElse String.IsNullOrWhiteSpace(contactTxt.Text) Then
-            MessageBox.Show("Full Name at Contact No. ay required.")
+            MessageBox.Show("Full Name and Contact No. are required.")
             Return
         End If
 
@@ -103,9 +95,6 @@ Public Class Form1
         Try
             conn.Open()
 
-            ' Update lang ang sariling info ng tenant - WALANG username/password/
-            ' lease/unit dito. Yung WHERE clause gamit ang session TenantId,
-            ' kaya hindi ito magiging pwedeng i-edit ang record ng ibang tenant.
             Dim cmd As New MySqlCommand(
                 "UPDATE tenants SET full_name = @full_name, contact_no = @contact_no, " &
                 "emergency_contact = @emergency_contact, gov_id = @gov_id " &
@@ -119,7 +108,7 @@ Public Class Form1
 
             conn.Close()
 
-            MessageBox.Show("Na-update na ang profile mo!")
+            MessageBox.Show("Your profile has been updated!")
             loadMyProfile()
             setEditMode(False)
         Catch ex As Exception
