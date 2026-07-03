@@ -13,13 +13,12 @@ Public Class Form7
         Try
             conn.Open()
 
-            ' === Total Units count ===
             Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM units", conn)
             totalUnitsLbl.Text = cmdTotal.ExecuteScalar().ToString()
 
             ' === Load sa DataGridView (idinagdag ang unit_id para sa internal use) ===
-            Dim query As String = "SELECT unit_id, unit_number AS 'Unit #', type AS 'Type', floor AS 'Floor', " &
-                                   "monthly_rate AS 'Monthly Rate', unit_status AS 'Status' FROM units"
+            Dim query As String = "SELECT u.unit_id, u.unit_number AS 'Unit #', u.type AS 'Type', u.floor AS 'Floor', " &
+                                   "u.monthly_rate AS 'Monthly Rate', u.unit_status AS 'Status', l.tenant_id FROM units u LEFT JOIN leases l ON u.unit_id = l.unit_id"
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)

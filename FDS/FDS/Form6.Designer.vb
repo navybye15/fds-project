@@ -458,9 +458,14 @@ Partial Class Form6
         '
         'RecentTenantsGrid
         '
+        Me.RecentTenantsGrid.AllowUserToAddRows = False
+        Me.RecentTenantsGrid.AllowUserToDeleteRows = False
+        Me.RecentTenantsGrid.AllowUserToResizeColumns = False
+        Me.RecentTenantsGrid.AllowUserToResizeRows = False
         Me.RecentTenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RecentTenantsGrid.Location = New System.Drawing.Point(36, 340)
         Me.RecentTenantsGrid.Name = "RecentTenantsGrid"
+        Me.RecentTenantsGrid.ReadOnly = True
         Me.RecentTenantsGrid.RowHeadersWidth = 51
         Me.RecentTenantsGrid.RowTemplate.Height = 24
         Me.RecentTenantsGrid.Size = New System.Drawing.Size(862, 345)

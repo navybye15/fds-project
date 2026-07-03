@@ -567,9 +567,14 @@ Partial Class Form7
         '
         'UnitsGrid
         '
+        Me.UnitsGrid.AllowUserToAddRows = False
+        Me.UnitsGrid.AllowUserToDeleteRows = False
+        Me.UnitsGrid.AllowUserToResizeColumns = False
+        Me.UnitsGrid.AllowUserToResizeRows = False
         Me.UnitsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UnitsGrid.Location = New System.Drawing.Point(36, 131)
         Me.UnitsGrid.Name = "UnitsGrid"
+        Me.UnitsGrid.ReadOnly = True
         Me.UnitsGrid.RowHeadersWidth = 51
         Me.UnitsGrid.RowTemplate.Height = 24
         Me.UnitsGrid.Size = New System.Drawing.Size(863, 381)

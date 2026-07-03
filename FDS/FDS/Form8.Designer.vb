@@ -197,9 +197,14 @@ Partial Class Form8
         '
         'TenantsGrid
         '
+        Me.TenantsGrid.AllowUserToAddRows = False
+        Me.TenantsGrid.AllowUserToDeleteRows = False
+        Me.TenantsGrid.AllowUserToResizeColumns = False
+        Me.TenantsGrid.AllowUserToResizeRows = False
         Me.TenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TenantsGrid.Location = New System.Drawing.Point(36, 131)
         Me.TenantsGrid.Name = "TenantsGrid"
+        Me.TenantsGrid.ReadOnly = True
         Me.TenantsGrid.RowHeadersWidth = 51
         Me.TenantsGrid.RowTemplate.Height = 24
         Me.TenantsGrid.Size = New System.Drawing.Size(863, 381)
