@@ -1,8 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Form12
     Dim selectedExpenseId As Integer = 0
-
+    Dim loadingRow As Boolean = False
     Private Sub Form12_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If CategoryCmb.Items.Count = 0 Then
+            CategoryCmb.Items.AddRange(New String() {"Maintenance", "Utilities", "Other"})
+        End If
         loadExpenses()
     End Sub
 
@@ -13,34 +16,31 @@ Public Class Form12
         Try
             conn.Open()
 
-            ' === Total This Month (lahat ng expense_type) ===
             Dim cmdMonth As New MySqlCommand(
                 "SELECT IFNULL(SUM(amount), 0) FROM expenses " &
                 "WHERE MONTH(expense_date) = MONTH(CURDATE()) AND YEAR(expense_date) = YEAR(CURDATE())", conn)
             totalmonthLbl.Text = "₱" & Convert.ToDecimal(cmdMonth.ExecuteScalar()).ToString("N2")
 
-            ' === Per-type totals (all-time; palitan ang WHERE kung gusto mo "this month" din) ===
             Dim cmdMaint As New MySqlCommand("SELECT IFNULL(SUM(amount), 0) FROM expenses WHERE expense_type = 'Maintenance'", conn)
             maintenanceLbl.Text = "₱" & Convert.ToDecimal(cmdMaint.ExecuteScalar()).ToString("N2")
 
             Dim cmdUtil As New MySqlCommand("SELECT IFNULL(SUM(amount), 0) FROM expenses WHERE expense_type = 'Utilities'", conn)
             utilitiesLbl.Text = "₱" & Convert.ToDecimal(cmdUtil.ExecuteScalar()).ToString("N2")
 
-            ' "Misc/Oth" = lahat ng IBANG type maliban Maintenance/Utilities
-            ' (sa data mo ngayon, ito ang Repair at Pest Control - automatic
-            ' na masasama rito ang bagong expense_type sa future)
             Dim cmdMisc As New MySqlCommand("SELECT IFNULL(SUM(amount), 0) FROM expenses WHERE expense_type NOT IN ('Maintenance', 'Utilities')", conn)
-            miscTotalLbl.Text = "₱" & Convert.ToDecimal(cmdMisc.ExecuteScalar()).ToString("N2")
+            misctotalLbl.Text = "₱" & Convert.ToDecimal(cmdMisc.ExecuteScalar()).ToString("N2")
 
-            ' === Expense Records grid ===
             Dim query As String =
-                "SELECT expense_id, " &
-                "DATE_FORMAT(expense_date, '%Y-%m-%d') AS 'Date', " &
-                "expense_type AS 'Category', " &
-                "description AS 'Description', " &
-                "amount AS 'Amount', " &
-                "recorded_by AS 'Recorded By' " &
-                "FROM expenses ORDER BY expense_date DESC"
+                "SELECT e.expense_id, " &
+                "DATE_FORMAT(e.expense_date, '%Y-%m-%d') AS 'Date', " &
+                "e.expense_type AS 'Category', " &
+                "e.description AS 'Description', " &
+                "e.amount AS 'Amount', " &
+                "e.recorded_by AS 'Recorded By', " &
+                "e.unit_id, " &
+                "u.unit_number AS 'Unit Number' " &
+                "FROM expenses e LEFT JOIN units u ON e.unit_id = u.unit_id " &
+                "ORDER BY e.expense_date DESC"
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)
@@ -49,6 +49,7 @@ Public Class Form12
 
             ExpenseRecGrid.DataSource = dt
             ExpenseRecGrid.Columns("expense_id").Visible = False
+            ExpenseRecGrid.Columns("unit_id").Visible = False
 
             conn.Close()
         Catch ex As Exception
@@ -62,11 +63,75 @@ Public Class Form12
             selectedExpenseId = Convert.ToInt32(row.Cells("expense_id").Value)
 
             Datetxt.Text = row.Cells("Date").Value.ToString()
-            CategoryCmb.Text = row.Cells("Category").Value.ToString()
             DescriptionTxt.Text = row.Cells("Description").Value.ToString()
             AmtTxt.Text = row.Cells("Amount").Value.ToString()
             RecordedTxt.Text = row.Cells("Recorded By").Value.ToString()
+
+            Dim unitIdVal As Integer? = Nothing
+            If Not IsDBNull(row.Cells("unit_id").Value) Then
+                unitIdVal = Convert.ToInt32(row.Cells("unit_id").Value)
+            End If
+
+            loadingRow = True
+            CategoryCmb.Text = row.Cells("Category").Value.ToString()
+            loadUnitsForCategory(CategoryCmb.Text, unitIdVal)
+            loadingRow = False
         End If
+    End Sub
+
+    Private Sub CategoryCmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryCmb.SelectedIndexChanged
+        If loadingRow Then Return ' iwasan ang double-load habang pinopopulate galing sa grid click
+        loadUnitsForCategory(CategoryCmb.Text)
+    End Sub
+
+    Private Sub loadUnitsForCategory(category As String, Optional preselectUnitId As Integer? = Nothing)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+        Dim conn As New MySqlConnection(connStr)
+
+        Try
+            conn.Open()
+
+            Dim query As String
+            If category = "Maintenance" Then
+                query = "SELECT unit_id, unit_number FROM units WHERE unit_status = 'maintenance' ORDER BY unit_number"
+            Else
+                query = "SELECT unit_id, unit_number FROM units WHERE unit_status <> 'maintenance' ORDER BY unit_number"
+            End If
+
+            Dim cmd As New MySqlCommand(query, conn)
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            dt.Columns.Add("unit_id", GetType(Integer))
+            dt.Columns.Add("unit_number", GetType(String))
+            adapter.Fill(dt)
+
+            Dim noUnitRow As DataRow = dt.NewRow()
+            noUnitRow("unit_id") = DBNull.Value
+            noUnitRow("unit_number") = "-- No specific unit --"
+            dt.Rows.InsertAt(noUnitRow, 0)
+
+            UnitCmb.DataSource = dt
+            UnitCmb.DisplayMember = "unit_number"
+            UnitCmb.ValueMember = "unit_id"
+
+            If preselectUnitId.HasValue Then
+                Dim foundIndex As Integer = -1
+                For i As Integer = 0 To dt.Rows.Count - 1
+                    If Not IsDBNull(dt.Rows(i)("unit_id")) AndAlso Convert.ToInt32(dt.Rows(i)("unit_id")) = preselectUnitId.Value Then
+                        foundIndex = i
+                        Exit For
+                    End If
+                Next
+                UnitCmb.SelectedIndex = If(foundIndex >= 0, foundIndex, 0)
+            Else
+                UnitCmb.SelectedIndex = 0
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading units: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+        End Try
     End Sub
 
     Private Sub saveBtn_Click(sender As Object, e As EventArgs) Handles saveBtn.Click
@@ -81,6 +146,11 @@ Public Class Form12
             Return
         End If
 
+        Dim unitIdVal As Object = DBNull.Value
+        If UnitCmb.SelectedValue IsNot Nothing AndAlso Not IsDBNull(UnitCmb.SelectedValue) Then
+            unitIdVal = UnitCmb.SelectedValue
+        End If
+
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
         Dim conn As New MySqlConnection(connStr)
 
@@ -89,11 +159,12 @@ Public Class Form12
 
             Dim cmd As New MySqlCommand(
                 "UPDATE expenses SET expense_date = @expense_date, expense_type = @expense_type, " &
-                "description = @description, amount = @amount, recorded_by = @recorded_by " &
+                "unit_id = @unit_id, description = @description, amount = @amount, recorded_by = @recorded_by " &
                 "WHERE expense_id = @expense_id", conn)
             cmd.Parameters.AddWithValue("@expense_date", Datetxt.Text)
             cmd.Parameters.AddWithValue("@expense_type", CategoryCmb.Text)
-            cmd.Parameters.AddWithValue("@description", descriptionTxt.Text)
+            cmd.Parameters.AddWithValue("@unit_id", unitIdVal)
+            cmd.Parameters.AddWithValue("@description", DescriptionTxt.Text)
             cmd.Parameters.AddWithValue("@amount", amountVal)
             cmd.Parameters.AddWithValue("@recorded_by", RecordedTxt.Text)
             cmd.Parameters.AddWithValue("@expense_id", selectedExpenseId)
@@ -142,9 +213,6 @@ Public Class Form12
     End Sub
 
     Private Sub addExpenseBtn_Click(sender As Object, e As EventArgs) Handles addExpenseBtn.Click
-        ' Bagong instance tuwing bubuksan, tapos i-dispose pagkatapos -
-        ' guaranteed fresh/blangko palagi (parehong fix gagawin natin
-        ' sa Form8/Form10 sa ibaba).
         Dim addForm As New Form11()
         addForm.ShowDialog()
         addForm.Dispose()
@@ -158,6 +226,8 @@ Public Class Form12
         DescriptionTxt.Text = ""
         AmtTxt.Text = ""
         RecordedTxt.Text = ""
+        UnitCmb.DataSource = Nothing
+        UnitCmb.Text = ""
         selectedExpenseId = 0
     End Sub
 
@@ -180,6 +250,10 @@ Public Class Form12
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Typelbl_Click(sender As Object, e As EventArgs) Handles Typelbl.Click
 
     End Sub
 End Class

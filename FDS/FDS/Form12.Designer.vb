@@ -83,6 +83,8 @@ Partial Class Form12
         Me.UnitNumberlbl = New System.Windows.Forms.Label()
         Me.Desclbl = New System.Windows.Forms.Label()
         Me.DescriptionTxt = New System.Windows.Forms.TextBox()
+        Me.UnitCmb = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -450,7 +452,7 @@ Partial Class Form12
         Me.misctotalLbl.BackColor = System.Drawing.Color.White
         Me.misctotalLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.misctotalLbl.ForeColor = System.Drawing.Color.Black
-        Me.misctotalLbl.Location = New System.Drawing.Point(1078, 148)
+        Me.misctotalLbl.Location = New System.Drawing.Point(1078, 135)
         Me.misctotalLbl.Name = "misctotalLbl"
         Me.misctotalLbl.Size = New System.Drawing.Size(100, 22)
         Me.misctotalLbl.TabIndex = 27
@@ -461,7 +463,7 @@ Partial Class Form12
         Me.utilitiesLbl.BackColor = System.Drawing.Color.White
         Me.utilitiesLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.utilitiesLbl.ForeColor = System.Drawing.Color.Black
-        Me.utilitiesLbl.Location = New System.Drawing.Point(863, 148)
+        Me.utilitiesLbl.Location = New System.Drawing.Point(863, 135)
         Me.utilitiesLbl.Name = "utilitiesLbl"
         Me.utilitiesLbl.Size = New System.Drawing.Size(100, 22)
         Me.utilitiesLbl.TabIndex = 28
@@ -472,7 +474,7 @@ Partial Class Form12
         Me.maintenanceLbl.BackColor = System.Drawing.Color.White
         Me.maintenanceLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.maintenanceLbl.ForeColor = System.Drawing.Color.Black
-        Me.maintenanceLbl.Location = New System.Drawing.Point(647, 148)
+        Me.maintenanceLbl.Location = New System.Drawing.Point(647, 135)
         Me.maintenanceLbl.Name = "maintenanceLbl"
         Me.maintenanceLbl.Size = New System.Drawing.Size(100, 22)
         Me.maintenanceLbl.TabIndex = 29
@@ -483,7 +485,7 @@ Partial Class Form12
         Me.totalmonthLbl.BackColor = System.Drawing.Color.White
         Me.totalmonthLbl.Font = New System.Drawing.Font("Garamond", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalmonthLbl.ForeColor = System.Drawing.Color.Black
-        Me.totalmonthLbl.Location = New System.Drawing.Point(432, 148)
+        Me.totalmonthLbl.Location = New System.Drawing.Point(432, 135)
         Me.totalmonthLbl.Name = "totalmonthLbl"
         Me.totalmonthLbl.Size = New System.Drawing.Size(100, 22)
         Me.totalmonthLbl.TabIndex = 30
@@ -494,7 +496,7 @@ Partial Class Form12
         Me.Label28.BackColor = System.Drawing.Color.White
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label28.Location = New System.Drawing.Point(1078, 125)
+        Me.Label28.Location = New System.Drawing.Point(1078, 112)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(93, 20)
         Me.Label28.TabIndex = 41
@@ -505,7 +507,7 @@ Partial Class Form12
         Me.Label26.BackColor = System.Drawing.Color.White
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label26.Location = New System.Drawing.Point(647, 125)
+        Me.Label26.Location = New System.Drawing.Point(647, 112)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(121, 20)
         Me.Label26.TabIndex = 42
@@ -515,7 +517,7 @@ Partial Class Form12
         '
         Me.Button8.BackgroundImage = Global.FDS.My.Resources.Resources.COLLECTED_LOGO
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button8.Location = New System.Drawing.Point(1021, 121)
+        Me.Button8.Location = New System.Drawing.Point(1021, 108)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(45, 45)
         Me.Button8.TabIndex = 37
@@ -525,7 +527,7 @@ Partial Class Form12
         '
         Me.Button6.BackgroundImage = Global.FDS.My.Resources.Resources.TENANTS_LOGO
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.Location = New System.Drawing.Point(590, 121)
+        Me.Button6.Location = New System.Drawing.Point(590, 108)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(45, 45)
         Me.Button6.TabIndex = 38
@@ -535,7 +537,7 @@ Partial Class Form12
         '
         Me.Button7.BackgroundImage = Global.FDS.My.Resources.Resources.UNPAID_BILL_LOGO
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button7.Location = New System.Drawing.Point(807, 121)
+        Me.Button7.Location = New System.Drawing.Point(807, 108)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(45, 45)
         Me.Button7.TabIndex = 39
@@ -545,7 +547,7 @@ Partial Class Form12
         '
         Me.Button5.BackgroundImage = Global.FDS.My.Resources.Resources.TOTAL_UNITS_LOGO
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.Location = New System.Drawing.Point(376, 121)
+        Me.Button5.Location = New System.Drawing.Point(376, 108)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(45, 45)
         Me.Button5.TabIndex = 40
@@ -553,7 +555,7 @@ Partial Class Form12
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(1009, 102)
+        Me.Button4.Location = New System.Drawing.Point(1009, 89)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(211, 90)
         Me.Button4.TabIndex = 31
@@ -561,7 +563,7 @@ Partial Class Form12
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(575, 102)
+        Me.Button2.Location = New System.Drawing.Point(575, 89)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(211, 90)
         Me.Button2.TabIndex = 32
@@ -572,7 +574,7 @@ Partial Class Form12
         Me.Label27.BackColor = System.Drawing.Color.White
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label27.Location = New System.Drawing.Point(864, 125)
+        Me.Label27.Location = New System.Drawing.Point(864, 112)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(104, 20)
         Me.Label27.TabIndex = 33
@@ -583,7 +585,7 @@ Partial Class Form12
         Me.Label20.BackColor = System.Drawing.Color.White
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label20.Location = New System.Drawing.Point(433, 125)
+        Me.Label20.Location = New System.Drawing.Point(433, 112)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(134, 20)
         Me.Label20.TabIndex = 34
@@ -591,7 +593,7 @@ Partial Class Form12
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(792, 102)
+        Me.Button3.Location = New System.Drawing.Point(792, 89)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(211, 90)
         Me.Button3.TabIndex = 35
@@ -599,7 +601,7 @@ Partial Class Form12
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(358, 102)
+        Me.Button1.Location = New System.Drawing.Point(358, 89)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(211, 90)
         Me.Button1.TabIndex = 36
@@ -610,7 +612,7 @@ Partial Class Form12
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Label8)
-        Me.Panel5.Location = New System.Drawing.Point(358, 243)
+        Me.Panel5.Location = New System.Drawing.Point(358, 203)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(862, 67)
         Me.Panel5.TabIndex = 44
@@ -643,7 +645,7 @@ Partial Class Form12
         Me.ExpenseRecGrid.AllowUserToResizeRows = False
         Me.ExpenseRecGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ExpenseRecGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ExpenseRecGrid.Location = New System.Drawing.Point(358, 309)
+        Me.ExpenseRecGrid.Location = New System.Drawing.Point(358, 269)
         Me.ExpenseRecGrid.Name = "ExpenseRecGrid"
         Me.ExpenseRecGrid.RowHeadersWidth = 51
         Me.ExpenseRecGrid.RowTemplate.Height = 24
@@ -654,7 +656,7 @@ Partial Class Form12
         '
         Me.deleteBtn.BackColor = System.Drawing.Color.Firebrick
         Me.deleteBtn.ForeColor = System.Drawing.Color.MistyRose
-        Me.deleteBtn.Location = New System.Drawing.Point(510, 665)
+        Me.deleteBtn.Location = New System.Drawing.Point(506, 630)
         Me.deleteBtn.Name = "deleteBtn"
         Me.deleteBtn.Size = New System.Drawing.Size(125, 31)
         Me.deleteBtn.TabIndex = 45
@@ -663,7 +665,7 @@ Partial Class Form12
         '
         'saveBtn
         '
-        Me.saveBtn.Location = New System.Drawing.Point(379, 665)
+        Me.saveBtn.Location = New System.Drawing.Point(358, 630)
         Me.saveBtn.Name = "saveBtn"
         Me.saveBtn.Size = New System.Drawing.Size(125, 31)
         Me.saveBtn.TabIndex = 46
@@ -673,7 +675,7 @@ Partial Class Form12
         'CategoryCmb
         '
         Me.CategoryCmb.FormattingEnabled = True
-        Me.CategoryCmb.Location = New System.Drawing.Point(652, 730)
+        Me.CategoryCmb.Location = New System.Drawing.Point(749, 662)
         Me.CategoryCmb.Name = "CategoryCmb"
         Me.CategoryCmb.Size = New System.Drawing.Size(262, 24)
         Me.CategoryCmb.TabIndex = 56
@@ -682,7 +684,7 @@ Partial Class Form12
         '
         Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Typelbl.Location = New System.Drawing.Point(649, 707)
+        Me.Typelbl.Location = New System.Drawing.Point(746, 637)
         Me.Typelbl.Name = "Typelbl"
         Me.Typelbl.Size = New System.Drawing.Size(106, 20)
         Me.Typelbl.TabIndex = 48
@@ -726,7 +728,7 @@ Partial Class Form12
         '
         'Datetxt
         '
-        Me.Datetxt.Location = New System.Drawing.Point(369, 730)
+        Me.Datetxt.Location = New System.Drawing.Point(651, 730)
         Me.Datetxt.Multiline = True
         Me.Datetxt.Name = "Datetxt"
         Me.Datetxt.Size = New System.Drawing.Size(262, 24)
@@ -736,7 +738,7 @@ Partial Class Form12
         '
         Me.UnitNumberlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UnitNumberlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.UnitNumberlbl.Location = New System.Drawing.Point(366, 707)
+        Me.UnitNumberlbl.Location = New System.Drawing.Point(648, 707)
         Me.UnitNumberlbl.Name = "UnitNumberlbl"
         Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
         Me.UnitNumberlbl.TabIndex = 51
@@ -760,11 +762,31 @@ Partial Class Form12
         Me.DescriptionTxt.Size = New System.Drawing.Size(546, 24)
         Me.DescriptionTxt.TabIndex = 58
         '
+        'UnitCmb
+        '
+        Me.UnitCmb.FormattingEnabled = True
+        Me.UnitCmb.Location = New System.Drawing.Point(369, 730)
+        Me.UnitCmb.Name = "UnitCmb"
+        Me.UnitCmb.Size = New System.Drawing.Size(262, 24)
+        Me.UnitCmb.TabIndex = 60
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(366, 707)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(106, 20)
+        Me.Label4.TabIndex = 59
+        Me.Label4.Text = "Unit Number:"
+        '
         'Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1253, 858)
+        Me.Controls.Add(Me.UnitCmb)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.DescriptionTxt)
         Me.Controls.Add(Me.Desclbl)
         Me.Controls.Add(Me.CategoryCmb)
@@ -878,4 +900,6 @@ Partial Class Form12
     Friend WithEvents UnitNumberlbl As Label
     Friend WithEvents Desclbl As Label
     Friend WithEvents DescriptionTxt As TextBox
+    Friend WithEvents UnitCmb As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

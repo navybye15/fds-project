@@ -38,6 +38,8 @@ Partial Class Form11
         Me.Loclbl = New System.Windows.Forms.Label()
         Me.saveExpenseBtn = New System.Windows.Forms.Button()
         Me.CancelBtn = New System.Windows.Forms.Button()
+        Me.UnitCmb = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -107,7 +109,7 @@ Partial Class Form11
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(306, 103)
+        Me.Label1.Location = New System.Drawing.Point(23, 387)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 20)
         Me.Label1.TabIndex = 59
@@ -118,7 +120,7 @@ Partial Class Form11
         Me.DateIncurredDtp.CustomFormat = ""
         Me.DateIncurredDtp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateIncurredDtp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateIncurredDtp.Location = New System.Drawing.Point(307, 120)
+        Me.DateIncurredDtp.Location = New System.Drawing.Point(24, 404)
         Me.DateIncurredDtp.Name = "DateIncurredDtp"
         Me.DateIncurredDtp.Size = New System.Drawing.Size(276, 30)
         Me.DateIncurredDtp.TabIndex = 60
@@ -200,11 +202,32 @@ Partial Class Form11
         Me.CancelBtn.Text = "Cancel"
         Me.CancelBtn.UseVisualStyleBackColor = True
         '
+        'UnitCmb
+        '
+        Me.UnitCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnitCmb.FormattingEnabled = True
+        Me.UnitCmb.Location = New System.Drawing.Point(321, 120)
+        Me.UnitCmb.Name = "UnitCmb"
+        Me.UnitCmb.Size = New System.Drawing.Size(262, 30)
+        Me.UnitCmb.TabIndex = 70
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(318, 97)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(106, 20)
+        Me.Label4.TabIndex = 69
+        Me.Label4.Text = "Unit Number"
+        '
         'Form11
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(637, 473)
+        Me.Controls.Add(Me.UnitCmb)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.saveExpenseBtn)
         Me.Controls.Add(Me.RecordedTxt)
@@ -243,4 +266,6 @@ Partial Class Form11
     Friend WithEvents Loclbl As Label
     Friend WithEvents saveExpenseBtn As Button
     Friend WithEvents CancelBtn As Button
+    Friend WithEvents UnitCmb As ComboBox
+    Friend WithEvents Label4 As Label
 End Class
