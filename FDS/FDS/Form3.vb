@@ -133,10 +133,10 @@ Public Class Form3
 
             Dim result = cmd.ExecuteScalar()
 
-            If result.ToString() = "" Then
+            If result Is Nothing OrElse IsDBNull(result) Then
                 leaseExpirationlbl.Text = "N/A"
             Else
-                leaseExpirationlbl.Text = result.ToString()
+                leaseExpirationlbl.Text = Convert.ToDateTime(result).ToString("MMM dd, yyyy")
             End If
 
             conn.Close()

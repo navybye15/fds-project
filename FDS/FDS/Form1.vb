@@ -23,7 +23,8 @@ Public Class Form1
 
             Dim query As String =
                 "SELECT t.full_name, t.contact_no, t.emergency_contact, t.gov_id, " &
-                "un.unit_number, un.type, un.floor, un.monthly_rate, l.status " &
+                "un.unit_number, un.type, un.floor, un.monthly_rate, l.status, " &
+                "l.lease_end, l.security_deposit " &
                 "FROM tenants t " &
                 "LEFT JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
                 "LEFT JOIN units un ON l.unit_id = un.unit_id " &
@@ -35,6 +36,13 @@ Public Class Form1
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
             If reader.Read() Then
+
+                unitCodelbl.Text = reader("unit_number").ToString()
+                unitFloorlbl.Text = "Floor " & reader("floor").ToString()
+
+                ' --- Greeting ---
+                namelbl.Text = reader("full_name").ToString()
+
                 ' --- My Profile (read-only display) ---
                 fullNamelbl.Text = reader("full_name").ToString()
                 contactlbl.Text = reader("contact_no").ToString()
@@ -55,6 +63,20 @@ Public Class Form1
                     monthlylbl.Text = ""
                 End If
 
+                ' --- Lease Expiration card ---
+                If Not IsDBNull(reader("lease_end")) Then
+                    leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
+                Else
+                    leaseExpirationlbl.Text = "N/A"
+                End If
+
+                ' --- Security Deposit card ---
+                If Not IsDBNull(reader("security_deposit")) Then
+                    securityDepositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
+                Else
+                    securityDepositlbl.Text = "₱0.00"
+                End If
+
                 ' --- I-fill din agad ang editable textboxes (disabled muna) ---
                 FullNametxt.Text = reader("full_name").ToString()
                 contactTxt.Text = reader("contact_no").ToString()
@@ -62,8 +84,12 @@ Public Class Form1
                 govIdTxt.Text = reader("gov_id").ToString()
             End If
 
+
             reader.Close()
             conn.Close()
+
+            loadOutstandingBalance(Session.CurrentTenantID)
+            loadLastPayment(Session.CurrentTenantID)
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -116,4 +142,79 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub loadOutstandingBalance(myTenantId As Integer)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+        Dim conn As New MySqlConnection(connStr)
+
+        Try
+            conn.Open()
+
+            Dim query As String = "SELECT SUM(base_rent + addtional_charges) AS outstanding " &
+                               "FROM bills WHERE tenant_id = @myTenantId AND status IN ('unpaid', 'partial')"
+
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@myTenantId", myTenantId)
+
+            Dim result = cmd.ExecuteScalar()
+
+            If IsDBNull(result) OrElse result Is Nothing Then
+                outstandinglbl.Text = "₱0.00"
+            Else
+                outstandinglbl.Text = "₱" & Convert.ToDecimal(result).ToString("N2")
+            End If
+
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadLastPayment(myTenantId As Integer)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+        Dim conn As New MySqlConnection(connStr)
+
+        Try
+            conn.Open()
+
+            Dim query As String = "SELECT p.amount_paid, p.payment_date " &
+                               "FROM payments p " &
+                               "JOIN bills b ON p.bill_id = b.bill_id " &
+                               "WHERE b.tenant_id = @myTenantId " &
+                               "ORDER BY p.payment_date DESC LIMIT 1"
+
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@myTenantId", myTenantId)
+
+            Dim reader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                paymentHistorylbl.Text = "₱" & Convert.ToDecimal(reader("amount_paid")).ToString("N2") & " on " & Convert.ToDateTime(reader("payment_date")).ToString("MMM dd, yyyy")
+            Else
+                paymentHistorylbl.Text = "No payments yet"
+            End If
+
+            reader.Close()
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Form2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        Form3.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Form4.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub namelbl_Click(sender As Object, e As EventArgs) Handles namelbl.Click
+
+    End Sub
 End Class
