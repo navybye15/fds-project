@@ -22,12 +22,9 @@ Partial Class Form10
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.assignUnitCmb = New System.Windows.Forms.ComboBox()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.Typelbl = New System.Windows.Forms.Label()
         Me.contactTxt = New System.Windows.Forms.TextBox()
         Me.Usernametxt = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Loclbl = New System.Windows.Forms.Label()
         Me.emergencyTxt = New System.Windows.Forms.TextBox()
         Me.Passwordtxt = New System.Windows.Forms.TextBox()
@@ -36,33 +33,10 @@ Partial Class Form10
         Me.govIdTxt = New System.Windows.Forms.TextBox()
         Me.FullNametxt = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.UnitNumberlbl = New System.Windows.Forms.Label()
         Me.createTenantBtn = New System.Windows.Forms.Button()
         Me.cancelBtn = New System.Windows.Forms.Button()
-        Me.leaseEndDtp = New System.Windows.Forms.DateTimePicker()
-        Me.leaseStartDtp = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
-        '
-        'assignUnitCmb
-        '
-        Me.assignUnitCmb.BackColor = System.Drawing.SystemColors.InactiveBorder
-        Me.assignUnitCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.assignUnitCmb.FormattingEnabled = True
-        Me.assignUnitCmb.Location = New System.Drawing.Point(31, 267)
-        Me.assignUnitCmb.Name = "assignUnitCmb"
-        Me.assignUnitCmb.Size = New System.Drawing.Size(276, 33)
-        Me.assignUnitCmb.TabIndex = 33
-        '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(322, 344)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(185, 47)
-        Me.Label19.TabIndex = 17
-        Me.Label19.Text = "Lease End"
         '
         'Typelbl
         '
@@ -93,16 +67,6 @@ Partial Class Form10
         Me.Usernametxt.Name = "Usernametxt"
         Me.Usernametxt.Size = New System.Drawing.Size(276, 51)
         Me.Usernametxt.TabIndex = 30
-        '
-        'Label9
-        '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label9.Location = New System.Drawing.Point(30, 247)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(228, 47)
-        Me.Label9.TabIndex = 20
-        Me.Label9.Text = "Assign Unit"
         '
         'Loclbl
         '
@@ -158,7 +122,7 @@ Partial Class Form10
         '
         Me.govIdTxt.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.govIdTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.govIdTxt.Location = New System.Drawing.Point(31, 464)
+        Me.govIdTxt.Location = New System.Drawing.Point(31, 268)
         Me.govIdTxt.Multiline = True
         Me.govIdTxt.Name = "govIdTxt"
         Me.govIdTxt.Size = New System.Drawing.Size(276, 51)
@@ -178,21 +142,11 @@ Partial Class Form10
         '
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label20.Location = New System.Drawing.Point(28, 441)
+        Me.Label20.Location = New System.Drawing.Point(28, 245)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(185, 47)
         Me.Label20.TabIndex = 19
         Me.Label20.Text = "Government ID"
-        '
-        'Label7
-        '
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(28, 344)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(185, 47)
-        Me.Label7.TabIndex = 22
-        Me.Label7.Text = "Lease Start"
         '
         'UnitNumberlbl
         '
@@ -226,39 +180,15 @@ Partial Class Form10
         Me.cancelBtn.Text = "Cancel"
         Me.cancelBtn.UseVisualStyleBackColor = False
         '
-        'leaseEndDtp
-        '
-        Me.leaseEndDtp.CustomFormat = ""
-        Me.leaseEndDtp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.leaseEndDtp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.leaseEndDtp.Location = New System.Drawing.Point(325, 367)
-        Me.leaseEndDtp.Name = "leaseEndDtp"
-        Me.leaseEndDtp.Size = New System.Drawing.Size(276, 30)
-        Me.leaseEndDtp.TabIndex = 35
-        '
-        'leaseStartDtp
-        '
-        Me.leaseStartDtp.CustomFormat = ""
-        Me.leaseStartDtp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.leaseStartDtp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.leaseStartDtp.Location = New System.Drawing.Point(31, 367)
-        Me.leaseStartDtp.Name = "leaseStartDtp"
-        Me.leaseStartDtp.Size = New System.Drawing.Size(276, 30)
-        Me.leaseStartDtp.TabIndex = 35
-        '
         'Form10
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(637, 645)
-        Me.Controls.Add(Me.leaseStartDtp)
-        Me.Controls.Add(Me.leaseEndDtp)
         Me.Controls.Add(Me.cancelBtn)
         Me.Controls.Add(Me.createTenantBtn)
-        Me.Controls.Add(Me.assignUnitCmb)
         Me.Controls.Add(Me.contactTxt)
         Me.Controls.Add(Me.Usernametxt)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Loclbl)
         Me.Controls.Add(Me.emergencyTxt)
         Me.Controls.Add(Me.Passwordtxt)
@@ -267,9 +197,7 @@ Partial Class Form10
         Me.Controls.Add(Me.govIdTxt)
         Me.Controls.Add(Me.FullNametxt)
         Me.Controls.Add(Me.Label20)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.UnitNumberlbl)
-        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Typelbl)
         Me.Name = "Form10"
         Me.Text = "Form10"
@@ -277,13 +205,9 @@ Partial Class Form10
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents assignUnitCmb As ComboBox
-    Friend WithEvents Label19 As Label
     Friend WithEvents Typelbl As Label
     Friend WithEvents contactTxt As TextBox
     Friend WithEvents Usernametxt As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents Loclbl As Label
     Friend WithEvents emergencyTxt As TextBox
     Friend WithEvents Passwordtxt As TextBox
@@ -292,10 +216,7 @@ Partial Class Form10
     Friend WithEvents govIdTxt As TextBox
     Friend WithEvents FullNametxt As TextBox
     Friend WithEvents Label20 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents UnitNumberlbl As Label
     Friend WithEvents createTenantBtn As Button
     Friend WithEvents cancelBtn As Button
-    Friend WithEvents leaseEndDtp As DateTimePicker
-    Friend WithEvents leaseStartDtp As DateTimePicker
 End Class

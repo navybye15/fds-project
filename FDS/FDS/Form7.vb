@@ -224,4 +224,10 @@ Public Class Form7
         Me.Hide()
 
     End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+        Form9.Show()
+        Me.Hide()
+
+    End Sub
 End Class

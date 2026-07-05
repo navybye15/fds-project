@@ -22,29 +22,29 @@ Partial Class Form9
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.renewBtn = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.endBtn = New System.Windows.Forms.Button()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.LeasesGrid = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.totalLeasesLbl = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.createLeaseBtn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -59,7 +59,7 @@ Partial Class Form9
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LeasesGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -74,16 +74,16 @@ Partial Class Form9
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button5
+        'renewBtn
         '
-        Me.Button5.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button5.ForeColor = System.Drawing.Color.MistyRose
-        Me.Button5.Location = New System.Drawing.Point(643, 528)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(125, 31)
-        Me.Button5.TabIndex = 18
-        Me.Button5.Text = "Renew"
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.renewBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.renewBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.renewBtn.Location = New System.Drawing.Point(643, 528)
+        Me.renewBtn.Name = "renewBtn"
+        Me.renewBtn.Size = New System.Drawing.Size(125, 31)
+        Me.renewBtn.TabIndex = 18
+        Me.renewBtn.Text = "Renew"
+        Me.renewBtn.UseVisualStyleBackColor = False
         '
         'Label13
         '
@@ -145,16 +145,16 @@ Partial Class Form9
         Me.Label18.TabIndex = 12
         Me.Label18.Text = "Reports"
         '
-        'Button4
+        'endBtn
         '
-        Me.Button4.BackColor = System.Drawing.Color.Firebrick
-        Me.Button4.ForeColor = System.Drawing.Color.MistyRose
-        Me.Button4.Location = New System.Drawing.Point(774, 528)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(125, 31)
-        Me.Button4.TabIndex = 19
-        Me.Button4.Text = "End"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.endBtn.BackColor = System.Drawing.Color.Firebrick
+        Me.endBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.endBtn.Location = New System.Drawing.Point(774, 528)
+        Me.endBtn.Name = "endBtn"
+        Me.endBtn.Size = New System.Drawing.Size(125, 31)
+        Me.endBtn.TabIndex = 19
+        Me.endBtn.Text = "End"
+        Me.endBtn.UseVisualStyleBackColor = False
         '
         'Label25
         '
@@ -202,9 +202,9 @@ Partial Class Form9
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Button4)
-        Me.Panel4.Controls.Add(Me.Button5)
-        Me.Panel4.Controls.Add(Me.DataGridView1)
+        Me.Panel4.Controls.Add(Me.endBtn)
+        Me.Panel4.Controls.Add(Me.renewBtn)
+        Me.Panel4.Controls.Add(Me.LeasesGrid)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Location = New System.Drawing.Point(317, 85)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -212,27 +212,27 @@ Partial Class Form9
         Me.Panel4.Size = New System.Drawing.Size(932, 733)
         Me.Panel4.TabIndex = 28
         '
-        'DataGridView1
+        'LeasesGrid
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 131)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(863, 381)
-        Me.DataGridView1.TabIndex = 12
+        Me.LeasesGrid.AllowUserToAddRows = False
+        Me.LeasesGrid.AllowUserToDeleteRows = False
+        Me.LeasesGrid.AllowUserToResizeColumns = False
+        Me.LeasesGrid.AllowUserToResizeRows = False
+        Me.LeasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.LeasesGrid.Location = New System.Drawing.Point(36, 131)
+        Me.LeasesGrid.Name = "LeasesGrid"
+        Me.LeasesGrid.ReadOnly = True
+        Me.LeasesGrid.RowHeadersWidth = 51
+        Me.LeasesGrid.RowTemplate.Height = 24
+        Me.LeasesGrid.Size = New System.Drawing.Size(863, 381)
+        Me.LeasesGrid.TabIndex = 12
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.totalLeasesLbl)
         Me.Panel2.Location = New System.Drawing.Point(36, 31)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(863, 106)
@@ -246,17 +246,17 @@ Partial Class Form9
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(195, 22)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Active Leases"
+        Me.Label4.Text = "Leases"
         '
-        'Label6
+        'totalLeasesLbl
         '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(30, 55)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(116, 20)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "TOTAL"
+        Me.totalLeasesLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalLeasesLbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.totalLeasesLbl.Location = New System.Drawing.Point(30, 55)
+        Me.totalLeasesLbl.Name = "totalLeasesLbl"
+        Me.totalLeasesLbl.Size = New System.Drawing.Size(116, 20)
+        Me.totalLeasesLbl.TabIndex = 0
+        Me.totalLeasesLbl.Text = "TOTAL"
         '
         'Label14
         '
@@ -305,7 +305,7 @@ Partial Class Form9
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.createLeaseBtn)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(320, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -313,16 +313,16 @@ Partial Class Form9
         Me.Panel1.Size = New System.Drawing.Size(929, 81)
         Me.Panel1.TabIndex = 26
         '
-        'Button1
+        'createLeaseBtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.SeaGreen
-        Me.Button1.ForeColor = System.Drawing.Color.MistyRose
-        Me.Button1.Location = New System.Drawing.Point(769, 28)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(125, 31)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Create new lease"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.createLeaseBtn.BackColor = System.Drawing.Color.SeaGreen
+        Me.createLeaseBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.createLeaseBtn.Location = New System.Drawing.Point(769, 28)
+        Me.createLeaseBtn.Name = "createLeaseBtn"
+        Me.createLeaseBtn.Size = New System.Drawing.Size(125, 31)
+        Me.createLeaseBtn.TabIndex = 18
+        Me.createLeaseBtn.Text = "Create new lease"
+        Me.createLeaseBtn.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -514,7 +514,7 @@ Partial Class Form9
         Me.Name = "Form9"
         Me.Text = "Form9"
         Me.Panel4.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LeasesGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
@@ -531,23 +531,23 @@ Partial Class Form9
 
     End Sub
 
-    Friend WithEvents Button5 As Button
+    Friend WithEvents renewBtn As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents Button4 As Button
+    Friend WithEvents endBtn As Button
     Friend WithEvents Label25 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents LeasesGrid As DataGridView
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents totalLeasesLbl As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox7 As PictureBox
@@ -564,7 +564,7 @@ Partial Class Form9
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents createLeaseBtn As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox9 As PictureBox
 End Class

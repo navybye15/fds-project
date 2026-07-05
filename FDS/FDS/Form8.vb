@@ -146,28 +146,33 @@ Public Class Form8
         Try
             conn.Open()
 
-            ' === STEP 1: I-check muna kung may bills/payments/leases history ang tenant ===
-            Dim checkQuery As String =
-                "SELECT (SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id) AS bill_count, " &
-                "(SELECT COUNT(*) FROM payments p JOIN bills b ON p.bill_id = b.bill_id WHERE b.tenant_id = @tenant_id) AS payment_count, " &
-                "(SELECT COUNT(*) FROM leases WHERE tenant_id = @tenant_id) AS lease_count"
+            ' === STEP 1: Simpleng COUNT queries na lang, hiwalay-hiwalay ===
+            Dim cmdBillCount As New MySqlCommand("SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id", conn)
+            cmdBillCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+            Dim billCount As Integer = Convert.ToInt32(cmdBillCount.ExecuteScalar())
 
-            Dim checkCmd As New MySqlCommand(checkQuery, conn)
-            checkCmd.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+            Dim cmdLeaseCount As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE tenant_id = @tenant_id", conn)
+            cmdLeaseCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+            Dim leaseCount As Integer = Convert.ToInt32(cmdLeaseCount.ExecuteScalar())
 
-            Dim billCount As Integer = 0
-            Dim paymentCount As Integer = 0
-            Dim leaseCount As Integer = 0
-
-            Using reader As MySqlDataReader = checkCmd.ExecuteReader()
-                If reader.Read() Then
-                    billCount = Convert.ToInt32(reader("bill_count"))
-                    paymentCount = Convert.ToInt32(reader("payment_count"))
-                    leaseCount = Convert.ToInt32(reader("lease_count"))
-                End If
+            ' Para sa payments: kunin muna lahat ng bill_id ng tenant, tapos count payments doon
+            Dim billIds As New List(Of String)
+            Dim cmdGetBillIds As New MySqlCommand("SELECT bill_id FROM bills WHERE tenant_id = @tenant_id", conn)
+            cmdGetBillIds.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+            Using reader = cmdGetBillIds.ExecuteReader()
+                While reader.Read()
+                    billIds.Add(reader("bill_id").ToString())
+                End While
             End Using
 
-            ' === STEP 2: Bigyan ng malinaw na warning kung may history ===
+            Dim paymentCount As Integer = 0
+            If billIds.Count > 0 Then
+                Dim idList As String = String.Join(",", billIds)
+                Dim cmdPaymentCount As New MySqlCommand("SELECT COUNT(*) FROM payments WHERE bill_id IN (" & idList & ")", conn)
+                paymentCount = Convert.ToInt32(cmdPaymentCount.ExecuteScalar())
+            End If
+
+            ' === STEP 2: Warning message ===
             Dim confirmMsg As String = "Are you sure you want to delete this tenant?"
             If billCount > 0 OrElse paymentCount > 0 OrElse leaseCount > 0 Then
                 confirmMsg = "This tenant has existing records:" & vbCrLf &
@@ -181,36 +186,43 @@ Public Class Form8
             Dim confirm = MessageBox.Show(confirmMsg, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If confirm <> DialogResult.Yes Then Return
 
-            ' === STEP 3: I-delete sa tamang pagkakasunod-sunod gamit ang TRANSACTION ===
+            ' === STEP 3: I-delete step by step gamit ang TRANSACTION (walang subquery) ===
             Dim transaction As MySqlTransaction = conn.BeginTransaction()
 
             Try
-                ' Free up ang unit (kung may active lease)
-                Dim cmdFreeUnit As New MySqlCommand(
-                    "UPDATE units SET unit_status = 'available' " &
-                    "WHERE unit_id = (SELECT unit_id FROM leases WHERE tenant_id = @tenant_id AND status = 'active' LIMIT 1)",
-                    conn, transaction)
-                cmdFreeUnit.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                cmdFreeUnit.ExecuteNonQuery()
+                ' 3a. Hanapin muna ang unit_id ng ACTIVE lease ng tenant (kung meron)
+                Dim activeUnitId As Object = Nothing
+                Dim cmdGetActiveUnit As New MySqlCommand(
+                    "SELECT unit_id FROM leases WHERE tenant_id = @tenant_id AND status = 'active' LIMIT 1", conn, transaction)
+                cmdGetActiveUnit.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                activeUnitId = cmdGetActiveUnit.ExecuteScalar()
 
-                ' Delete payments muna (child ng bills)
-                Dim cmdPayments As New MySqlCommand(
-                    "DELETE p FROM payments p JOIN bills b ON p.bill_id = b.bill_id WHERE b.tenant_id = @tenant_id",
-                    conn, transaction)
-                cmdPayments.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                cmdPayments.ExecuteNonQuery()
+                ' 3b. Kung may active unit, i-free up (hiwalay na command, walang subquery)
+                If activeUnitId IsNot Nothing Then
+                    Dim cmdFreeUnit As New MySqlCommand(
+                        "UPDATE units SET unit_status = 'available' WHERE unit_id = @unit_id", conn, transaction)
+                    cmdFreeUnit.Parameters.AddWithValue("@unit_id", activeUnitId)
+                    cmdFreeUnit.ExecuteNonQuery()
+                End If
 
-                ' Delete bills
+                ' 3c. Delete payments muna (base sa listahan ng bill_ids na kinuha natin kanina)
+                If billIds.Count > 0 Then
+                    Dim idList As String = String.Join(",", billIds)
+                    Dim cmdPayments As New MySqlCommand("DELETE FROM payments WHERE bill_id IN (" & idList & ")", conn, transaction)
+                    cmdPayments.ExecuteNonQuery()
+                End If
+
+                ' 3d. Delete bills
                 Dim cmdBills As New MySqlCommand("DELETE FROM bills WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdBills.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdBills.ExecuteNonQuery()
 
-                ' Delete leases
+                ' 3e. Delete leases
                 Dim cmdLease As New MySqlCommand("DELETE FROM leases WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdLease.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdLease.ExecuteNonQuery()
 
-                ' Tapos delete na ang tenant
+                ' 3f. Delete tenant
                 Dim cmdTenant As New MySqlCommand("DELETE FROM tenants WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdTenant.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdTenant.ExecuteNonQuery()
@@ -334,6 +346,12 @@ Public Class Form8
     End Sub
 
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+
+    End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+        Form9.Show()
+        Me.Hide()
 
     End Sub
 End Class
