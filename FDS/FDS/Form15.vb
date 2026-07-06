@@ -8,10 +8,6 @@ Public Class Form15
     Private Sub Form15_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TenantTxt.ReadOnly = True
         UnitTxt.ReadOnly = True
-        BRTxt.ReadOnly = True
-        AddChargeTxt.ReadOnly = True
-        TotalTxt.ReadOnly = True
-        DateTxt.ReadOnly = True
         StatusTxt.ReadOnly = True
         StatusTxt.Text = "unpaid"
 
@@ -29,7 +25,7 @@ Public Class Form15
                                    "b.base_rent AS 'Base Rent', " &
                                    "b.addtional_charges AS 'Add. Charges', " &
                                    "(b.base_rent + b.addtional_charges) AS 'Total Due', " &
-                                   "DATE_FORMAT(b.due_date, '%Y-%m-%d') AS 'Due Date', " &
+                                   "b.due_date AS 'Due Date', " &
                                    "b.status AS 'Status' " &
                                    "FROM bills b " &
                                    "JOIN tenants t ON b.tenant_id = t.tenant_id " &
@@ -60,7 +56,7 @@ Public Class Form15
             BRTxt.Text = row.Cells("Base Rent").Value.ToString()
             AddChargeTxt.Text = row.Cells("Add. Charges").Value.ToString()
             TotalTxt.Text = row.Cells("Total Due").Value.ToString()
-            DateTxt.Text = row.Cells("Due Date").Value.ToString()
+            DateTxt.Text = Convert.ToDateTime(row.Cells("Due Date").Value).ToString("yyyy-MM-dd")
             StatusTxt.Text = row.Cells("Status").Value.ToString()
         End If
     End Sub
@@ -124,8 +120,4 @@ Public Class Form15
         End Try
     End Sub
 
-    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-        Form18.Show()
-        Me.Hide()
-    End Sub
 End Class
