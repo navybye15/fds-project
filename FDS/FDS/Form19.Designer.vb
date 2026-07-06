@@ -62,9 +62,9 @@ Partial Class Form19
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Datepick = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Todate = New System.Windows.Forms.DateTimePicker()
+        Me.Fromdate = New System.Windows.Forms.DateTimePicker()
+        Me.Applybtn = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Printbtn = New System.Windows.Forms.Button()
@@ -79,7 +79,7 @@ Partial Class Form19
         Me.Label19 = New System.Windows.Forms.Label()
         Me.labell6 = New System.Windows.Forms.Label()
         Me.Labell2 = New System.Windows.Forms.Label()
-        Me.PaymentsGrid = New System.Windows.Forms.DataGridView()
+        Me.ReportsGrid = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.perTenantCmb = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -102,7 +102,7 @@ Partial Class Form19
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
-        CType(Me.PaymentsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReportsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -499,7 +499,7 @@ Partial Class Form19
         Me.Panel4.Controls.Add(Me.Panel8)
         Me.Panel4.Controls.Add(Me.Panel7)
         Me.Panel4.Controls.Add(Me.Panel6)
-        Me.Panel4.Controls.Add(Me.PaymentsGrid)
+        Me.Panel4.Controls.Add(Me.ReportsGrid)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Controls.Add(Me.Label28)
         Me.Panel4.Location = New System.Drawing.Point(317, 81)
@@ -554,9 +554,9 @@ Partial Class Form19
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel8.Controls.Add(Me.Label27)
         Me.Panel8.Controls.Add(Me.Label26)
-        Me.Panel8.Controls.Add(Me.DateTimePicker1)
-        Me.Panel8.Controls.Add(Me.Datepick)
-        Me.Panel8.Controls.Add(Me.Button1)
+        Me.Panel8.Controls.Add(Me.Todate)
+        Me.Panel8.Controls.Add(Me.Fromdate)
+        Me.Panel8.Controls.Add(Me.Applybtn)
         Me.Panel8.Location = New System.Drawing.Point(36, 121)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(863, 72)
@@ -586,36 +586,36 @@ Partial Class Form19
         Me.Label26.Text = "Date From"
         Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'DateTimePicker1
+        'Todate
         '
-        Me.DateTimePicker1.CustomFormat = ""
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(251, 31)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(178, 30)
-        Me.DateTimePicker1.TabIndex = 103
+        Me.Todate.CustomFormat = ""
+        Me.Todate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Todate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Todate.Location = New System.Drawing.Point(251, 31)
+        Me.Todate.Name = "Todate"
+        Me.Todate.Size = New System.Drawing.Size(178, 30)
+        Me.Todate.TabIndex = 103
         '
-        'Datepick
+        'Fromdate
         '
-        Me.Datepick.CustomFormat = ""
-        Me.Datepick.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Datepick.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Datepick.Location = New System.Drawing.Point(30, 31)
-        Me.Datepick.Name = "Datepick"
-        Me.Datepick.Size = New System.Drawing.Size(178, 30)
-        Me.Datepick.TabIndex = 102
+        Me.Fromdate.CustomFormat = ""
+        Me.Fromdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Fromdate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Fromdate.Location = New System.Drawing.Point(30, 31)
+        Me.Fromdate.Name = "Fromdate"
+        Me.Fromdate.Size = New System.Drawing.Size(178, 30)
+        Me.Fromdate.TabIndex = 102
         '
-        'Button1
+        'Applybtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
-        Me.Button1.ForeColor = System.Drawing.Color.PaleGreen
-        Me.Button1.Location = New System.Drawing.Point(686, 19)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(156, 34)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Apply Filter"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Applybtn.BackColor = System.Drawing.Color.LimeGreen
+        Me.Applybtn.ForeColor = System.Drawing.Color.PaleGreen
+        Me.Applybtn.Location = New System.Drawing.Point(686, 19)
+        Me.Applybtn.Name = "Applybtn"
+        Me.Applybtn.Size = New System.Drawing.Size(156, 34)
+        Me.Applybtn.TabIndex = 13
+        Me.Applybtn.Text = "Apply Filter"
+        Me.Applybtn.UseVisualStyleBackColor = False
         '
         'Panel7
         '
@@ -789,20 +789,20 @@ Partial Class Form19
         Me.Labell2.Text = "LABEL2"
         Me.Labell2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'PaymentsGrid
+        'ReportsGrid
         '
-        Me.PaymentsGrid.AllowUserToAddRows = False
-        Me.PaymentsGrid.AllowUserToDeleteRows = False
-        Me.PaymentsGrid.AllowUserToResizeColumns = False
-        Me.PaymentsGrid.AllowUserToResizeRows = False
-        Me.PaymentsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PaymentsGrid.Location = New System.Drawing.Point(36, 349)
-        Me.PaymentsGrid.Name = "PaymentsGrid"
-        Me.PaymentsGrid.ReadOnly = True
-        Me.PaymentsGrid.RowHeadersWidth = 51
-        Me.PaymentsGrid.RowTemplate.Height = 24
-        Me.PaymentsGrid.Size = New System.Drawing.Size(863, 295)
-        Me.PaymentsGrid.TabIndex = 12
+        Me.ReportsGrid.AllowUserToAddRows = False
+        Me.ReportsGrid.AllowUserToDeleteRows = False
+        Me.ReportsGrid.AllowUserToResizeColumns = False
+        Me.ReportsGrid.AllowUserToResizeRows = False
+        Me.ReportsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ReportsGrid.Location = New System.Drawing.Point(36, 349)
+        Me.ReportsGrid.Name = "ReportsGrid"
+        Me.ReportsGrid.ReadOnly = True
+        Me.ReportsGrid.RowHeadersWidth = 51
+        Me.ReportsGrid.RowTemplate.Height = 24
+        Me.ReportsGrid.Size = New System.Drawing.Size(863, 295)
+        Me.ReportsGrid.TabIndex = 12
         '
         'Panel2
         '
@@ -883,7 +883,7 @@ Partial Class Form19
         Me.Panel7.ResumeLayout(False)
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
-        CType(Me.PaymentsGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReportsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -928,7 +928,7 @@ Partial Class Form19
     Friend WithEvents Label19 As Label
     Friend WithEvents labell6 As Label
     Friend WithEvents Labell2 As Label
-    Friend WithEvents PaymentsGrid As DataGridView
+    Friend WithEvents ReportsGrid As DataGridView
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents label40 As Label
@@ -937,11 +937,11 @@ Partial Class Form19
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Datepick As DateTimePicker
+    Friend WithEvents Applybtn As Button
+    Friend WithEvents Fromdate As DateTimePicker
     Friend WithEvents Label27 As Label
     Friend WithEvents Label26 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Todate As DateTimePicker
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
