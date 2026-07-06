@@ -87,11 +87,11 @@ Partial Class Form9
         '
         'Label13
         '
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(58, 389)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(93, 20)
+        Me.Label13.Size = New System.Drawing.Size(104, 30)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Leases"
         '
@@ -121,7 +121,7 @@ Partial Class Form9
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Label15.Location = New System.Drawing.Point(58, 474)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(93, 20)
+        Me.Label15.Size = New System.Drawing.Size(93, 34)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "Billing"
         '
@@ -162,7 +162,7 @@ Partial Class Form9
         Me.Label25.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Label25.Location = New System.Drawing.Point(58, 202)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(93, 20)
+        Me.Label25.Size = New System.Drawing.Size(158, 30)
         Me.Label25.TabIndex = 12
         Me.Label25.Text = "Dashboard"
         '

@@ -84,7 +84,7 @@ Partial Class Form3
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(41, 43)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(134, 22)
+        Me.Label22.Size = New System.Drawing.Size(134, 33)
         Me.Label22.TabIndex = 9
         Me.Label22.Text = "Billing"
         '
@@ -126,11 +126,11 @@ Partial Class Form3
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(264, 21)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 20)
+        Me.Label3.Size = New System.Drawing.Size(74, 27)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Billing"
         '

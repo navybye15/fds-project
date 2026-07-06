@@ -145,11 +145,11 @@ Partial Class Form2
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(157, 21)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 20)
+        Me.Label2.Size = New System.Drawing.Size(143, 37)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "My Lease"
         '
@@ -454,7 +454,7 @@ Partial Class Form2
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(41, 43)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(134, 22)
+        Me.Label22.Size = New System.Drawing.Size(134, 33)
         Me.Label22.TabIndex = 9
         Me.Label22.Text = "My Lease"
         '

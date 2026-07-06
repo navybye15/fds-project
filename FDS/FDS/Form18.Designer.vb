@@ -153,11 +153,11 @@ Partial Class Form18
         '
         'Label16
         '
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.Label16.Location = New System.Drawing.Point(58, 525)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(93, 20)
+        Me.Label16.Size = New System.Drawing.Size(106, 20)
         Me.Label16.TabIndex = 12
         Me.Label16.Text = "Payments"
         '
@@ -177,7 +177,7 @@ Partial Class Form18
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Label15.Location = New System.Drawing.Point(58, 474)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(93, 20)
+        Me.Label15.Size = New System.Drawing.Size(93, 29)
         Me.Label15.TabIndex = 12
         Me.Label15.Text = "Billing"
         '
@@ -207,7 +207,7 @@ Partial Class Form18
         Me.Label25.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Label25.Location = New System.Drawing.Point(58, 202)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(93, 20)
+        Me.Label25.Size = New System.Drawing.Size(148, 20)
         Me.Label25.TabIndex = 12
         Me.Label25.Text = "Dashboard"
         '
