@@ -174,4 +174,36 @@ Public Class Form9
         Form19.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click
+        Form6.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+        Form7.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+        Form8.Show()
+        Me.Hide()
+    End Sub
+
+
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+        Form15.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
+        Form18.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        Form12.Show()
+        Me.Hide()
+    End Sub
 End Class

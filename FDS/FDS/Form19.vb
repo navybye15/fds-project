@@ -81,4 +81,20 @@
         Me.Hide()
 
     End Sub
+
+    Private Sub Label32_Click(sender As Object, e As EventArgs) Handles Label32.Click
+        labell1.Text = "Occupied:"
+        Labell2.Text = "Available:"
+        labell6.Text = "Maintenance:"
+        Label4.Text = "Occupancy Report"
+        label40.Text = "Current units status summary"
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub label40_Click(sender As Object, e As EventArgs) Handles label40.Click
+
+    End Sub
 End Class
