@@ -24,8 +24,8 @@ Partial Class Form14
     Private Sub InitializeComponent()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CancelBtn = New System.Windows.Forms.Button()
-        Me.saveExpenseBtn = New System.Windows.Forms.Button()
-        Me.RecordedTxt = New System.Windows.Forms.TextBox()
+        Me.addUnitBtn = New System.Windows.Forms.Button()
+        Me.monthlyTxt = New System.Windows.Forms.TextBox()
         Me.Loclbl = New System.Windows.Forms.Label()
         Me.AmtTxt = New System.Windows.Forms.TextBox()
         Me.floorTxt = New System.Windows.Forms.Label()
@@ -58,25 +58,25 @@ Partial Class Form14
         Me.CancelBtn.Text = "Cancel"
         Me.CancelBtn.UseVisualStyleBackColor = True
         '
-        'saveExpenseBtn
+        'addUnitBtn
         '
-        Me.saveExpenseBtn.BackColor = System.Drawing.Color.MediumSeaGreen
-        Me.saveExpenseBtn.ForeColor = System.Drawing.Color.PaleGreen
-        Me.saveExpenseBtn.Location = New System.Drawing.Point(477, 403)
-        Me.saveExpenseBtn.Name = "saveExpenseBtn"
-        Me.saveExpenseBtn.Size = New System.Drawing.Size(125, 31)
-        Me.saveExpenseBtn.TabIndex = 83
-        Me.saveExpenseBtn.Text = "Add Unit"
-        Me.saveExpenseBtn.UseVisualStyleBackColor = False
+        Me.addUnitBtn.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.addUnitBtn.ForeColor = System.Drawing.Color.PaleGreen
+        Me.addUnitBtn.Location = New System.Drawing.Point(477, 403)
+        Me.addUnitBtn.Name = "addUnitBtn"
+        Me.addUnitBtn.Size = New System.Drawing.Size(125, 31)
+        Me.addUnitBtn.TabIndex = 83
+        Me.addUnitBtn.Text = "Add Unit"
+        Me.addUnitBtn.UseVisualStyleBackColor = False
         '
-        'RecordedTxt
+        'monthlyTxt
         '
-        Me.RecordedTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RecordedTxt.Location = New System.Drawing.Point(307, 206)
-        Me.RecordedTxt.Multiline = True
-        Me.RecordedTxt.Name = "RecordedTxt"
-        Me.RecordedTxt.Size = New System.Drawing.Size(274, 34)
-        Me.RecordedTxt.TabIndex = 82
+        Me.monthlyTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.monthlyTxt.Location = New System.Drawing.Point(307, 206)
+        Me.monthlyTxt.Multiline = True
+        Me.monthlyTxt.Name = "monthlyTxt"
+        Me.monthlyTxt.Size = New System.Drawing.Size(274, 34)
+        Me.monthlyTxt.TabIndex = 82
         '
         'Loclbl
         '
@@ -185,9 +185,9 @@ Partial Class Form14
         Me.ClientSize = New System.Drawing.Size(637, 473)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CancelBtn)
-        Me.Controls.Add(Me.saveExpenseBtn)
+        Me.Controls.Add(Me.addUnitBtn)
         Me.Controls.Add(Me.typeTxt)
-        Me.Controls.Add(Me.RecordedTxt)
+        Me.Controls.Add(Me.monthlyTxt)
         Me.Controls.Add(Me.unitNumberTxt)
         Me.Controls.Add(Me.Loclbl)
         Me.Controls.Add(Me.AmtTxt)
@@ -204,8 +204,8 @@ Partial Class Form14
     End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents CancelBtn As Button
-    Friend WithEvents saveExpenseBtn As Button
-    Friend WithEvents RecordedTxt As TextBox
+    Friend WithEvents addUnitBtn As Button
+    Friend WithEvents monthlyTxt As TextBox
     Friend WithEvents Loclbl As Label
     Friend WithEvents AmtTxt As TextBox
     Friend WithEvents floorTxt As Label

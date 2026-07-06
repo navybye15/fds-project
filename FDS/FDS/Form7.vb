@@ -41,40 +41,8 @@ Public Class Form7
 
     Private Sub addUnitBtn_Click(sender As Object, e As EventArgs) Handles addUnitBtn.Click
 
-        If String.IsNullOrWhiteSpace(unitNumbertxt.Text) Then
-            MessageBox.Show("Please enter a unit number.")
-            Return
-        End If
-
-        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
-        Dim conn As New MySqlConnection(connStr)
-
-        Try
-            conn.Open()
-
-            Dim query As String = "INSERT INTO units (unit_number, type, floor, monthly_rate, unit_status) " &
-                                   "VALUES (@unit_number, @type, @floor, @monthly_rate, @unit_status)"
-
-            Dim cmd As New MySqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@unit_number", unitNumbertxt.Text)
-            cmd.Parameters.AddWithValue("@type", typeCmb.Text)
-            cmd.Parameters.AddWithValue("@floor", floorTxt.Text)
-            cmd.Parameters.AddWithValue("@monthly_rate", monthlyRateTxt.Text)
-            cmd.Parameters.AddWithValue("@unit_status", statusCmb.Text)
-
-            cmd.ExecuteNonQuery()
-
-            MessageBox.Show("Unit added successfully!")
-            clearFields()
-            loadUnits()
-        Catch ex As MySqlException When ex.Number = 1062
-
-            MessageBox.Show("That unit number already exists. Please use a different unit number.")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            If conn.State = ConnectionState.Open Then conn.Close()
-        End Try
+        Form14.ShowDialog()
+        loadUnits()
     End Sub
 
     Private Sub saveBtn_Click(sender As Object, e As EventArgs) Handles saveBtn.Click
