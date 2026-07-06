@@ -95,7 +95,7 @@ Public Class Form11
             Return
         End If
 
-        ' Kunin ang napiling unit_id; DBNull kung "-- No specific unit --" ang napili
+
         Dim unitIdVal As Object = DBNull.Value
         If UnitCmb.SelectedValue IsNot Nothing AndAlso Not IsDBNull(UnitCmb.SelectedValue) Then
             unitIdVal = UnitCmb.SelectedValue

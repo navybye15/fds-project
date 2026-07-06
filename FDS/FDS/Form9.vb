@@ -52,7 +52,7 @@ Public Class Form9
         loadLeases()
     End Sub
 
-    ' === RENEW: simpleng paraan, hiwalay-hiwalay na commands, walang transaction ===
+
     Private Sub renewBtn_Click(sender As Object, e As EventArgs) Handles renewBtn.Click
         If selectedLeaseId = 0 Then
             MessageBox.Show("Please select a lease to renew.")
@@ -68,7 +68,7 @@ Public Class Form9
         Try
             conn.Open()
 
-            ' Step 1: Kunin ang details ng napiling lease gamit ang basic reader
+
             Dim tenantId As String = ""
             Dim unitId As String = ""
             Dim oldEndText As String = ""
@@ -95,17 +95,17 @@ Public Class Form9
                 Return
             End If
 
-            ' Step 2: Kwentahin ang bagong lease_start at lease_end (basic Date math na lang)
+
             Dim oldEnd As Date = Convert.ToDateTime(oldEndText)
             Dim newStart As Date = oldEnd.AddDays(1)
             Dim newEnd As Date = newStart.AddYears(1)
 
-            ' Step 3: I-mark ang lumang lease as expired (hiwalay na command)
+
             Dim cmdExpire As New MySqlCommand("UPDATE leases SET status = 'expired' WHERE lease_id = @lease_id", conn)
             cmdExpire.Parameters.AddWithValue("@lease_id", selectedLeaseId)
             cmdExpire.ExecuteNonQuery()
 
-            ' Step 4: Mag-insert ng bagong lease record (hiwalay na command)
+
             Dim cmdNew As New MySqlCommand(
                 "INSERT INTO leases (tenant_id, unit_id, lease_start, lease_end, monthly_rent, security_deposit, status) " &
                 "VALUES (@tenant_id, @unit_id, @lease_start, @lease_end, @rent, @deposit, 'active')", conn)
@@ -128,7 +128,7 @@ Public Class Form9
         End Try
     End Sub
 
-    ' === END LEASE: simpleng paraan, hiwalay-hiwalay na commands, walang transaction ===
+
     Private Sub endBtn_Click(sender As Object, e As EventArgs) Handles endBtn.Click
         If selectedLeaseId = 0 Then
             MessageBox.Show("Please select a lease to end.")
@@ -144,17 +144,17 @@ Public Class Form9
         Try
             conn.Open()
 
-            ' Step 1: Kunin muna ang unit_id ng lease na ito
+
             Dim cmdGetUnit As New MySqlCommand("SELECT unit_id FROM leases WHERE lease_id = @lease_id", conn)
             cmdGetUnit.Parameters.AddWithValue("@lease_id", selectedLeaseId)
             Dim unitId = cmdGetUnit.ExecuteScalar().ToString()
 
-            ' Step 2: I-update ang lease status (hiwalay na command)
+
             Dim cmdEnd As New MySqlCommand("UPDATE leases SET status = 'terminated' WHERE lease_id = @lease_id", conn)
             cmdEnd.Parameters.AddWithValue("@lease_id", selectedLeaseId)
             cmdEnd.ExecuteNonQuery()
 
-            ' Step 3: I-update ang unit status (hiwalay na command)
+
             Dim cmdUnit As New MySqlCommand("UPDATE units SET unit_status = 'available' WHERE unit_id = @unit_id", conn)
             cmdUnit.Parameters.AddWithValue("@unit_id", unitId)
             cmdUnit.ExecuteNonQuery()

@@ -13,18 +13,18 @@ Public Class Form10
         Try
             conn.Open()
 
-            ' 1. Insert sa users
+
             Dim cmdUser As New MySqlCommand(
                 "INSERT INTO users (username, password, role) VALUES (@username, @password, 'tenant')", conn)
             cmdUser.Parameters.AddWithValue("@username", Usernametxt.Text)
             cmdUser.Parameters.AddWithValue("@password", Passwordtxt.Text)
             cmdUser.ExecuteNonQuery()
 
-            ' 2. Get new user_id
+
             Dim cmdUserId As New MySqlCommand("SELECT LAST_INSERT_ID()", conn)
             Dim newUserId = cmdUserId.ExecuteScalar().ToString()
 
-            ' 3. Insert sa tenants (wala nang unit/lease dito, sa Leases module na ito)
+
             Dim cmdTenant As New MySqlCommand(
                 "INSERT INTO tenants (user_id, full_name, contact_no, emergency_contact, gov_id) " &
                 "VALUES (@user_id, @full_name, @contact_no, @emergency_contact, @gov_id)", conn)

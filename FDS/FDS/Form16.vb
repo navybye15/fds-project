@@ -1,16 +1,11 @@
-﻿' ================================================================
-' Form16.vb - Add Bill (popup, called via .ShowDialog() from Form15's "Generate Bill")
-' Follows the same connection pattern as Form8.vb (connStr inline, isarms_db)
-' Table name corrected to "bills" (per Form8.vb)
-' ================================================================
+﻿
 Imports MySql.Data.MySqlClient
 
 Public Class Form16
 
     Private ReadOnly connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
 
-    ' Holds tenant_id, full_name, unit_id, unit_number, monthly_rent
-    ' for tenants that currently have an active lease.
+
     Dim leaseTable As New DataTable()
 
     Private Sub Form16_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -55,7 +50,7 @@ Public Class Form16
         For i As Integer = 0 To 5
             monthCmb.Items.Add(baseDate.AddMonths(i).ToString("MMMM yyyy"))
         Next
-        ' allow free typing too, e.g. "July 2026", since billing_month is just varchar(20)
+
         monthCmb.DropDownStyle = ComboBoxStyle.DropDown
     End Sub
 

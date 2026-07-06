@@ -16,7 +16,7 @@ Public Class Form7
             Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM units", conn)
             totalUnitsLbl.Text = cmdTotal.ExecuteScalar().ToString()
 
-            ' === Load sa DataGridView (idinagdag ang unit_id para sa internal use) ===
+
             Dim query As String = "SELECT u.unit_id, u.unit_number AS 'Unit #', u.type AS 'Type', u.floor AS 'Floor', " &
                                    "u.monthly_rate AS 'Monthly Rate', u.unit_status AS 'Status', l.tenant_id FROM units u LEFT JOIN leases l ON u.unit_id = l.unit_id"
 
@@ -27,7 +27,7 @@ Public Class Form7
 
             UnitsGrid.DataSource = dt
 
-            ' Itago ang unit_id column sa view pero pwede pa rin i-access sa code
+
             If UnitsGrid.Columns.Contains("unit_id") Then
                 UnitsGrid.Columns("unit_id").Visible = False
             End If
@@ -40,7 +40,7 @@ Public Class Form7
     End Sub
 
     Private Sub addUnitBtn_Click(sender As Object, e As EventArgs) Handles addUnitBtn.Click
-        ' Basic validation muna
+
         If String.IsNullOrWhiteSpace(unitNumbertxt.Text) Then
             MessageBox.Show("Please enter a unit number.")
             Return
@@ -68,7 +68,7 @@ Public Class Form7
             clearFields()
             loadUnits()
         Catch ex As MySqlException When ex.Number = 1062
-            ' Duplicate entry (unit_number ay UNIQUE)
+
             MessageBox.Show("That unit number already exists. Please use a different unit number.")
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -132,7 +132,7 @@ Public Class Form7
             Dim unitId As Integer = Convert.ToInt32(UnitsGrid.SelectedRows(0).Cells("unit_id").Value)
             Dim selectedUnitNumber = UnitsGrid.SelectedRows(0).Cells("Unit #").Value.ToString()
 
-            ' === STEP 1: Check muna kung may related records (bills, leases, expenses) ===
+
             Dim checkQuery As String = "SELECT " &
                 "(SELECT COUNT(*) FROM bills WHERE unit_id = @unit_id) AS bill_count, " &
                 "(SELECT COUNT(*) FROM leases WHERE unit_id = @unit_id) AS lease_count, " &
@@ -153,7 +153,7 @@ Public Class Form7
                 End If
             End Using
 
-            ' === STEP 2: Kung may related records, huwag ituloy ang delete ===
+
             If billCount > 0 OrElse leaseCount > 0 OrElse expenseCount > 0 Then
                 Dim msg As String = "Cannot delete Unit " & selectedUnitNumber & " because it still has related records:" & vbCrLf
                 If billCount > 0 Then msg &= "- " & billCount & " bill(s)" & vbCrLf
@@ -165,7 +165,7 @@ Public Class Form7
                 Return
             End If
 
-            ' === STEP 3: Walang related records, ligtas na i-delete ===
+
             Dim cmd As New MySqlCommand("DELETE FROM units WHERE unit_id = @unit_id", conn)
             cmd.Parameters.AddWithValue("@unit_id", unitId)
             cmd.ExecuteNonQuery()
@@ -175,7 +175,7 @@ Public Class Form7
             loadUnits()
 
         Catch ex As MySqlException When ex.Number = 1451
-            ' Fallback safety net kung sakaling may dumaan sa check sa itaas
+
             MessageBox.Show("Cannot delete this unit because it is still linked to other records (bills, leases, or expenses).",
                              "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Catch ex As Exception

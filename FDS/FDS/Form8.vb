@@ -16,9 +16,7 @@ Public Class Form8
             Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM tenants", conn)
             totalTenantsLbl.Text = cmdTotal.ExecuteScalar().ToString()
 
-            ' FIX: ginawang DATE_FORMAT na string ang lease_start/lease_end sa SQL mismo
-            ' imbes na hayaan ang .NET na gumawa ng DateTime/MySqlDateTime mismatch
-            ' kapag may zero-date o NULL (tenant na walang active lease).
+
             Dim query As String = "SELECT t.tenant_id, t.full_name AS 'Name', " &
                                    "un.unit_number AS 'Unit', " &
                                    "t.contact_no AS 'Contact', " &
@@ -48,7 +46,7 @@ Public Class Form8
             Dim row = TenantsGrid.SelectedRows(0)
             selectedTenantId = row.Cells("tenant_id").Value
 
-            ' Basic info from grid
+
             FullNametxt.Text = row.Cells("Name").Value.ToString()
             contactTxt.Text = row.Cells("Contact").Value.ToString()
 
@@ -60,7 +58,7 @@ Public Class Form8
                 LeaseEndtxt.Text = row.Cells("Lease End").Value.ToString()
             End If
 
-            ' Fetch additional info from database
+
             Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
             Dim conn As New MySqlConnection(connStr)
 
@@ -115,7 +113,7 @@ Public Class Form8
             cmdTenant.Parameters.AddWithValue("@tenant_id", selectedTenantId)
             cmdTenant.ExecuteNonQuery()
 
-            ' Update lease dates
+
             Dim cmdLease As New MySqlCommand(
                 "UPDATE leases SET lease_start = @lease_start, lease_end = @lease_end " &
                 "WHERE tenant_id = @tenant_id AND status = 'active'", conn)
@@ -146,7 +144,7 @@ Public Class Form8
         Try
             conn.Open()
 
-            ' === STEP 1: Simpleng COUNT queries na lang, hiwalay-hiwalay ===
+
             Dim cmdBillCount As New MySqlCommand("SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id", conn)
             cmdBillCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
             Dim billCount As Integer = Convert.ToInt32(cmdBillCount.ExecuteScalar())
@@ -155,7 +153,7 @@ Public Class Form8
             cmdLeaseCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
             Dim leaseCount As Integer = Convert.ToInt32(cmdLeaseCount.ExecuteScalar())
 
-            ' Para sa payments: kunin muna lahat ng bill_id ng tenant, tapos count payments doon
+
             Dim billIds As New List(Of String)
             Dim cmdGetBillIds As New MySqlCommand("SELECT bill_id FROM bills WHERE tenant_id = @tenant_id", conn)
             cmdGetBillIds.Parameters.AddWithValue("@tenant_id", selectedTenantId)
@@ -172,7 +170,7 @@ Public Class Form8
                 paymentCount = Convert.ToInt32(cmdPaymentCount.ExecuteScalar())
             End If
 
-            ' === STEP 2: Warning message ===
+
             Dim confirmMsg As String = "Are you sure you want to delete this tenant?"
             If billCount > 0 OrElse paymentCount > 0 OrElse leaseCount > 0 Then
                 confirmMsg = "This tenant has existing records:" & vbCrLf &
@@ -186,18 +184,18 @@ Public Class Form8
             Dim confirm = MessageBox.Show(confirmMsg, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
             If confirm <> DialogResult.Yes Then Return
 
-            ' === STEP 3: I-delete step by step gamit ang TRANSACTION (walang subquery) ===
+
             Dim transaction As MySqlTransaction = conn.BeginTransaction()
 
             Try
-                ' 3a. Hanapin muna ang unit_id ng ACTIVE lease ng tenant (kung meron)
+
                 Dim activeUnitId As Object = Nothing
                 Dim cmdGetActiveUnit As New MySqlCommand(
                     "SELECT unit_id FROM leases WHERE tenant_id = @tenant_id AND status = 'active' LIMIT 1", conn, transaction)
                 cmdGetActiveUnit.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 activeUnitId = cmdGetActiveUnit.ExecuteScalar()
 
-                ' 3b. Kung may active unit, i-free up (hiwalay na command, walang subquery)
+
                 If activeUnitId IsNot Nothing Then
                     Dim cmdFreeUnit As New MySqlCommand(
                         "UPDATE units SET unit_status = 'available' WHERE unit_id = @unit_id", conn, transaction)
@@ -205,24 +203,24 @@ Public Class Form8
                     cmdFreeUnit.ExecuteNonQuery()
                 End If
 
-                ' 3c. Delete payments muna (base sa listahan ng bill_ids na kinuha natin kanina)
+
                 If billIds.Count > 0 Then
                     Dim idList As String = String.Join(",", billIds)
                     Dim cmdPayments As New MySqlCommand("DELETE FROM payments WHERE bill_id IN (" & idList & ")", conn, transaction)
                     cmdPayments.ExecuteNonQuery()
                 End If
 
-                ' 3d. Delete bills
+
                 Dim cmdBills As New MySqlCommand("DELETE FROM bills WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdBills.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdBills.ExecuteNonQuery()
 
-                ' 3e. Delete leases
+
                 Dim cmdLease As New MySqlCommand("DELETE FROM leases WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdLease.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdLease.ExecuteNonQuery()
 
-                ' 3f. Delete tenant
+
                 Dim cmdTenant As New MySqlCommand("DELETE FROM tenants WHERE tenant_id = @tenant_id", conn, transaction)
                 cmdTenant.Parameters.AddWithValue("@tenant_id", selectedTenantId)
                 cmdTenant.ExecuteNonQuery()
@@ -247,8 +245,8 @@ Public Class Form8
     End Sub
 
     Private Sub addTenantBtn_Click(sender As Object, e As EventArgs) Handles addTenantBtn.Click
-        Form10.ShowDialog() ' popup, hindi mawawala Form8
-        loadTenants() ' i-refresh ang grid pagkatapos mag-add
+        Form10.ShowDialog()
+        loadTenants()
     End Sub
 
     Private Sub clearFields()

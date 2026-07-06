@@ -1,16 +1,4 @@
-﻿' ================================================================
-' Form17.vb - Record Payment (popup, called via .ShowDialog() from Form15's
-'             "Record Bill" button, passed the selected bill_id)
-' Follows the same connection pattern as Form8.vb (connStr inline, isarms_db)
-'
-' Control names:
-'   tenantlbl, monthyearlbl          Labels, read-only display
-'   totallbl, rentlbl, chargelbl     Labels, read-only display (Total Due / Base Rent / Additional Charges)
-'   paidtxt                          TextBox, editable - Amount Paid
-'   statuscmb                        ComboBox - paid / partial / unpaid
-'   CancelBtn, RecordPayBtn          ASSUMED names - rename the Handles clause below if different
-' ================================================================
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Form17
 
@@ -19,7 +7,7 @@ Public Class Form17
     Dim billId As Integer
     Dim currentTotalDue As Decimal
 
-    ' Constructor overload used by Form15: New Form17(selectedBillId)
+
     Public Sub New(ByVal passedBillId As Integer)
         InitializeComponent()
         billId = passedBillId
@@ -28,7 +16,7 @@ Public Class Form17
     Private Sub Form17_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Statuscmb.Items.Clear()
         Statuscmb.Items.AddRange({"paid", "partial", "unpaid"})
-        Statuscmb.SelectedIndex = 0 ' default "paid"
+        Statuscmb.SelectedIndex = 0
 
         loadBillDetails()
     End Sub
@@ -81,7 +69,7 @@ Public Class Form17
             Dim transaction As MySqlTransaction = conn.BeginTransaction()
 
             Try
-                ' 1. update the bill's status
+
                 Dim cmdBill As New MySqlCommand(
                     "UPDATE bills SET status = @status WHERE bill_id = @bill_id",
                     conn, transaction)
@@ -89,7 +77,7 @@ Public Class Form17
                 cmdBill.Parameters.AddWithValue("@bill_id", billId)
                 cmdBill.ExecuteNonQuery()
 
-                ' 2. record the actual payment
+
                 Dim cmdPayment As New MySqlCommand(
                     "INSERT INTO payments (bill_id, amount_paid, payment_date) VALUES (@bill_id, @amount, @pay_date)",
                     conn, transaction)

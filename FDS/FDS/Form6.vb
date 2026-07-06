@@ -20,31 +20,31 @@ Public Class Form6
         Try
             conn.Open()
 
-            ' === Date ===
+
             dateLbl.Text = DateTime.Now.ToString("MMMM dd, yyyy")
             dateLbl2.Text = DateTime.Now.ToString("MMMM yyyy")
 
 
-            ' === Active Tenants count sa dark panel ===
+
             Dim cmdActive As New MySqlCommand(
             "SELECT COUNT(*) FROM leases WHERE status = 'active' " &
             "AND MONTH(lease_start) = MONTH(CURDATE()) " &
             "AND YEAR(lease_start) = YEAR(CURDATE())", conn)
             activeTenantsLbl.Text = cmdActive.ExecuteScalar().ToString() & " Active Tenants"
 
-            ' === Total Units card ===
+
             Dim cmdUnits As New MySqlCommand("SELECT COUNT(*) FROM units", conn)
             totalUnitsLbl.Text = cmdUnits.ExecuteScalar().ToString()
 
-            ' === Active Tenants card ===
+
             Dim cmdTenants As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE status = 'active'", conn)
             activeTenantsTotalLbl.Text = cmdTenants.ExecuteScalar().ToString()
 
-            ' === Unpaid Bills card ===
+
             Dim cmdUnpaid As New MySqlCommand("SELECT COUNT(*) FROM bills WHERE status IN ('unpaid', 'partial')", conn)
             unpaidBillsLbl.Text = cmdUnpaid.ExecuteScalar().ToString()
 
-            ' === Collected card (total amount paid) ===
+
             Dim cmdCollected As New MySqlCommand(
             "SELECT SUM(amount_paid) FROM payments " &
             "WHERE MONTH(payment_date) = MONTH(CURDATE()) " &

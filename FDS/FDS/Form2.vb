@@ -48,20 +48,20 @@ Public Class Form2
             Dim reader = cmd.ExecuteReader()
 
             If reader.Read() Then
-                ' === Left sidebar ===
+
                 unitCodelbl.Text = reader("unit_number")
                 unitFloorlbl.Text = "Floor " & reader("floor").ToString()
 
-                ' === YOUR UNIT dark panel ===
+
                 unitCodeMainlbl.Text = reader("unit_number")
                 contractDatelbl.Text = reader("lease_start").ToString() & " to " & reader("lease_end").ToString()
 
-                ' === 3 buttons sa dark panel ===
+
                 rentPricelbl.Text = "₱" & reader("monthly_rent").ToString()
                 depositlbl.Text = "₱" & reader("security_deposit").ToString()
                 statuslbl.Text = reader("status").ToString()
 
-                ' === Contract Details ===
+
                 tenantValuelbl.Text = reader("full_name").ToString()
                 unitValuelbl.Text = reader("unit_number").ToString()
                 leaseStartValuelbl.Text = reader("lease_start").ToString()
@@ -70,10 +70,10 @@ Public Class Form2
                 securityDepositValuelbl.Text = "₱" & reader("security_deposit").ToString()
                 contractStatusValuelbl.Text = reader("status").ToString()
 
-                ' === Lease Expiration card ===
+
                 leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
 
-                ' === Security Deposit card ===
+
                 securityDepositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
             End If
 

@@ -58,8 +58,7 @@ Public Class Form13
         statusCmb.SelectedIndex = 0
     End Sub
 
-    ' Simpleng paraan: mag-query ulit sa database para makuha ang monthly_rate,
-    ' imbes na mag-cast ng DataRowView mula sa ComboBox.
+
     Private Sub assignUnitCmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles assignUnitCmb.SelectedIndexChanged
         If assignUnitCmb.SelectedValue Is Nothing Then Return
 
@@ -102,7 +101,7 @@ Public Class Form13
             Dim tenantId As String = tenantCmb.SelectedValue.ToString()
             Dim unitId As String = assignUnitCmb.SelectedValue.ToString()
 
-            ' Step 1: Simpleng check kung may active lease na ang tenant (walang subquery)
+
             Dim cmdCheck As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE tenant_id = @tenant_id AND status = 'active'", conn)
             cmdCheck.Parameters.AddWithValue("@tenant_id", tenantId)
             Dim activeCount As Integer = Convert.ToInt32(cmdCheck.ExecuteScalar())
@@ -115,7 +114,7 @@ Public Class Form13
                 End If
             End If
 
-            ' Step 2: I-insert ang bagong lease record
+
             Dim cmdLease As New MySqlCommand(
                 "INSERT INTO leases (tenant_id, unit_id, lease_start, lease_end, monthly_rent, security_deposit, status) " &
                 "VALUES (@tenant_id, @unit_id, @lease_start, @lease_end, @monthly_rent, @security_deposit, @status)", conn)
@@ -128,7 +127,7 @@ Public Class Form13
             cmdLease.Parameters.AddWithValue("@status", statusCmb.Text)
             cmdLease.ExecuteNonQuery()
 
-            ' Step 3: Kung active ang status, i-update ang unit status (hiwalay na command)
+
             If statusCmb.Text = "active" Then
                 Dim cmdUnit As New MySqlCommand("UPDATE units SET unit_status = 'occupied' WHERE unit_id = @unit_id", conn)
                 cmdUnit.Parameters.AddWithValue("@unit_id", unitId)

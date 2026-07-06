@@ -5,15 +5,12 @@ Imports System.IO
 
 Public Class Form19
 
-    ' Remembers which report tab is currently open, so the Apply Filter button
-    ' knows which report to reload
+
     Dim currentReport As String = "occupancy"
 
     Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
 
-    ' ============================================================
-    '  FORM LOAD
-    ' ============================================================
+
     Private Sub Form19_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Fromdate.Value = New Date(Now.Year, Now.Month, 1)
         Todate.Value = Now.Date
@@ -23,9 +20,7 @@ Public Class Form19
         ShowOccupancyTab()
     End Sub
 
-    ' ============================================================
-    '  TAB CLICKS
-    ' ============================================================
+
     Private Sub Label32_Click(sender As Object, e As EventArgs) Handles Label32.Click
         ShowOccupancyTab()
     End Sub
@@ -107,9 +102,7 @@ Public Class Form19
         LoadTenantComboBox()
     End Sub
 
-    ' ============================================================
-    '  APPLY FILTER BUTTON
-    ' ============================================================
+
     Private Sub applybtn_Click(sender As Object, e As EventArgs) Handles Applybtn.Click
         If currentReport = "occupancy" Then
             LoadOccupancyReport()
@@ -122,9 +115,7 @@ Public Class Form19
         End If
     End Sub
 
-    ' ============================================================
-    '  1. OCCUPANCY REPORT (current snapshot, not date filtered)
-    ' ============================================================
+
     Private Sub LoadOccupancyReport()
         Dim conn As New MySqlConnection(connStr)
 
@@ -148,7 +139,7 @@ Public Class Form19
 
             ReportsGrid.DataSource = dt
 
-            ' Count occupied / available / maintenance units one at a time
+
             Dim cmdOccupied As New MySqlCommand("SELECT COUNT(*) FROM units WHERE unit_status = 'occupied'", conn)
             Dim occupiedCount As Integer = cmdOccupied.ExecuteScalar()
 
@@ -169,9 +160,7 @@ Public Class Form19
         End Try
     End Sub
 
-    ' ============================================================
-    '  2. MONTHLY COLLECTION REPORT (filtered by due date range)
-    ' ============================================================
+
     Private Sub LoadMonthlyCollectionReport()
         Dim conn As New MySqlConnection(connStr)
 
@@ -202,7 +191,7 @@ Public Class Form19
 
             ReportsGrid.DataSource = dt
 
-            ' Total Due
+
             Dim cmdDue As New MySqlCommand(
                 "SELECT IFNULL(SUM(base_rent + IFNULL(addtional_charges,0)),0) FROM bills " &
                 "WHERE due_date BETWEEN @fromdate AND @todate", conn)
@@ -210,7 +199,7 @@ Public Class Form19
             cmdDue.Parameters.AddWithValue("@todate", toD)
             Dim totalDue As Decimal = cmdDue.ExecuteScalar()
 
-            ' Total Collected
+
             Dim cmdCollected As New MySqlCommand(
                 "SELECT IFNULL(SUM(p.amount_paid),0) FROM payments p " &
                 "JOIN bills b ON p.bill_id = b.bill_id " &
@@ -229,9 +218,7 @@ Public Class Form19
         End Try
     End Sub
 
-    ' ============================================================
-    '  3. OUTSTANDING BALANCES (unpaid / partial bills in range)
-    ' ============================================================
+
     Private Sub LoadOutstandingBalancesReport()
         Dim conn As New MySqlConnection(connStr)
 
@@ -278,11 +265,7 @@ Public Class Form19
         End Try
     End Sub
 
-    ' ============================================================
-    '  4. PAYMENT HISTORY PER TENANT
-    ' ============================================================
 
-    ' Fills the tenant dropdown with tenants who have bills in the selected date range
     Private Sub LoadTenantComboBox()
         Dim conn As New MySqlConnection(connStr)
 
@@ -327,7 +310,7 @@ Public Class Form19
         End Try
     End Sub
 
-    ' Runs whenever the user picks a different tenant from the dropdown
+
     Private Sub perTenantCmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles perTenantCmb.SelectedIndexChanged
         If perTenantCmb.SelectedValue Is Nothing Then Return
         If Not IsNumeric(perTenantCmb.SelectedValue) Then Return
@@ -336,7 +319,7 @@ Public Class Form19
         LoadPaymentHistoryForTenant(tenantId)
     End Sub
 
-    ' Shows only the payments made within the selected date range for one tenant
+
     Private Sub LoadPaymentHistoryForTenant(tenantId As Integer)
         Dim conn As New MySqlConnection(connStr)
 
@@ -391,9 +374,7 @@ Public Class Form19
         End Try
     End Sub
 
-    ' ============================================================
-    '  PRINT / NAVIGATION (same as your original code)
-    ' ============================================================
+
     Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles Printbtn.Click
 
         Dim saveDialog As New SaveFileDialog()
@@ -409,7 +390,7 @@ Public Class Form19
             PdfWriter.GetInstance(doc, New System.IO.FileStream(saveDialog.FileName, System.IO.FileMode.Create))
             doc.Open()
 
-            ' === Mga fonts na gagamitin (para may lebel ng importansya bawat text) ===
+
             Dim propertyFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
             Dim titleFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 13, iTextSharp.text.Font.BOLD, New BaseColor(0, 90, 60))
             Dim dateFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.ITALIC, BaseColor.GRAY)
@@ -417,7 +398,7 @@ Public Class Form19
             Dim normalFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.NORMAL)
             Dim summaryFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
 
-            ' === HEADER SECTION ===
+
             Dim propertyName As New Paragraph("ISA-RMS", propertyFont)
             propertyName.Alignment = Element.ALIGN_CENTER
             doc.Add(propertyName)
@@ -427,7 +408,7 @@ Public Class Form19
             subLabel.SpacingAfter = 10
             doc.Add(subLabel)
 
-            ' Simpleng linya bilang divider
+
             Dim line As New Paragraph("_______________________________________________________________")
             line.Alignment = Element.ALIGN_CENTER
             doc.Add(line)
@@ -442,21 +423,21 @@ Public Class Form19
             generatedOn.SpacingAfter = 15
             doc.Add(generatedOn)
 
-            ' === TABLE ===
+
             Dim table As New PdfPTable(ReportsGrid.Columns.Count)
             table.WidthPercentage = 100
             table.SpacingBefore = 10
 
-            ' Header row ng table, may background color
+
             For Each col As DataGridViewColumn In ReportsGrid.Columns
                 Dim headerCell As New PdfPCell(New Phrase(col.HeaderText, headerFont))
-                headerCell.BackgroundColor = New BaseColor(30, 60, 50) ' dark green, kasing tema ng sidebar niyo
+                headerCell.BackgroundColor = New BaseColor(30, 60, 50)
                 headerCell.Padding = 6
                 headerCell.HorizontalAlignment = Element.ALIGN_CENTER
                 table.AddCell(headerCell)
             Next
 
-            ' Data rows, may alternating na light gray para sa bawat ibang row (mas madaling basahin)
+
             Dim rowIndex As Integer = 0
             For Each row As DataGridViewRow In ReportsGrid.Rows
                 If Not row.IsNewRow Then
@@ -470,7 +451,7 @@ Public Class Form19
                         dataCell.Padding = 5
 
                         If rowIndex Mod 2 = 0 Then
-                            dataCell.BackgroundColor = New BaseColor(245, 245, 245) ' light gray
+                            dataCell.BackgroundColor = New BaseColor(245, 245, 245)
                         Else
                             dataCell.BackgroundColor = BaseColor.WHITE
                         End If
@@ -483,7 +464,7 @@ Public Class Form19
 
             doc.Add(table)
 
-            ' === SUMMARY SECTION (may box/border para tumambad) ===
+
             doc.Add(New Paragraph(" "))
 
             Dim summaryTable As New PdfPTable(1)

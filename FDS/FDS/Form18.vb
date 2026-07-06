@@ -31,9 +31,7 @@ Public Class Form18
 
             conn.Close()
 
-            ' Count & total collected should only reflect THIS month's payments,
-            ' even though the grid above still shows the full history.
-            ' (computed here in VB instead of using SQL functions)
+
             Dim monthlyCount As Integer = 0
             Dim monthlyTotal As Decimal = 0
 

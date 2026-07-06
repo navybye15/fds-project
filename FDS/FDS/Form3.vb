@@ -190,7 +190,7 @@ Public Class Form3
             Dim dt As New DataTable()
             adapter.Fill(dt)
 
-            ' Rename columns para mas presentable
+
             dt.Columns("billing_month").ColumnName = "Billing Month"
             dt.Columns("base_rent").ColumnName = "Base Rent"
             dt.Columns("addtional_charges").ColumnName = "Additional Charges"

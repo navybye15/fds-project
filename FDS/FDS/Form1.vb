@@ -11,7 +11,7 @@ Public Class Form1
         End If
 
         loadMyProfile()
-        setEditMode(False) 'disabled muna ang textboxes pagbukas ng form
+        setEditMode(False)
     End Sub
 
     Private Sub loadMyProfile()
@@ -40,22 +40,22 @@ Public Class Form1
                 unitCodelbl.Text = reader("unit_number").ToString()
                 unitFloorlbl.Text = "Floor " & reader("floor").ToString()
 
-                ' --- Greeting ---
+
                 namelbl.Text = reader("full_name").ToString()
 
-                ' --- My Profile (read-only display) ---
+
                 fullNamelbl.Text = reader("full_name").ToString()
                 contactlbl.Text = reader("contact_no").ToString()
                 emergencylbl.Text = reader("emergency_contact").ToString()
                 govIdlbl.Text = reader("gov_id").ToString()
 
-                ' --- My Unit (read-only display) ---
+
                 unitNumlbl.Text = reader("unit_number").ToString()
                 typelbl.Text = reader("type").ToString()
                 floorlbl.Text = reader("floor").ToString()
                 statuslbl.Text = reader("status").ToString()
 
-                ' Monthly Rate - i-format bilang Peso para mas readable (hal. ₱5,000.00)
+
                 If Not IsDBNull(reader("monthly_rate")) Then
                     Dim rate As Decimal = Convert.ToDecimal(reader("monthly_rate"))
                     monthlylbl.Text = "₱" & rate.ToString("N2")
@@ -63,21 +63,18 @@ Public Class Form1
                     monthlylbl.Text = ""
                 End If
 
-                ' --- Lease Expiration card ---
                 If Not IsDBNull(reader("lease_end")) Then
                     leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
                 Else
                     leaseExpirationlbl.Text = "N/A"
                 End If
 
-                ' --- Security Deposit card ---
                 If Not IsDBNull(reader("security_deposit")) Then
                     securityDepositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
                 Else
                     securityDepositlbl.Text = "₱0.00"
                 End If
 
-                ' --- I-fill din agad ang editable textboxes (disabled muna) ---
                 FullNametxt.Text = reader("full_name").ToString()
                 contactTxt.Text = reader("contact_no").ToString()
                 emergencyTxt.Text = reader("emergency_contact").ToString()

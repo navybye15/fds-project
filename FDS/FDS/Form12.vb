@@ -80,7 +80,7 @@ Public Class Form12
     End Sub
 
     Private Sub CategoryCmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CategoryCmb.SelectedIndexChanged
-        If loadingRow Then Return ' iwasan ang double-load habang pinopopulate galing sa grid click
+        If loadingRow Then Return
         loadUnitsForCategory(CategoryCmb.Text)
     End Sub
 

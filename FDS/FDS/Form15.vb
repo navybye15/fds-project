@@ -61,13 +61,13 @@ Public Class Form15
         End If
     End Sub
 
-    ' "Generate Bill" -> popup, hindi mawawala Form15 (same pattern as addTenantBtn sa Form8)
+
     Private Sub btnGenerateBill_Click(sender As Object, e As EventArgs) Handles BillBtn.Click
         Form16.ShowDialog()
         loadBills()
     End Sub
 
-    ' "Record Bill" -> opens Form17 (Record Payment), passing the selected bill_id
+
     Private Sub btnRecordBill_Click(sender As Object, e As EventArgs) Handles RecordBtn.Click
         If selectedBillId = 0 Then
             MessageBox.Show("Please select a bill first.")
