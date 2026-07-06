@@ -52,6 +52,7 @@ Public Class Form16
         Next
 
         monthCmb.DropDownStyle = ComboBoxStyle.DropDown
+
     End Sub
 
     Private Sub cboTenant_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tenantCmb.SelectedIndexChanged
