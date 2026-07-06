@@ -91,8 +91,7 @@ Public Class Form17
                 MessageBox.Show("Payment recorded successfully!")
                 Me.Close()
 
-                Dim frm18 As New Form18()
-                frm18.Show()
+
             Catch ex As Exception
                 transaction.Rollback()
                 MessageBox.Show("Recording payment failed, no changes were made: " & ex.Message)

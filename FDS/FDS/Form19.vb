@@ -330,7 +330,7 @@ Public Class Form19
             Dim toD As String = Todate.Value.ToString("yyyy-MM-dd")
 
             Dim query As String =
-                "SELECT CONCAT('PMT-', YEAR(p.payment_date), '-', LPAD(p.payment_id,3,'0')) AS 'Ref No', " &
+                "SELECT p.payment_date AS 'Payment Date', " &
                 "t.full_name AS 'Tenant', un.unit_number AS 'Unit', b.billing_month AS 'Billing Month', " &
                 "DATE_FORMAT(p.payment_date, '%b %e, %Y') AS 'Date Paid', " &
                 "CONCAT('₱', FORMAT(p.amount_paid, 2)) AS 'Amount' " &
@@ -543,4 +543,7 @@ Public Class Form19
         Me.Hide()
     End Sub
 
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
 End Class
