@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LEASES-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LEASES-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UNPAID-BILL-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UNPAID-BILL-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rentalhouse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rentalhouse1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,11 +127,17 @@
   <data name="TOTAL-UNITS-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TOTAL-UNITS-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UNIT-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UNIT-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-dashboard-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-dashboard-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DASHBOARD-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DASHBOARD-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cash_icon-icons.com_51090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash_icon-icons.com_51090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CALENDAR-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CALENDAR-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PROFILE-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PROFILE-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,23 +148,23 @@
   <data name="TENANTS-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TENANTS-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UNPAID-BILL-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UNPAID-BILL-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HISTORY-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HISTORY-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LEASES-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LEASES-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SECURITY-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SECURITY-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CALENDAR-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CALENDAR-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DASHBOARD-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DASHBOARD-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BILLING-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BILLING-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash_icon-icons.com_51090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash_icon-icons.com_51090.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ISA-RMS-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ISA-RMS-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,10 +181,10 @@
   <data name="CONTRACT-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CONTRACT-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UNIT-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UNIT-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="COLLECTED-LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\COLLECTED-LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

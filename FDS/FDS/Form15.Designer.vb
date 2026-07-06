@@ -52,6 +52,7 @@ Partial Class Form15
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BillBtn = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.StatusTxt = New System.Windows.Forms.TextBox()
         Me.RecordBtn = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Typelbl = New System.Windows.Forms.Label()
@@ -72,7 +73,6 @@ Partial Class Form15
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.totalTenantsLbl = New System.Windows.Forms.Label()
-        Me.StatusTxt = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -465,6 +465,14 @@ Partial Class Form15
         Me.Panel4.Size = New System.Drawing.Size(932, 733)
         Me.Panel4.TabIndex = 28
         '
+        'StatusTxt
+        '
+        Me.StatusTxt.Location = New System.Drawing.Point(481, 673)
+        Me.StatusTxt.Multiline = True
+        Me.StatusTxt.Name = "StatusTxt"
+        Me.StatusTxt.Size = New System.Drawing.Size(197, 24)
+        Me.StatusTxt.TabIndex = 15
+        '
         'RecordBtn
         '
         Me.RecordBtn.BackColor = System.Drawing.Color.MediumSeaGreen
@@ -661,14 +669,6 @@ Partial Class Form15
         Me.totalTenantsLbl.TabIndex = 0
         Me.totalTenantsLbl.Text = "All active tenant bills this month"
         Me.totalTenantsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'StatusTxt
-        '
-        Me.StatusTxt.Location = New System.Drawing.Point(481, 673)
-        Me.StatusTxt.Multiline = True
-        Me.StatusTxt.Name = "StatusTxt"
-        Me.StatusTxt.Size = New System.Drawing.Size(197, 24)
-        Me.StatusTxt.TabIndex = 15
         '
         'Form15
         '

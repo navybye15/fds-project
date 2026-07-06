@@ -240,4 +240,9 @@ Public Class Form7
         Form18.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
+        Form19.Show()
+        Me.Hide()
+    End Sub
 End Class
