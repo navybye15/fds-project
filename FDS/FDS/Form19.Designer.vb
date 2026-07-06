@@ -73,10 +73,6 @@ Partial Class Form19
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Labell4 = New System.Windows.Forms.Label()
         Me.labell1 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.labell6 = New System.Windows.Forms.Label()
         Me.Labell2 = New System.Windows.Forms.Label()
         Me.ReportsGrid = New System.Windows.Forms.DataGridView()
@@ -682,10 +678,6 @@ Partial Class Form19
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Labell4)
         Me.Panel6.Controls.Add(Me.labell1)
-        Me.Panel6.Controls.Add(Me.Label33)
-        Me.Panel6.Controls.Add(Me.Label22)
-        Me.Panel6.Controls.Add(Me.Label9)
-        Me.Panel6.Controls.Add(Me.Label19)
         Me.Panel6.Controls.Add(Me.labell6)
         Me.Panel6.Controls.Add(Me.Labell2)
         Me.Panel6.Location = New System.Drawing.Point(36, 643)
@@ -697,10 +689,10 @@ Partial Class Form19
         '
         Me.Labell4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Labell4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Labell4.Location = New System.Drawing.Point(561, 13)
+        Me.Labell4.Location = New System.Drawing.Point(631, 13)
         Me.Labell4.Name = "Labell4"
         Me.Labell4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Labell4.Size = New System.Drawing.Size(156, 20)
+        Me.Labell4.Size = New System.Drawing.Size(226, 20)
         Me.Labell4.TabIndex = 16
         Me.Labell4.Text = "LABEL4"
         Me.Labell4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -709,70 +701,22 @@ Partial Class Form19
         '
         Me.labell1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labell1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.labell1.Location = New System.Drawing.Point(8, 13)
+        Me.labell1.Location = New System.Drawing.Point(13, 13)
         Me.labell1.Name = "labell1"
         Me.labell1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.labell1.Size = New System.Drawing.Size(118, 20)
+        Me.labell1.Size = New System.Drawing.Size(192, 20)
         Me.labell1.TabIndex = 15
         Me.labell1.Text = "LABEL1"
-        Me.labell1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label33
-        '
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label33.Location = New System.Drawing.Point(624, 13)
-        Me.Label33.Name = "Label33"
-        Me.Label33.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label33.Size = New System.Drawing.Size(28, 20)
-        Me.Label33.TabIndex = 14
-        Me.Label33.Text = "— "
-        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label22
-        '
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label22.Location = New System.Drawing.Point(391, 13)
-        Me.Label22.Name = "Label22"
-        Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label22.Size = New System.Drawing.Size(28, 20)
-        Me.Label22.TabIndex = 14
-        Me.Label22.Text = "— "
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label9
-        '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(234, 13)
-        Me.Label9.Name = "Label9"
-        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label9.Size = New System.Drawing.Size(28, 20)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "— "
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label19.Location = New System.Drawing.Point(129, 13)
-        Me.Label19.Name = "Label19"
-        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label19.Size = New System.Drawing.Size(28, 20)
-        Me.Label19.TabIndex = 14
-        Me.Label19.Text = "— "
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.labell1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'labell6
         '
         Me.labell6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labell6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.labell6.Location = New System.Drawing.Point(327, 13)
+        Me.labell6.Location = New System.Drawing.Point(421, 13)
         Me.labell6.Name = "labell6"
         Me.labell6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.labell6.Size = New System.Drawing.Size(141, 20)
+        Me.labell6.Size = New System.Drawing.Size(216, 20)
         Me.labell6.TabIndex = 14
         Me.labell6.Text = "LABEL3"
         Me.labell6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -781,10 +725,10 @@ Partial Class Form19
         '
         Me.Labell2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Labell2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Labell2.Location = New System.Drawing.Point(166, 13)
+        Me.Labell2.Location = New System.Drawing.Point(204, 13)
         Me.Labell2.Name = "Labell2"
         Me.Labell2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Labell2.Size = New System.Drawing.Size(116, 20)
+        Me.Labell2.Size = New System.Drawing.Size(207, 20)
         Me.Labell2.TabIndex = 13
         Me.Labell2.Text = "LABEL2"
         Me.Labell2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -925,7 +869,6 @@ Partial Class Form19
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Labell4 As Label
     Friend WithEvents labell1 As Label
-    Friend WithEvents Label19 As Label
     Friend WithEvents labell6 As Label
     Friend WithEvents Labell2 As Label
     Friend WithEvents ReportsGrid As DataGridView
@@ -948,8 +891,5 @@ Partial Class Form19
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
-    Friend WithEvents Label33 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents perTenantCmb As ComboBox
 End Class

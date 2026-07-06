@@ -1,4 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
 
 Public Class Form19
 
@@ -392,6 +395,135 @@ Public Class Form19
     '  PRINT / NAVIGATION (same as your original code)
     ' ============================================================
     Private Sub Printbtn_Click(sender As Object, e As EventArgs) Handles Printbtn.Click
+
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "PDF Files|*.pdf"
+        saveDialog.FileName = Label4.Text.Replace(" ", "_") & ".pdf"
+
+        If saveDialog.ShowDialog() <> DialogResult.OK Then
+            Return
+        End If
+
+        Try
+            Dim doc As New iTextSharp.text.Document(PageSize.A4, 30, 30, 30, 30)
+            PdfWriter.GetInstance(doc, New System.IO.FileStream(saveDialog.FileName, System.IO.FileMode.Create))
+            doc.Open()
+
+            ' === Mga fonts na gagamitin (para may lebel ng importansya bawat text) ===
+            Dim propertyFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
+            Dim titleFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 13, iTextSharp.text.Font.BOLD, New BaseColor(0, 90, 60))
+            Dim dateFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.ITALIC, BaseColor.GRAY)
+            Dim headerFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE)
+            Dim normalFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.NORMAL)
+            Dim summaryFont As New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 11, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
+
+            ' === HEADER SECTION ===
+            Dim propertyName As New Paragraph("ISA-RMS", propertyFont)
+            propertyName.Alignment = Element.ALIGN_CENTER
+            doc.Add(propertyName)
+
+            Dim subLabel As New Paragraph("Rental House Management System", dateFont)
+            subLabel.Alignment = Element.ALIGN_CENTER
+            subLabel.SpacingAfter = 10
+            doc.Add(subLabel)
+
+            ' Simpleng linya bilang divider
+            Dim line As New Paragraph("_______________________________________________________________")
+            line.Alignment = Element.ALIGN_CENTER
+            doc.Add(line)
+
+            Dim title As New Paragraph(Label4.Text, titleFont)
+            title.Alignment = Element.ALIGN_CENTER
+            title.SpacingBefore = 10
+            doc.Add(title)
+
+            Dim generatedOn As New Paragraph("Generated on: " & DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt"), dateFont)
+            generatedOn.Alignment = Element.ALIGN_CENTER
+            generatedOn.SpacingAfter = 15
+            doc.Add(generatedOn)
+
+            ' === TABLE ===
+            Dim table As New PdfPTable(ReportsGrid.Columns.Count)
+            table.WidthPercentage = 100
+            table.SpacingBefore = 10
+
+            ' Header row ng table, may background color
+            For Each col As DataGridViewColumn In ReportsGrid.Columns
+                Dim headerCell As New PdfPCell(New Phrase(col.HeaderText, headerFont))
+                headerCell.BackgroundColor = New BaseColor(30, 60, 50) ' dark green, kasing tema ng sidebar niyo
+                headerCell.Padding = 6
+                headerCell.HorizontalAlignment = Element.ALIGN_CENTER
+                table.AddCell(headerCell)
+            Next
+
+            ' Data rows, may alternating na light gray para sa bawat ibang row (mas madaling basahin)
+            Dim rowIndex As Integer = 0
+            For Each row As DataGridViewRow In ReportsGrid.Rows
+                If Not row.IsNewRow Then
+                    For Each cell As DataGridViewCell In row.Cells
+                        Dim value As String = ""
+                        If cell.Value IsNot Nothing Then
+                            value = cell.Value.ToString()
+                        End If
+
+                        Dim dataCell As New PdfPCell(New Phrase(value, normalFont))
+                        dataCell.Padding = 5
+
+                        If rowIndex Mod 2 = 0 Then
+                            dataCell.BackgroundColor = New BaseColor(245, 245, 245) ' light gray
+                        Else
+                            dataCell.BackgroundColor = BaseColor.WHITE
+                        End If
+
+                        table.AddCell(dataCell)
+                    Next
+                    rowIndex += 1
+                End If
+            Next
+
+            doc.Add(table)
+
+            ' === SUMMARY SECTION (may box/border para tumambad) ===
+            doc.Add(New Paragraph(" "))
+
+            Dim summaryTable As New PdfPTable(1)
+            summaryTable.WidthPercentage = 100
+
+            If labell1.Visible AndAlso labell1.Text <> "" Then
+                Dim c As New PdfPCell(New Phrase(labell1.Text, summaryFont))
+                c.Border = Rectangle.NO_BORDER
+                c.PaddingTop = 4
+                summaryTable.AddCell(c)
+            End If
+            If Labell2.Visible AndAlso Labell2.Text <> "" Then
+                Dim c As New PdfPCell(New Phrase(Labell2.Text, summaryFont))
+                c.Border = Rectangle.NO_BORDER
+                c.PaddingTop = 4
+                summaryTable.AddCell(c)
+            End If
+            If labell6.Visible AndAlso labell6.Text <> "" Then
+                Dim c As New PdfPCell(New Phrase(labell6.Text, summaryFont))
+                c.Border = Rectangle.NO_BORDER
+                c.PaddingTop = 4
+                summaryTable.AddCell(c)
+            End If
+            If Labell4.Visible AndAlso Labell4.Text <> "" Then
+                Dim c As New PdfPCell(New Phrase(Labell4.Text, summaryFont))
+                c.Border = Rectangle.NO_BORDER
+                c.PaddingTop = 4
+                summaryTable.AddCell(c)
+            End If
+
+            doc.Add(summaryTable)
+
+            doc.Close()
+
+            MessageBox.Show("Report saved successfully!")
+            Process.Start(saveDialog.FileName)
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
 
     End Sub
 
