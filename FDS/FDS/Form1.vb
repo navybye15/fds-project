@@ -5,7 +5,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Session.CurrentTenantID = 0 Then
-            MessageBox.Show("Walang naka-login na tenant session. Bumalik sa login.")
+            MessageBox.Show("There is no currently logged in, please go back to login form")
             Me.Close()
             Return
         End If
