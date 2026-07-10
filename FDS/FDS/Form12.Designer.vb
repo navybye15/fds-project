@@ -85,6 +85,10 @@ Partial Class Form12
         Me.DescriptionTxt = New System.Windows.Forms.TextBox()
         Me.UnitCmb = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.btnSignOut = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,12 +102,14 @@ Partial Class Form12
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.PictureBox9)
         Me.Panel3.Controls.Add(Me.Label13)
@@ -454,7 +460,7 @@ Partial Class Form12
         Me.misctotalLbl.ForeColor = System.Drawing.Color.Black
         Me.misctotalLbl.Location = New System.Drawing.Point(1078, 135)
         Me.misctotalLbl.Name = "misctotalLbl"
-        Me.misctotalLbl.Size = New System.Drawing.Size(100, 22)
+        Me.misctotalLbl.Size = New System.Drawing.Size(139, 22)
         Me.misctotalLbl.TabIndex = 27
         Me.misctotalLbl.Text = "TOTAL"
         '
@@ -465,7 +471,7 @@ Partial Class Form12
         Me.utilitiesLbl.ForeColor = System.Drawing.Color.Black
         Me.utilitiesLbl.Location = New System.Drawing.Point(863, 135)
         Me.utilitiesLbl.Name = "utilitiesLbl"
-        Me.utilitiesLbl.Size = New System.Drawing.Size(100, 22)
+        Me.utilitiesLbl.Size = New System.Drawing.Size(140, 22)
         Me.utilitiesLbl.TabIndex = 28
         Me.utilitiesLbl.Text = "TOTAL"
         '
@@ -476,7 +482,7 @@ Partial Class Form12
         Me.maintenanceLbl.ForeColor = System.Drawing.Color.Black
         Me.maintenanceLbl.Location = New System.Drawing.Point(647, 135)
         Me.maintenanceLbl.Name = "maintenanceLbl"
-        Me.maintenanceLbl.Size = New System.Drawing.Size(100, 22)
+        Me.maintenanceLbl.Size = New System.Drawing.Size(139, 22)
         Me.maintenanceLbl.TabIndex = 29
         Me.maintenanceLbl.Text = "TOTAL"
         '
@@ -487,7 +493,7 @@ Partial Class Form12
         Me.totalmonthLbl.ForeColor = System.Drawing.Color.Black
         Me.totalmonthLbl.Location = New System.Drawing.Point(432, 135)
         Me.totalmonthLbl.Name = "totalmonthLbl"
-        Me.totalmonthLbl.Size = New System.Drawing.Size(100, 22)
+        Me.totalmonthLbl.Size = New System.Drawing.Size(135, 22)
         Me.totalmonthLbl.TabIndex = 30
         Me.totalmonthLbl.Text = "TOTAL"
         '
@@ -498,7 +504,7 @@ Partial Class Form12
         Me.Label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label28.Location = New System.Drawing.Point(1078, 112)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(93, 20)
+        Me.Label28.Size = New System.Drawing.Size(127, 20)
         Me.Label28.TabIndex = 41
         Me.Label28.Text = "Misc/Other"
         '
@@ -647,6 +653,7 @@ Partial Class Form12
         Me.ExpenseRecGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ExpenseRecGrid.Location = New System.Drawing.Point(358, 269)
         Me.ExpenseRecGrid.Name = "ExpenseRecGrid"
+        Me.ExpenseRecGrid.ReadOnly = True
         Me.ExpenseRecGrid.RowHeadersWidth = 51
         Me.ExpenseRecGrid.RowTemplate.Height = 24
         Me.ExpenseRecGrid.Size = New System.Drawing.Size(862, 345)
@@ -780,6 +787,51 @@ Partial Class Form12
         Me.Label4.TabIndex = 59
         Me.Label4.Text = "Unit Number:"
         '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.btnSignOut)
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Location = New System.Drawing.Point(2, 768)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(318, 89)
+        Me.Panel2.TabIndex = 17
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label19
+        '
+        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label19.Location = New System.Drawing.Point(37, 44)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(146, 18)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -834,6 +886,7 @@ Partial Class Form12
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -902,4 +955,8 @@ Partial Class Form12
     Friend WithEvents DescriptionTxt As TextBox
     Friend WithEvents UnitCmb As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents btnSignOut As Label
 End Class

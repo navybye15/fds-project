@@ -31,7 +31,7 @@ Public Class Form4
         Try
             conn.Open()
 
-            Dim query As String = "SELECT u.unit_number, u.floor " &
+            Dim query As String = "SELECT t.full_name, u.unit_number, u.floor " &
                                    "FROM tenants t " &
                                    "JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
                                    "JOIN units u ON u.unit_id = l.unit_id " &
@@ -45,6 +45,9 @@ Public Class Form4
             If reader.Read() Then
                 unitCodelbl.Text = reader("unit_number").ToString()
                 unitFloorlbl.Text = "Floor " & reader("floor").ToString()
+
+                TenantNamelbl.Text = reader("full_name").ToString()
+                Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
             End If
 
             reader.Close()
@@ -202,5 +205,33 @@ Public Class Form4
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs)
+        Session.SignOut(Me)
+    End Sub
+
+    Private Sub Unitlbl_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TenantNamelbl_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
     End Sub
 End Class

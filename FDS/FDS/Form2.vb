@@ -70,6 +70,8 @@ Public Class Form2
                 securityDepositValuelbl.Text = "₱" & reader("security_deposit").ToString()
                 contractStatusValuelbl.Text = reader("status").ToString()
 
+                TenantNamelbl.Text = reader("full_name").ToString()
+                Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
 
                 leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
 
@@ -145,5 +147,27 @@ Public Class Form2
         End Try
     End Sub
 
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs)
+        Session.SignOut(Me)
+    End Sub
 
+    Private Sub Unitlbl_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TenantNamelbl_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

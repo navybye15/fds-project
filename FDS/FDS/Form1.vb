@@ -55,6 +55,9 @@ Public Class Form1
                 floorlbl.Text = reader("floor").ToString()
                 statuslbl.Text = reader("status").ToString()
 
+                TenantNamelbl.Text = reader("full_name").ToString()
+                Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
+
 
                 If Not IsDBNull(reader("monthly_rate")) Then
                     Dim rate As Decimal = Convert.ToDecimal(reader("monthly_rate"))
@@ -211,7 +214,19 @@ Public Class Form1
         Me.Hide()
     End Sub
 
-    Private Sub namelbl_Click(sender As Object, e As EventArgs) Handles namelbl.Click
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
+    End Sub
+
+    Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
 
     End Sub
 End Class

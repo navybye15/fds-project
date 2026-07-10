@@ -23,6 +23,12 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TenantNamelbl = New System.Windows.Forms.Label()
+        Me.Unitlbl = New System.Windows.Forms.Label()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -107,6 +113,8 @@ Partial Class Form1
         Me.Label23 = New System.Windows.Forms.Label()
         Me.namelbl = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,11 +131,84 @@ Partial Class Form1
         '
         Me.Panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.TenantNamelbl)
+        Me.Panel2.Controls.Add(Me.Unitlbl)
+        Me.Panel2.Controls.Add(Me.btnSignOut)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.PictureBox8)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1249, 66)
         Me.Panel2.TabIndex = 1
+        '
+        'TenantNamelbl
+        '
+        Me.TenantNamelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.TenantNamelbl.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TenantNamelbl.ForeColor = System.Drawing.Color.White
+        Me.TenantNamelbl.Location = New System.Drawing.Point(940, 17)
+        Me.TenantNamelbl.Name = "TenantNamelbl"
+        Me.TenantNamelbl.Size = New System.Drawing.Size(180, 22)
+        Me.TenantNamelbl.TabIndex = 17
+        Me.TenantNamelbl.Text = "Name"
+        '
+        'Unitlbl
+        '
+        Me.Unitlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Unitlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Unitlbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Unitlbl.Location = New System.Drawing.Point(941, 39)
+        Me.Unitlbl.Name = "Unitlbl"
+        Me.Unitlbl.Size = New System.Drawing.Size(146, 18)
+        Me.Unitlbl.TabIndex = 16
+        Me.Unitlbl.Text = "unit"
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSignOut.Location = New System.Drawing.Point(1128, 19)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 15
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label15.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(101, 17)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(195, 22)
+        Me.Label15.TabIndex = 14
+        Me.Label15.Text = "ISA-RMS"
+        '
+        'Label17
+        '
+        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label17.Location = New System.Drawing.Point(106, 44)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(146, 18)
+        Me.Label17.TabIndex = 12
+        Me.Label17.Text = "Tenant Portal"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
+        Me.PictureBox8.Location = New System.Drawing.Point(32, 4)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 13
+        Me.PictureBox8.TabStop = False
         '
         'Panel1
         '
@@ -1130,6 +1211,8 @@ Partial Class Form1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1229,4 +1312,10 @@ Partial Class Form1
     Friend WithEvents UnitNumberlbl As Label
     Friend WithEvents saveBtn As Button
     Friend WithEvents editBtn As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents btnSignOut As Label
+    Friend WithEvents TenantNamelbl As Label
+    Friend WithEvents Unitlbl As Label
 End Class

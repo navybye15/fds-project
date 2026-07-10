@@ -546,4 +546,8 @@ Public Class Form19
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
 
     End Sub
+
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
+    End Sub
 End Class

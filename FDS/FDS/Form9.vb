@@ -206,4 +206,8 @@ Public Class Form9
         Form12.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
+    End Sub
 End Class
