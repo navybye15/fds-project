@@ -13,19 +13,30 @@ Public Class Form8
         Try
             conn.Open()
 
-            Dim cmdTotal As New MySqlCommand("SELECT COUNT(*) FROM tenants", conn)
+            Dim whereClause As String
+
+            If showInactiveChk.Checked Then
+                whereClause = ""
+            Else
+                whereClause = "WHERE t.account_status = 'active'"
+            End If
+
+            Dim cmdTotal As New MySqlCommand(
+            "SELECT COUNT(*) FROM tenants t " & whereClause, conn)
             totalTenantsLbl.Text = cmdTotal.ExecuteScalar().ToString()
 
-
             Dim query As String = "SELECT t.tenant_id, t.full_name AS 'Name', " &
-                                   "un.unit_number AS 'Unit', " &
-                                   "t.contact_no AS 'Contact', " &
-                                   "DATE_FORMAT(l.lease_start, '%Y-%m-%d') AS 'Lease Start', " &
-                                   "DATE_FORMAT(l.lease_end, '%Y-%m-%d') AS 'Lease End', " &
-                                   "l.status AS 'Status' " &
-                                   "FROM tenants t " &
-                                   "LEFT JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
-                                   "LEFT JOIN units un ON l.unit_id = un.unit_id"
+                               "un.unit_number AS 'Unit', " &
+                               "t.contact_no AS 'Contact', " &
+                               "DATE_FORMAT(l.lease_start, '%Y-%m-%d') AS 'Lease Start', " &
+                               "DATE_FORMAT(l.lease_end, '%Y-%m-%d') AS 'Lease End', " &
+                               "l.status AS 'Status', " &
+                               "t.account_status AS 'Account Status' " &
+                               "FROM tenants t " &
+                               "LEFT JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
+                               "LEFT JOIN units un ON l.unit_id = un.unit_id " &
+                               whereClause & " " &
+                               "ORDER BY t.account_status ASC, t.full_name ASC"
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)
@@ -41,11 +52,16 @@ Public Class Form8
         End Try
     End Sub
 
+    Private Sub showInactiveChk_CheckedChanged(sender As Object, e As EventArgs) Handles showInactiveChk.CheckedChanged
+        loadTenants()
+    End Sub
+
+    Dim selectedAccountStatus As String = "active"
+
     Private Sub TenantsGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles TenantsGrid.CellClick
         If TenantsGrid.SelectedRows.Count > 0 Then
             Dim row = TenantsGrid.SelectedRows(0)
             selectedTenantId = row.Cells("tenant_id").Value
-
 
             FullNametxt.Text = row.Cells("Name").Value.ToString()
             contactTxt.Text = row.Cells("Contact").Value.ToString()
@@ -58,6 +74,13 @@ Public Class Form8
                 LeaseEndtxt.Text = row.Cells("Lease End").Value.ToString()
             End If
 
+            selectedAccountStatus = row.Cells("Account Status").Value.ToString()
+
+            If selectedAccountStatus = "inactive" Then
+                deleteBtn.Text = "Reactivate"
+            Else
+                deleteBtn.Text = "Delete"
+            End If
 
             Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
             Dim conn As New MySqlConnection(connStr)
@@ -66,9 +89,9 @@ Public Class Form8
                 conn.Open()
 
                 Dim query As String = "SELECT t.emergency_contact, t.gov_id, u.username, u.password " &
-                                   "FROM tenants t " &
-                                   "JOIN users u ON t.user_id = u.user_id " &
-                                   "WHERE t.tenant_id = @tenant_id"
+                               "FROM tenants t " &
+                               "JOIN users u ON t.user_id = u.user_id " &
+                               "WHERE t.tenant_id = @tenant_id"
 
                 Dim cmd As New MySqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@tenant_id", selectedTenantId)
@@ -134,114 +157,118 @@ Public Class Form8
 
     Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
         If selectedTenantId = 0 Then
-            MessageBox.Show("Please select a tenant to delete.")
+            MessageBox.Show("Please select a tenant first.")
             Return
         End If
 
-        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
-        Dim conn As New MySqlConnection(connStr)
+        If selectedAccountStatus = "inactive" Then
 
-        Try
-            conn.Open()
+            Dim confirm = MessageBox.Show(
+            "Reactivate this tenant? They will appear again in the active tenants list.",
+            "Confirm Reactivate", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-
-            Dim cmdBillCount As New MySqlCommand("SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id", conn)
-            cmdBillCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-            Dim billCount As Integer = Convert.ToInt32(cmdBillCount.ExecuteScalar())
-
-            Dim cmdLeaseCount As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE tenant_id = @tenant_id", conn)
-            cmdLeaseCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-            Dim leaseCount As Integer = Convert.ToInt32(cmdLeaseCount.ExecuteScalar())
-
-
-            Dim billIds As New List(Of String)
-            Dim cmdGetBillIds As New MySqlCommand("SELECT bill_id FROM bills WHERE tenant_id = @tenant_id", conn)
-            cmdGetBillIds.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-            Using reader = cmdGetBillIds.ExecuteReader()
-                While reader.Read()
-                    billIds.Add(reader("bill_id").ToString())
-                End While
-            End Using
-
-            Dim paymentCount As Integer = 0
-            If billIds.Count > 0 Then
-                Dim idList As String = String.Join(",", billIds)
-                Dim cmdPaymentCount As New MySqlCommand("SELECT COUNT(*) FROM payments WHERE bill_id IN (" & idList & ")", conn)
-                paymentCount = Convert.ToInt32(cmdPaymentCount.ExecuteScalar())
+            If confirm <> DialogResult.Yes Then
+                Return
             End If
 
-
-            Dim confirmMsg As String = "Are you sure you want to delete this tenant?"
-            If billCount > 0 OrElse paymentCount > 0 OrElse leaseCount > 0 Then
-                confirmMsg = "This tenant has existing records:" & vbCrLf &
-                             "- " & leaseCount & " lease(s)" & vbCrLf &
-                             "- " & billCount & " bill(s)" & vbCrLf &
-                             "- " & paymentCount & " payment(s)" & vbCrLf & vbCrLf &
-                             "Deleting this tenant will PERMANENTLY remove all of this history too." & vbCrLf &
-                             "This cannot be undone. Continue?"
-            End If
-
-            Dim confirm = MessageBox.Show(confirmMsg, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-            If confirm <> DialogResult.Yes Then Return
-
-
-            Dim transaction As MySqlTransaction = conn.BeginTransaction()
+            Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+            Dim conn As New MySqlConnection(connStr)
 
             Try
+                conn.Open()
 
-                Dim activeUnitId As Object = Nothing
-                Dim cmdGetActiveUnit As New MySqlCommand(
-                    "SELECT unit_id FROM leases WHERE tenant_id = @tenant_id AND status = 'active' LIMIT 1", conn, transaction)
-                cmdGetActiveUnit.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                activeUnitId = cmdGetActiveUnit.ExecuteScalar()
+                Dim cmd As New MySqlCommand(
+                "UPDATE tenants SET account_status = 'active' WHERE tenant_id = @tenant_id", conn)
+                cmd.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                cmd.ExecuteNonQuery()
 
+                conn.Close()
 
-                If activeUnitId IsNot Nothing Then
-                    Dim cmdFreeUnit As New MySqlCommand(
-                        "UPDATE units SET unit_status = 'available' WHERE unit_id = @unit_id", conn, transaction)
-                    cmdFreeUnit.Parameters.AddWithValue("@unit_id", activeUnitId)
-                    cmdFreeUnit.ExecuteNonQuery()
-                End If
-
-
-                If billIds.Count > 0 Then
-                    Dim idList As String = String.Join(",", billIds)
-                    Dim cmdPayments As New MySqlCommand("DELETE FROM payments WHERE bill_id IN (" & idList & ")", conn, transaction)
-                    cmdPayments.ExecuteNonQuery()
-                End If
-
-
-                Dim cmdBills As New MySqlCommand("DELETE FROM bills WHERE tenant_id = @tenant_id", conn, transaction)
-                cmdBills.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                cmdBills.ExecuteNonQuery()
-
-
-                Dim cmdLease As New MySqlCommand("DELETE FROM leases WHERE tenant_id = @tenant_id", conn, transaction)
-                cmdLease.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                cmdLease.ExecuteNonQuery()
-
-
-                Dim cmdTenant As New MySqlCommand("DELETE FROM tenants WHERE tenant_id = @tenant_id", conn, transaction)
-                cmdTenant.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-                cmdTenant.ExecuteNonQuery()
-
-                transaction.Commit()
-
-                MessageBox.Show("Tenant deleted successfully!")
+                MessageBox.Show("Tenant reactivated successfully!")
                 clearFields()
                 selectedTenantId = 0
                 loadTenants()
-
             Catch ex As Exception
-                transaction.Rollback()
-                MessageBox.Show("Delete failed, no changes were made: " & ex.Message)
+                MessageBox.Show("Error: " & ex.Message)
             End Try
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            If conn.State = ConnectionState.Open Then conn.Close()
-        End Try
+        Else
+
+            Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+            Dim conn As New MySqlConnection(connStr)
+
+            Try
+                conn.Open()
+
+                Dim cmdBillCount As New MySqlCommand("SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id", conn)
+                cmdBillCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                Dim billCount As Integer = Convert.ToInt32(cmdBillCount.ExecuteScalar())
+
+                Dim cmdLeaseCount As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE tenant_id = @tenant_id AND status = 'active'", conn)
+                cmdLeaseCount.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                Dim activeLeaseCount As Integer = Convert.ToInt32(cmdLeaseCount.ExecuteScalar())
+
+                Dim confirmMsg As String = "Are you sure you want to remove this tenant?" & vbCrLf & vbCrLf &
+                "This tenant will be marked as INACTIVE. Their billing and payment history " &
+                "(" & billCount & " bill(s)) will be KEPT for income/report accuracy."
+
+                If activeLeaseCount > 0 Then
+                    confirmMsg = confirmMsg & vbCrLf & vbCrLf & "Their active lease will be terminated and the unit freed up."
+                End If
+
+                Dim confirm = MessageBox.Show(confirmMsg, "Confirm Remove Tenant", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+                If confirm <> DialogResult.Yes Then
+                    conn.Close()
+                    Return
+                End If
+
+                Dim transaction As MySqlTransaction = conn.BeginTransaction()
+
+                Try
+                    Dim cmdGetActiveUnit As New MySqlCommand(
+                    "SELECT unit_id FROM leases WHERE tenant_id = @tenant_id AND status = 'active' LIMIT 1", conn, transaction)
+                    cmdGetActiveUnit.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                    Dim activeUnitId As Object = cmdGetActiveUnit.ExecuteScalar()
+
+                    Dim cmdTerminateLease As New MySqlCommand(
+                    "UPDATE leases SET status = 'terminated' WHERE tenant_id = @tenant_id AND status = 'active'", conn, transaction)
+                    cmdTerminateLease.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                    cmdTerminateLease.ExecuteNonQuery()
+
+                    If activeUnitId IsNot Nothing Then
+                        Dim cmdFreeUnit As New MySqlCommand(
+                        "UPDATE units SET unit_status = 'available' WHERE unit_id = @unit_id", conn, transaction)
+                        cmdFreeUnit.Parameters.AddWithValue("@unit_id", activeUnitId)
+                        cmdFreeUnit.ExecuteNonQuery()
+                    End If
+
+                    Dim cmdDeactivate As New MySqlCommand(
+                    "UPDATE tenants SET account_status = 'inactive' WHERE tenant_id = @tenant_id", conn, transaction)
+                    cmdDeactivate.Parameters.AddWithValue("@tenant_id", selectedTenantId)
+                    cmdDeactivate.ExecuteNonQuery()
+
+                    transaction.Commit()
+
+                    MessageBox.Show("Tenant removed. Billing history preserved for reports.")
+                    clearFields()
+                    selectedTenantId = 0
+                    loadTenants()
+
+                Catch ex As Exception
+                    transaction.Rollback()
+                    MessageBox.Show("Operation failed, no changes were made: " & ex.Message)
+                End Try
+
+            Catch ex As Exception
+                MessageBox.Show("Error: " & ex.Message)
+            Finally
+                If conn.State = ConnectionState.Open Then
+                    conn.Close()
+                End If
+            End Try
+
+        End If
     End Sub
 
     Private Sub addTenantBtn_Click(sender As Object, e As EventArgs) Handles addTenantBtn.Click
@@ -259,6 +286,8 @@ Public Class Form8
         LeaseStarttxt.Text = ""
         LeaseEndtxt.Text = ""
         selectedTenantId = 0
+        selectedAccountStatus = "active"
+        deleteBtn.Text = "Delete"
     End Sub
 
     Private Sub Loclbl_Click(sender As Object, e As EventArgs) Handles Loclbl.Click

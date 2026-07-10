@@ -74,6 +74,7 @@ Partial Class Form8
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.showInactiveChk = New System.Windows.Forms.CheckBox()
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -526,6 +527,7 @@ Partial Class Form8
         Me.Panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.showInactiveChk)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.addTenantBtn)
@@ -677,6 +679,16 @@ Partial Class Form8
         Me.Panel2.Size = New System.Drawing.Size(863, 106)
         Me.Panel2.TabIndex = 11
         '
+        'showInactiveChk
+        '
+        Me.showInactiveChk.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.showInactiveChk.Location = New System.Drawing.Point(590, 38)
+        Me.showInactiveChk.Name = "showInactiveChk"
+        Me.showInactiveChk.Size = New System.Drawing.Size(166, 24)
+        Me.showInactiveChk.TabIndex = 14
+        Me.showInactiveChk.Text = "Show Inactive Tenants"
+        Me.showInactiveChk.UseVisualStyleBackColor = False
+        '
         'Form8
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -758,4 +770,5 @@ Partial Class Form8
     Friend WithEvents Label20 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents showInactiveChk As CheckBox
 End Class
