@@ -170,4 +170,8 @@ Public Class Form2
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
+    End Sub
 End Class

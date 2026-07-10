@@ -211,4 +211,8 @@ Public Class Form3
     Private Sub btnSignOut_Click(sender As Object, e As EventArgs)
         Session.SignOut(Me)
     End Sub
+
+    Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
+    End Sub
 End Class
