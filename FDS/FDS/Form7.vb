@@ -3,6 +3,10 @@ Public Class Form7
 
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        statusCmb.Items.Clear()
+        statusCmb.Items.AddRange({"occupied", "maintenance", "available"})
+        statusCmb.DropDownStyle = ComboBoxStyle.DropDownList
+
         loadUnits()
     End Sub
 
@@ -58,6 +62,23 @@ Public Class Form7
             conn.Open()
 
             Dim selectedUnitNumber = UnitsGrid.SelectedRows(0).Cells("Unit #").Value.ToString()
+            Dim unitId As Integer = Convert.ToInt32(UnitsGrid.SelectedRows(0).Cells("unit_id").Value)
+
+
+            If Not statusCmb.Text.Equals("occupied", StringComparison.OrdinalIgnoreCase) Then
+                Dim checkQuery As String = "SELECT COUNT(*) FROM leases WHERE unit_id = @unit_id AND status = 'active'"
+                Dim checkCmd As New MySqlCommand(checkQuery, conn)
+                checkCmd.Parameters.AddWithValue("@unit_id", unitId)
+
+                Dim activeLeaseCount As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+
+                If activeLeaseCount > 0 Then
+                    MessageBox.Show("Cannot change status of Unit " & selectedUnitNumber & " because it still has an active tenant. Please end or reassign the lease first.",
+                                     "Cannot Update", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                End If
+            End If
+
 
             Dim query As String = "UPDATE units SET type = @type, floor = @floor, " &
                                    "monthly_rate = @monthly_rate, unit_status = @unit_status " &
