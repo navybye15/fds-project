@@ -317,7 +317,7 @@ Partial Class Form1
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(151, 18)
         Me.Label34.TabIndex = 9
-        Me.Label34.Text = "Outstanding Report"
+        Me.Label34.Text = "Outstanding Balance"
         '
         'PictureBox2
         '

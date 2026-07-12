@@ -6,16 +6,18 @@
 
 
     Public Sub SignOut(currentForm As Form)
-
         CurrentUserID = 0
         CurrentTenantID = 0
         CurrentTenantName = Nothing
         CurrentRole = Nothing
 
-        Dim loginForm As New Form5()
-        loginForm.Show()
+        Form5.usernametxt.Text = ""
+        Form5.passwordtxt.Text = ""
+        Form5.Show()
 
-        currentForm.Close()
-
+        Dim allForms = Application.OpenForms.Cast(Of Form)().ToList()
+        For Each f In allForms
+            If f IsNot Form5 Then f.Close()
+        Next
     End Sub
 End Module
