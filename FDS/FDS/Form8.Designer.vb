@@ -36,6 +36,10 @@ Partial Class Form8
         Me.TenantsGrid = New System.Windows.Forms.DataGridView()
         Me.totalTenantsLbl = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -75,12 +79,9 @@ Partial Class Form8
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +94,6 @@ Partial Class Form8
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label4
@@ -207,11 +207,13 @@ Partial Class Form8
         Me.TenantsGrid.AllowUserToDeleteRows = False
         Me.TenantsGrid.AllowUserToResizeColumns = False
         Me.TenantsGrid.AllowUserToResizeRows = False
+        Me.TenantsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.TenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TenantsGrid.Location = New System.Drawing.Point(36, 131)
         Me.TenantsGrid.Name = "TenantsGrid"
         Me.TenantsGrid.ReadOnly = True
         Me.TenantsGrid.RowHeadersWidth = 51
+        Me.TenantsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.TenantsGrid.RowTemplate.Height = 24
         Me.TenantsGrid.Size = New System.Drawing.Size(863, 381)
         Me.TenantsGrid.TabIndex = 12
@@ -260,6 +262,51 @@ Partial Class Form8
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 24
+        '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.btnSignOut)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.Label21)
+        Me.Panel5.Location = New System.Drawing.Point(1, 730)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(318, 89)
+        Me.Panel5.TabIndex = 19
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label21
+        '
+        Me.Label21.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label21.Location = New System.Drawing.Point(37, 44)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(146, 18)
+        Me.Label21.TabIndex = 12
+        Me.Label21.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label6
         '
@@ -695,51 +742,6 @@ Partial Class Form8
         Me.Panel2.Size = New System.Drawing.Size(863, 106)
         Me.Panel2.TabIndex = 11
         '
-        'Panel5
-        '
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.btnSignOut)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Controls.Add(Me.Label21)
-        Me.Panel5.Location = New System.Drawing.Point(1, 730)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(318, 89)
-        Me.Panel5.TabIndex = 19
-        '
-        'btnSignOut
-        '
-        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 14
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(36, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Admin Manager"
-        '
-        'Label21
-        '
-        Me.Label21.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label21.Location = New System.Drawing.Point(37, 44)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(146, 18)
-        Me.Label21.TabIndex = 12
-        Me.Label21.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'Form8
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -752,6 +754,7 @@ Partial Class Form8
         Me.Text = "Form8"
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -765,7 +768,6 @@ Partial Class Form8
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -38,11 +38,12 @@ Partial Class Form5
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(444, 149)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(348, 477)
         Me.Button1.TabIndex = 0
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label8
         '

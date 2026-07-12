@@ -26,10 +26,7 @@ Public Class Form6
 
 
 
-            Dim cmdActive As New MySqlCommand(
-            "SELECT COUNT(*) FROM leases WHERE status = 'active' " &
-            "AND MONTH(lease_start) = MONTH(CURDATE()) " &
-            "AND YEAR(lease_start) = YEAR(CURDATE())", conn)
+            Dim cmdActive As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE status = 'active'", conn)
             activeTenantsLbl.Text = cmdActive.ExecuteScalar().ToString() & " Active Tenants"
 
 
@@ -72,13 +69,14 @@ Public Class Form6
             conn.Open()
 
             Dim query As String = "SELECT t.full_name AS 'Tenant Name', " &
-                                   "u.unit_number AS 'Unit', " &
-                                   "u.type AS 'Unit Type', " &
-                                   "l.status AS 'Status' " &
-                                   "FROM leases l " &
-                                   "JOIN tenants t ON l.tenant_id = t.tenant_id " &
-                                   "JOIN units u ON l.unit_id = u.unit_id " &
-                                   "ORDER BY l.lease_start DESC"
+                               "u.unit_number AS 'Unit', " &
+                               "u.type AS 'Unit Type', " &
+                               "l.status AS 'Status' " &
+                               "FROM leases l " &
+                               "JOIN tenants t ON l.tenant_id = t.tenant_id " &
+                               "JOIN units u ON l.unit_id = u.unit_id " &
+                               "ORDER BY l.lease_start DESC " &
+                               "LIMIT 5"
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)

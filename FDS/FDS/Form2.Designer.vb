@@ -29,6 +29,12 @@ Partial Class Form2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TenantNamelbl = New System.Windows.Forms.Label()
+        Me.Unitlbl = New System.Windows.Forms.Label()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -86,14 +92,12 @@ Partial Class Form2
         Me.Label33 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.unitCodeMainlbl = New System.Windows.Forms.Label()
-        Me.TenantNamelbl = New System.Windows.Forms.Label()
-        Me.Unitlbl = New System.Windows.Forms.Label()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,7 +106,6 @@ Partial Class Form2
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -186,6 +189,73 @@ Partial Class Form2
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1249, 66)
         Me.Panel2.TabIndex = 4
+        '
+        'TenantNamelbl
+        '
+        Me.TenantNamelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.TenantNamelbl.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TenantNamelbl.ForeColor = System.Drawing.Color.White
+        Me.TenantNamelbl.Location = New System.Drawing.Point(940, 15)
+        Me.TenantNamelbl.Name = "TenantNamelbl"
+        Me.TenantNamelbl.Size = New System.Drawing.Size(180, 22)
+        Me.TenantNamelbl.TabIndex = 23
+        Me.TenantNamelbl.Text = "Name"
+        '
+        'Unitlbl
+        '
+        Me.Unitlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Unitlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Unitlbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Unitlbl.Location = New System.Drawing.Point(941, 37)
+        Me.Unitlbl.Name = "Unitlbl"
+        Me.Unitlbl.Size = New System.Drawing.Size(146, 18)
+        Me.Unitlbl.TabIndex = 22
+        Me.Unitlbl.Text = "unit"
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSignOut.Location = New System.Drawing.Point(1128, 17)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 21
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label15.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(101, 15)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(195, 22)
+        Me.Label15.TabIndex = 20
+        Me.Label15.Text = "ISA-RMS"
+        '
+        'Label17
+        '
+        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label17.Location = New System.Drawing.Point(106, 42)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(146, 18)
+        Me.Label17.TabIndex = 18
+        Me.Label17.Text = "Tenant Portal"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
+        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
         '
         'Panel3
         '
@@ -685,6 +755,9 @@ Partial Class Form2
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.SystemColors.Menu
+        Me.Panel4.Controls.Add(Me.Label20)
+        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label32)
         Me.Panel4.Controls.Add(Me.statuslbl)
         Me.Panel4.Controls.Add(Me.depositlbl)
@@ -737,38 +810,38 @@ Partial Class Form2
         'statuslbl
         '
         Me.statuslbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.statuslbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statuslbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statuslbl.ForeColor = System.Drawing.SystemColors.Control
         Me.statuslbl.Location = New System.Drawing.Point(362, 260)
         Me.statuslbl.Name = "statuslbl"
         Me.statuslbl.Size = New System.Drawing.Size(129, 27)
         Me.statuslbl.TabIndex = 16
         Me.statuslbl.Text = "Status"
-        Me.statuslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.statuslbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'depositlbl
         '
         Me.depositlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.depositlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depositlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.depositlbl.ForeColor = System.Drawing.SystemColors.Control
         Me.depositlbl.Location = New System.Drawing.Point(218, 260)
         Me.depositlbl.Name = "depositlbl"
         Me.depositlbl.Size = New System.Drawing.Size(129, 27)
         Me.depositlbl.TabIndex = 16
         Me.depositlbl.Text = "Deposit"
-        Me.depositlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.depositlbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'rentPricelbl
         '
         Me.rentPricelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.rentPricelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rentPricelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rentPricelbl.ForeColor = System.Drawing.SystemColors.Control
         Me.rentPricelbl.Location = New System.Drawing.Point(74, 260)
         Me.rentPricelbl.Name = "rentPricelbl"
         Me.rentPricelbl.Size = New System.Drawing.Size(129, 27)
         Me.rentPricelbl.TabIndex = 16
         Me.rentPricelbl.Text = "Rent Price"
-        Me.rentPricelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.rentPricelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'contractDatelbl
         '
@@ -872,72 +945,41 @@ Partial Class Form2
         Me.unitCodeMainlbl.TabIndex = 4
         Me.unitCodeMainlbl.Text = "UNIT CODE"
         '
-        'TenantNamelbl
+        'Label8
         '
-        Me.TenantNamelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.TenantNamelbl.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TenantNamelbl.ForeColor = System.Drawing.Color.White
-        Me.TenantNamelbl.Location = New System.Drawing.Point(940, 15)
-        Me.TenantNamelbl.Name = "TenantNamelbl"
-        Me.TenantNamelbl.Size = New System.Drawing.Size(180, 22)
-        Me.TenantNamelbl.TabIndex = 23
-        Me.TenantNamelbl.Text = "Name"
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label8.Location = New System.Drawing.Point(74, 262)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(37, 24)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Rent:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Unitlbl
+        'Label9
         '
-        Me.Unitlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Unitlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Unitlbl.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Unitlbl.Location = New System.Drawing.Point(941, 37)
-        Me.Unitlbl.Name = "Unitlbl"
-        Me.Unitlbl.Size = New System.Drawing.Size(146, 18)
-        Me.Unitlbl.TabIndex = 22
-        Me.Unitlbl.Text = "unit"
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label9.Location = New System.Drawing.Point(218, 262)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(44, 23)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Deposit"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btnSignOut
+        'Label20
         '
-        Me.btnSignOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSignOut.Location = New System.Drawing.Point(1128, 17)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 21
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label15
-        '
-        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label15.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(101, 15)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(195, 22)
-        Me.Label15.TabIndex = 20
-        Me.Label15.Text = "ISA-RMS"
-        '
-        'Label17
-        '
-        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label17.Location = New System.Drawing.Point(106, 42)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(146, 18)
-        Me.Label17.TabIndex = 18
-        Me.Label17.Text = "Tenant Portal"
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
-        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 19
-        Me.PictureBox8.TabStop = False
+        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label20.Location = New System.Drawing.Point(362, 262)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(41, 24)
+        Me.Label20.TabIndex = 18
+        Me.Label20.Text = "Staus:"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Form2
         '
@@ -952,6 +994,7 @@ Partial Class Form2
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -960,7 +1003,6 @@ Partial Class Form2
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1034,4 +1076,7 @@ Partial Class Form2
     Friend WithEvents Label15 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label9 As Label
 End Class

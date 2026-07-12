@@ -19,7 +19,10 @@ Public Class Form19
 
         ShowOccupancyTab()
     End Sub
-
+    Public Sub RefreshAndShow()
+        ShowOccupancyTab()
+        Me.Show()
+    End Sub
 
     Private Sub Label32_Click(sender As Object, e As EventArgs) Handles Label32.Click
         ShowOccupancyTab()
@@ -513,38 +516,35 @@ Public Class Form19
         Me.Hide()
     End Sub
 
+
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        Form7.Show()
+        Form7.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-        Form8.Show()
+        Form8.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-        Form9.Show()
+        Form9.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Form12.Show()
+        Form12.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-        Form15.Show()
+        Form15.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-        Form18.Show()
+        Form18.RefreshAndShow()
         Me.Hide()
-    End Sub
-
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
-
     End Sub
 
     Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click

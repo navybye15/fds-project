@@ -9,6 +9,11 @@ Public Class Form12
         loadExpenses()
     End Sub
 
+    Public Sub RefreshAndShow()
+        loadExpenses()
+        Me.Show()
+    End Sub
+
     Private Sub loadExpenses()
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
         Dim conn As New MySqlConnection(connStr)
@@ -238,29 +243,29 @@ Public Class Form12
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        Form7.Show()
+        Form7.RefreshAndShow()
         Me.Hide()
 
     End Sub
 
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-        Form8.Show()
+        Form8.RefreshAndShow()
         Me.Hide()
 
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-        Form9.Show()
+        Form9.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-        Form15.Show()
+        Form15.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-        Form18.Show()
+        Form18.RefreshAndShow()
         Me.Hide()
     End Sub
 
@@ -273,11 +278,7 @@ Public Class Form12
     End Sub
 
     Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
-        Form19.Show()
+        Form19.RefreshAndShow()
         Me.Hide()
-    End Sub
-
-    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
-        Session.SignOut(Me)
     End Sub
 End Class

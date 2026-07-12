@@ -23,6 +23,10 @@ Partial Class Form12
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -85,11 +89,8 @@ Partial Class Form12
         Me.DescriptionTxt = New System.Windows.Forms.TextBox()
         Me.UnitCmb = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.btnSignOut = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,7 +103,6 @@ Partial Class Form12
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -139,6 +139,51 @@ Partial Class Form12
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 858)
         Me.Panel3.TabIndex = 25
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.btnSignOut)
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Location = New System.Drawing.Point(2, 768)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(318, 89)
+        Me.Panel2.TabIndex = 17
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label19
+        '
+        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label19.Location = New System.Drawing.Point(37, 44)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(146, 18)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label6
         '
@@ -561,19 +606,21 @@ Partial Class Form12
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(1009, 89)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(211, 90)
         Me.Button4.TabIndex = 31
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(575, 89)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(211, 90)
         Me.Button2.TabIndex = 32
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label27
         '
@@ -599,19 +646,21 @@ Partial Class Form12
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(792, 89)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(211, 90)
         Me.Button3.TabIndex = 35
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(358, 89)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(211, 90)
         Me.Button1.TabIndex = 36
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel5
         '
@@ -647,6 +696,8 @@ Partial Class Form12
         '
         'ExpenseRecGrid
         '
+        Me.ExpenseRecGrid.AllowUserToAddRows = False
+        Me.ExpenseRecGrid.AllowUserToDeleteRows = False
         Me.ExpenseRecGrid.AllowUserToResizeColumns = False
         Me.ExpenseRecGrid.AllowUserToResizeRows = False
         Me.ExpenseRecGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -655,6 +706,7 @@ Partial Class Form12
         Me.ExpenseRecGrid.Name = "ExpenseRecGrid"
         Me.ExpenseRecGrid.ReadOnly = True
         Me.ExpenseRecGrid.RowHeadersWidth = 51
+        Me.ExpenseRecGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ExpenseRecGrid.RowTemplate.Height = 24
         Me.ExpenseRecGrid.Size = New System.Drawing.Size(862, 345)
         Me.ExpenseRecGrid.TabIndex = 43
@@ -787,51 +839,6 @@ Partial Class Form12
         Me.Label4.TabIndex = 59
         Me.Label4.Text = "Unit Number:"
         '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.btnSignOut)
-        Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Controls.Add(Me.Label19)
-        Me.Panel2.Location = New System.Drawing.Point(2, 768)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(318, 89)
-        Me.Panel2.TabIndex = 17
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(36, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Admin Manager"
-        '
-        'Label19
-        '
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label19.Location = New System.Drawing.Point(37, 44)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(146, 18)
-        Me.Label19.TabIndex = 12
-        Me.Label19.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'btnSignOut
-        '
-        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 14
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -874,6 +881,7 @@ Partial Class Form12
         Me.Name = "Form12"
         Me.Text = "Form12"
         Me.Panel3.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -886,7 +894,6 @@ Partial Class Form12
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         CType(Me.ExpenseRecGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

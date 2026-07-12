@@ -40,6 +40,12 @@ Partial Class Form4
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TenantNamelbl = New System.Windows.Forms.Label()
+        Me.Unitlbl = New System.Windows.Forms.Label()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -56,13 +62,8 @@ Partial Class Form4
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TenantNamelbl = New System.Windows.Forms.Label()
-        Me.Unitlbl = New System.Windows.Forms.Label()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PaymentHistoryGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +73,6 @@ Partial Class Form4
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label34
@@ -270,6 +270,73 @@ Partial Class Form4
         Me.Panel2.Size = New System.Drawing.Size(1249, 66)
         Me.Panel2.TabIndex = 12
         '
+        'TenantNamelbl
+        '
+        Me.TenantNamelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.TenantNamelbl.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TenantNamelbl.ForeColor = System.Drawing.Color.White
+        Me.TenantNamelbl.Location = New System.Drawing.Point(940, 15)
+        Me.TenantNamelbl.Name = "TenantNamelbl"
+        Me.TenantNamelbl.Size = New System.Drawing.Size(180, 22)
+        Me.TenantNamelbl.TabIndex = 23
+        Me.TenantNamelbl.Text = "Name"
+        '
+        'Unitlbl
+        '
+        Me.Unitlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Unitlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Unitlbl.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Unitlbl.Location = New System.Drawing.Point(941, 37)
+        Me.Unitlbl.Name = "Unitlbl"
+        Me.Unitlbl.Size = New System.Drawing.Size(146, 18)
+        Me.Unitlbl.TabIndex = 22
+        Me.Unitlbl.Text = "unit"
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSignOut.Location = New System.Drawing.Point(1128, 17)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 21
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label15.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(101, 15)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(195, 22)
+        Me.Label15.TabIndex = 20
+        Me.Label15.Text = "ISA-RMS"
+        '
+        'Label17
+        '
+        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label17.Location = New System.Drawing.Point(106, 42)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(146, 18)
+        Me.Label17.TabIndex = 18
+        Me.Label17.Text = "Tenant Portal"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
+        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
+        '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -372,13 +439,19 @@ Partial Class Form4
         '
         'PaymentHistoryGrid
         '
+        Me.PaymentHistoryGrid.AllowUserToAddRows = False
+        Me.PaymentHistoryGrid.AllowUserToDeleteRows = False
+        Me.PaymentHistoryGrid.AllowUserToResizeColumns = False
+        Me.PaymentHistoryGrid.AllowUserToResizeRows = False
+        Me.PaymentHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PaymentHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PaymentHistoryGrid.Location = New System.Drawing.Point(46, 130)
         Me.PaymentHistoryGrid.Name = "PaymentHistoryGrid"
         Me.PaymentHistoryGrid.ReadOnly = True
         Me.PaymentHistoryGrid.RowHeadersWidth = 51
+        Me.PaymentHistoryGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.PaymentHistoryGrid.RowTemplate.Height = 24
-        Me.PaymentHistoryGrid.Size = New System.Drawing.Size(810, 278)
+        Me.PaymentHistoryGrid.Size = New System.Drawing.Size(810, 391)
         Me.PaymentHistoryGrid.TabIndex = 10
         '
         'Panel3
@@ -477,73 +550,6 @@ Partial Class Form4
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'TenantNamelbl
-        '
-        Me.TenantNamelbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.TenantNamelbl.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TenantNamelbl.ForeColor = System.Drawing.Color.White
-        Me.TenantNamelbl.Location = New System.Drawing.Point(940, 15)
-        Me.TenantNamelbl.Name = "TenantNamelbl"
-        Me.TenantNamelbl.Size = New System.Drawing.Size(180, 22)
-        Me.TenantNamelbl.TabIndex = 23
-        Me.TenantNamelbl.Text = "Name"
-        '
-        'Unitlbl
-        '
-        Me.Unitlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Unitlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Unitlbl.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Unitlbl.Location = New System.Drawing.Point(941, 37)
-        Me.Unitlbl.Name = "Unitlbl"
-        Me.Unitlbl.Size = New System.Drawing.Size(146, 18)
-        Me.Unitlbl.TabIndex = 22
-        Me.Unitlbl.Text = "unit"
-        '
-        'btnSignOut
-        '
-        Me.btnSignOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSignOut.Location = New System.Drawing.Point(1128, 17)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 21
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label15
-        '
-        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label15.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(101, 15)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(195, 22)
-        Me.Label15.TabIndex = 20
-        Me.Label15.Text = "ISA-RMS"
-        '
-        'Label17
-        '
-        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label17.Location = New System.Drawing.Point(106, 42)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(146, 18)
-        Me.Label17.TabIndex = 18
-        Me.Label17.Text = "Tenant Portal"
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
-        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 19
-        Me.PictureBox8.TabStop = False
-        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -556,6 +562,7 @@ Partial Class Form4
         Me.Name = "Form4"
         Me.Text = "Form4"
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PaymentHistoryGrid, System.ComponentModel.ISupportInitialize).EndInit()
@@ -565,7 +572,6 @@ Partial Class Form4
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

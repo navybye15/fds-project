@@ -6,6 +6,11 @@ Public Class Form9
         loadLeases()
     End Sub
 
+    Public Sub RefreshAndShow()
+        loadLeases()
+        Me.Show()
+    End Sub
+
     Private Sub loadLeases()
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
         Dim conn As New MySqlConnection(connStr)
@@ -59,7 +64,17 @@ Public Class Form9
             Return
         End If
 
-        Dim confirm = MessageBox.Show("Renew this lease for another year? A new lease record will be created.", "Confirm Renew", MessageBoxButtons.YesNo)
+        Dim newStart As Date = renewStartPicker.Value
+        Dim newEnd As Date = renewEndPicker.Value
+
+        If newEnd <= newStart Then
+            MessageBox.Show("End date must be after the start date.")
+            Return
+        End If
+
+        Dim confirm = MessageBox.Show("Renew this lease from " & newStart.ToString("yyyy-MM-dd") &
+            " to " & newEnd.ToString("yyyy-MM-dd") & "? A new lease record will be created.",
+            "Confirm Renew", MessageBoxButtons.YesNo)
         If confirm <> DialogResult.Yes Then Return
 
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
@@ -71,19 +86,17 @@ Public Class Form9
 
             Dim tenantId As String = ""
             Dim unitId As String = ""
-            Dim oldEndText As String = ""
             Dim rent As String = ""
             Dim deposit As String = ""
 
             Dim cmdGet As New MySqlCommand(
-                "SELECT tenant_id, unit_id, lease_end, monthly_rent, security_deposit FROM leases WHERE lease_id = @lease_id", conn)
+                "SELECT tenant_id, unit_id, monthly_rent, security_deposit FROM leases WHERE lease_id = @lease_id", conn)
             cmdGet.Parameters.AddWithValue("@lease_id", selectedLeaseId)
 
             Dim reader = cmdGet.ExecuteReader()
             If reader.Read() Then
                 tenantId = reader("tenant_id").ToString()
                 unitId = reader("unit_id").ToString()
-                oldEndText = reader("lease_end").ToString()
                 rent = reader("monthly_rent").ToString()
                 deposit = reader("security_deposit").ToString()
             End If
@@ -95,16 +108,9 @@ Public Class Form9
                 Return
             End If
 
-
-            Dim oldEnd As Date = Convert.ToDateTime(oldEndText)
-            Dim newStart As Date = oldEnd.AddDays(1)
-            Dim newEnd As Date = newStart.AddYears(1)
-
-
             Dim cmdExpire As New MySqlCommand("UPDATE leases SET status = 'expired' WHERE lease_id = @lease_id", conn)
             cmdExpire.Parameters.AddWithValue("@lease_id", selectedLeaseId)
             cmdExpire.ExecuteNonQuery()
-
 
             Dim cmdNew As New MySqlCommand(
                 "INSERT INTO leases (tenant_id, unit_id, lease_start, lease_end, monthly_rent, security_deposit, status) " &
@@ -116,6 +122,10 @@ Public Class Form9
             cmdNew.Parameters.AddWithValue("@rent", rent)
             cmdNew.Parameters.AddWithValue("@deposit", deposit)
             cmdNew.ExecuteNonQuery()
+
+            Dim cmdUnit As New MySqlCommand("UPDATE units SET unit_status = 'occupied' WHERE unit_id = @unit_id", conn)
+            cmdUnit.Parameters.AddWithValue("@unit_id", unitId)
+            cmdUnit.ExecuteNonQuery()
 
             conn.Close()
 
@@ -171,7 +181,7 @@ Public Class Form9
     End Sub
 
     Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
-        Form19.Show()
+        Form19.RefreshAndShow()
         Me.Hide()
     End Sub
 
@@ -181,29 +191,29 @@ Public Class Form9
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        Form7.Show()
+        Form7.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-        Form8.Show()
+        Form8.RefreshAndShow()
         Me.Hide()
     End Sub
 
 
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-        Form15.Show()
+        Form15.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
-        Form18.Show()
+        Form18.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-        Form12.Show()
+        Form12.RefreshAndShow()
         Me.Hide()
     End Sub
 

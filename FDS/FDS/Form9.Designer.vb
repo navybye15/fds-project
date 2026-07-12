@@ -48,6 +48,10 @@ Partial Class Form9
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -58,15 +62,16 @@ Partial Class Form9
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.renewStartPicker = New System.Windows.Forms.DateTimePicker()
+        Me.renewEndPicker = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel4.SuspendLayout()
         CType(Me.LeasesGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,7 +81,6 @@ Partial Class Form9
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'renewBtn
@@ -207,9 +211,13 @@ Partial Class Form9
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.renewStartPicker)
         Me.Panel4.Controls.Add(Me.endBtn)
+        Me.Panel4.Controls.Add(Me.renewEndPicker)
         Me.Panel4.Controls.Add(Me.renewBtn)
+        Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.LeasesGrid)
+        Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Location = New System.Drawing.Point(317, 85)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -223,11 +231,13 @@ Partial Class Form9
         Me.LeasesGrid.AllowUserToDeleteRows = False
         Me.LeasesGrid.AllowUserToResizeColumns = False
         Me.LeasesGrid.AllowUserToResizeRows = False
+        Me.LeasesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.LeasesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.LeasesGrid.Location = New System.Drawing.Point(36, 131)
         Me.LeasesGrid.Name = "LeasesGrid"
         Me.LeasesGrid.ReadOnly = True
         Me.LeasesGrid.RowHeadersWidth = 51
+        Me.LeasesGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.LeasesGrid.RowTemplate.Height = 24
         Me.LeasesGrid.Size = New System.Drawing.Size(863, 381)
         Me.LeasesGrid.TabIndex = 12
@@ -384,6 +394,51 @@ Partial Class Form9
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 27
         '
+        'Panel5
+        '
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.btnSignOut)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.Label8)
+        Me.Panel5.Location = New System.Drawing.Point(1, 732)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(318, 89)
+        Me.Panel5.TabIndex = 31
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label8.Location = New System.Drawing.Point(37, 44)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(146, 18)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -509,50 +564,45 @@ Partial Class Form9
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'Panel5
+        'renewStartPicker
         '
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.btnSignOut)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Controls.Add(Me.Label8)
-        Me.Panel5.Location = New System.Drawing.Point(1, 732)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(318, 89)
-        Me.Panel5.TabIndex = 31
+        Me.renewStartPicker.CustomFormat = ""
+        Me.renewStartPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.renewStartPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.renewStartPicker.Location = New System.Drawing.Point(263, 552)
+        Me.renewStartPicker.Name = "renewStartPicker"
+        Me.renewStartPicker.Size = New System.Drawing.Size(171, 30)
+        Me.renewStartPicker.TabIndex = 59
         '
-        'btnSignOut
+        'renewEndPicker
         '
-        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 14
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.renewEndPicker.CustomFormat = ""
+        Me.renewEndPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.renewEndPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.renewEndPicker.Location = New System.Drawing.Point(453, 552)
+        Me.renewEndPicker.Name = "renewEndPicker"
+        Me.renewEndPicker.Size = New System.Drawing.Size(171, 30)
+        Me.renewEndPicker.TabIndex = 58
         '
-        'Label9
+        'Label6
         '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(36, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Admin Manager"
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(260, 529)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 20)
+        Me.Label6.TabIndex = 57
+        Me.Label6.Text = "Lease Start"
         '
-        'Label8
+        'Label19
         '
-        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label8.Location = New System.Drawing.Point(37, 44)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(146, 18)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label19.Location = New System.Drawing.Point(450, 529)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(80, 20)
+        Me.Label19.TabIndex = 56
+        Me.Label19.Text = "Lease End"
         '
         'Form9
         '
@@ -569,6 +619,7 @@ Partial Class Form9
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -578,7 +629,6 @@ Partial Class Form9
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -623,4 +673,8 @@ Partial Class Form9
     Friend WithEvents btnSignOut As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents renewStartPicker As DateTimePicker
+    Friend WithEvents renewEndPicker As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label19 As Label
 End Class

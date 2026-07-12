@@ -77,7 +77,7 @@ Public Class Form16
         recomputeTotal()
     End Sub
 
-    Private Sub btnAddBill_Click(sender As Object, e As EventArgs) Handles Addbillbtn.Click
+    Private Sub Addbillbtn_Click(sender As Object, e As EventArgs) Handles Addbillbtn.Click
         If tenantCmb.SelectedIndex = -1 Then
             MessageBox.Show("Please select a tenant.")
             Return
@@ -95,8 +95,21 @@ Public Class Form16
         Try
             conn.Open()
 
+            Dim cmdCheck As New MySqlCommand(
+            "SELECT COUNT(*) FROM bills WHERE tenant_id = @tenant_id AND unit_id = @unit_id AND billing_month = @month", conn)
+            cmdCheck.Parameters.AddWithValue("@tenant_id", tenantId)
+            cmdCheck.Parameters.AddWithValue("@unit_id", unitId)
+            cmdCheck.Parameters.AddWithValue("@month", monthCmb.Text)
+            Dim existingCount As Integer = Convert.ToInt32(cmdCheck.ExecuteScalar())
+
+            If existingCount > 0 Then
+                MessageBox.Show("A bill for this tenant and billing month already exists.")
+                conn.Close()
+                Return
+            End If
+
             Dim query As String = "INSERT INTO bills (tenant_id, unit_id, billing_month, base_rent, addtional_charges, due_date, status) " &
-                                   "VALUES (@tenant_id, @unit_id, @month, @base_rent, @add_charges, @due_date, 'unpaid')"
+                               "VALUES (@tenant_id, @unit_id, @month, @base_rent, @add_charges, @due_date, 'unpaid')"
 
             Dim cmd As New MySqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@tenant_id", tenantId)
@@ -104,7 +117,7 @@ Public Class Form16
             cmd.Parameters.AddWithValue("@month", monthCmb.Text)
             cmd.Parameters.AddWithValue("@base_rent", Convert.ToDecimal(baseTxt.Text))
             cmd.Parameters.AddWithValue("@add_charges",
-                If(String.IsNullOrWhiteSpace(addTxt.Text), 0D, Convert.ToDecimal(addTxt.Text)))
+            If(String.IsNullOrWhiteSpace(addTxt.Text), 0D, Convert.ToDecimal(addTxt.Text)))
             cmd.Parameters.AddWithValue("@due_date", Datepick.Value.Date)
             cmd.ExecuteNonQuery()
 
@@ -120,5 +133,6 @@ Public Class Form16
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
         Me.Close()
     End Sub
+
 
 End Class

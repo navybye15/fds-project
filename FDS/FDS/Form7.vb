@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Form7
-
+    Public Sub RefreshAndShow()
+        loadUnits()
+        Me.Show()
+    End Sub
 
     Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         statusCmb.Items.Clear()
@@ -22,7 +25,10 @@ Public Class Form7
 
 
             Dim query As String = "SELECT u.unit_id, u.unit_number AS 'Unit #', u.type AS 'Type', u.floor AS 'Floor', " &
-                                   "u.monthly_rate AS 'Monthly Rate', u.unit_status AS 'Status', t.full_name AS 'Tenant' FROM units u LEFT JOIN leases l ON u.unit_id = l.unit_id JOIN tenants t ON l.tenant_id = t.tenant_id"
+                       "u.monthly_rate AS 'Monthly Rate', u.unit_status AS 'Status', t.full_name AS 'Tenant' " &
+                       "FROM units u " &
+                       "LEFT JOIN leases l ON u.unit_id = l.unit_id AND l.status = 'active' " &
+                       "LEFT JOIN tenants t ON l.tenant_id = t.tenant_id"
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)

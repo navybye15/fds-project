@@ -23,6 +23,10 @@ Partial Class Form19
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -81,11 +85,8 @@ Partial Class Form19
         Me.Label4 = New System.Windows.Forms.Label()
         Me.label40 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +105,6 @@ Partial Class Form19
         Me.Panel6.SuspendLayout()
         CType(Me.ReportsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -141,6 +141,51 @@ Partial Class Form19
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 33
+        '
+        'Panel9
+        '
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.btnSignOut)
+        Me.Panel9.Controls.Add(Me.Label9)
+        Me.Panel9.Controls.Add(Me.Label19)
+        Me.Panel9.Location = New System.Drawing.Point(0, 729)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(326, 89)
+        Me.Panel9.TabIndex = 19
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label19
+        '
+        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label19.Location = New System.Drawing.Point(37, 44)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(146, 18)
+        Me.Label19.TabIndex = 12
+        Me.Label19.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label6
         '
@@ -745,11 +790,13 @@ Partial Class Form19
         Me.ReportsGrid.AllowUserToDeleteRows = False
         Me.ReportsGrid.AllowUserToResizeColumns = False
         Me.ReportsGrid.AllowUserToResizeRows = False
+        Me.ReportsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ReportsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ReportsGrid.Location = New System.Drawing.Point(36, 349)
         Me.ReportsGrid.Name = "ReportsGrid"
         Me.ReportsGrid.ReadOnly = True
         Me.ReportsGrid.RowHeadersWidth = 51
+        Me.ReportsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ReportsGrid.RowTemplate.Height = 24
         Me.ReportsGrid.Size = New System.Drawing.Size(863, 295)
         Me.ReportsGrid.TabIndex = 12
@@ -806,51 +853,6 @@ Partial Class Form19
         Me.Label28.Size = New System.Drawing.Size(93, 20)
         Me.Label28.TabIndex = 12
         '
-        'Panel9
-        '
-        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel9.Controls.Add(Me.btnSignOut)
-        Me.Panel9.Controls.Add(Me.Label9)
-        Me.Panel9.Controls.Add(Me.Label19)
-        Me.Panel9.Location = New System.Drawing.Point(0, 729)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(326, 89)
-        Me.Panel9.TabIndex = 19
-        '
-        'btnSignOut
-        '
-        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 14
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(36, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Admin Manager"
-        '
-        'Label19
-        '
-        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label19.Location = New System.Drawing.Point(37, 44)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(146, 18)
-        Me.Label19.TabIndex = 12
-        Me.Label19.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'Form19
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -862,6 +864,7 @@ Partial Class Form19
         Me.Name = "Form19"
         Me.Text = "Form19"
         Me.Panel3.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -880,7 +883,6 @@ Partial Class Form19
         Me.Panel6.ResumeLayout(False)
         CType(Me.ReportsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -23,6 +23,10 @@ Partial Class Form6
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnSignOut = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -76,11 +80,8 @@ Partial Class Form6
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dateLbl = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btnSignOut = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,7 +96,6 @@ Partial Class Form6
         CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -132,6 +132,51 @@ Partial Class Form6
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(321, 818)
         Me.Panel3.TabIndex = 18
+        '
+        'Panel6
+        '
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.btnSignOut)
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Controls.Add(Me.Label6)
+        Me.Panel6.Location = New System.Drawing.Point(-5, 729)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(326, 89)
+        Me.Panel6.TabIndex = 19
+        '
+        'btnSignOut
+        '
+        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
+        Me.btnSignOut.TabIndex = 14
+        Me.btnSignOut.Text = "Sign Out"
+        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(36, 22)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(225, 22)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Admin Manager"
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
+        Me.Label6.Location = New System.Drawing.Point(37, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(146, 18)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label13
         '
@@ -468,11 +513,13 @@ Partial Class Form6
         Me.RecentTenantsGrid.AllowUserToDeleteRows = False
         Me.RecentTenantsGrid.AllowUserToResizeColumns = False
         Me.RecentTenantsGrid.AllowUserToResizeRows = False
+        Me.RecentTenantsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.RecentTenantsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RecentTenantsGrid.Location = New System.Drawing.Point(36, 340)
         Me.RecentTenantsGrid.Name = "RecentTenantsGrid"
         Me.RecentTenantsGrid.ReadOnly = True
         Me.RecentTenantsGrid.RowHeadersWidth = 51
+        Me.RecentTenantsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.RecentTenantsGrid.RowTemplate.Height = 24
         Me.RecentTenantsGrid.Size = New System.Drawing.Size(862, 345)
         Me.RecentTenantsGrid.TabIndex = 15
@@ -585,19 +632,21 @@ Partial Class Form6
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(687, 167)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(211, 90)
         Me.Button4.TabIndex = 12
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(253, 167)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(211, 90)
         Me.Button2.TabIndex = 12
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label21
         '
@@ -634,19 +683,21 @@ Partial Class Form6
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(470, 167)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(211, 90)
         Me.Button3.TabIndex = 12
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(36, 167)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(211, 90)
         Me.Button1.TabIndex = 12
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -724,51 +775,6 @@ Partial Class Form6
         Me.dateLbl.TabIndex = 0
         Me.dateLbl.Text = "Date"
         '
-        'Panel6
-        '
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.btnSignOut)
-        Me.Panel6.Controls.Add(Me.Label9)
-        Me.Panel6.Controls.Add(Me.Label6)
-        Me.Panel6.Location = New System.Drawing.Point(-5, 729)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(326, 89)
-        Me.Panel6.TabIndex = 19
-        '
-        'btnSignOut
-        '
-        Me.btnSignOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btnSignOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignOut.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.btnSignOut.Location = New System.Drawing.Point(213, 33)
-        Me.btnSignOut.Name = "btnSignOut"
-        Me.btnSignOut.Size = New System.Drawing.Size(89, 25)
-        Me.btnSignOut.TabIndex = 14
-        Me.btnSignOut.Text = "Sign Out"
-        Me.btnSignOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(36, 22)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Admin Manager"
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label6.Location = New System.Drawing.Point(37, 44)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(146, 18)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Property Owner" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'Form6
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -780,6 +786,7 @@ Partial Class Form6
         Me.Name = "Form6"
         Me.Text = "Form6"
         Me.Panel3.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -794,7 +801,6 @@ Partial Class Form6
         CType(Me.RecentTenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel6.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

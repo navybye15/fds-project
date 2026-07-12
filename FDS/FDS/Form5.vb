@@ -13,13 +13,14 @@ Public Class Form5
         Try
             conn.Open()
 
-            Dim query As String = "SELECT u.user_id, u.role, t.tenant_id, t.full_name FROM users u LEFT JOIN tenants t ON u.user_id = t.user_id WHERE u.username = @u AND u.password = @p"
+            Dim query As String = "SELECT u.user_id, u.role, t.tenant_id, t.full_name, t.account_status FROM users u LEFT JOIN tenants t ON u.user_id = t.user_id WHERE u.username = @u AND u.password = @p"
             Dim cmd As New MySqlCommand(query, conn)
 
             cmd.Parameters.AddWithValue("@u", usernametxt.Text)
             cmd.Parameters.AddWithValue("@p", passwordtxt.Text)
 
             Dim reader = cmd.ExecuteReader()
+            Dim accountStatus As String = ""
 
             If reader.Read() Then
                 Session.CurrentUserID = reader("user_id")
@@ -28,16 +29,25 @@ Public Class Form5
                 If Session.CurrentRole = "tenant" Then
                     Session.CurrentTenantID = reader("tenant_id")
                     Session.CurrentTenantName = reader("full_name")
+                    accountStatus = reader("account_status")
 
+                    If accountStatus = "inactive" Then
+
+                        MessageBox.Show("Sorry, your account is currently inactive, please contact the landlord.")
+                        conn.Close()
+                        Return
+                    End If
 
                 End If
 
                 If Session.CurrentRole = "tenant" Then
-                    Form1.Show()
-                    Me.Hide()
 
-                ElseIf Session.CurrentRole = "admin" Then
-                    Form6.Show()
+
+                    Form1.Show()
+                        Me.Hide()
+
+                    ElseIf Session.CurrentRole = "admin" Then
+                        Form6.Show()
                     Me.Hide()
 
 

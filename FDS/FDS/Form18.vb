@@ -8,6 +8,11 @@ Public Class Form18
         loadPayments()
     End Sub
 
+    Public Sub RefreshAndShow()
+        loadPayments()
+        Me.Show()
+    End Sub
+
     Private Sub loadPayments()
         Dim conn As New MySqlConnection(connStr)
         Try
@@ -30,7 +35,6 @@ Public Class Form18
             PaymentsGrid.DataSource = dt
 
             conn.Close()
-
 
             Dim monthlyCount As Integer = 0
             Dim monthlyTotal As Decimal = 0
@@ -58,42 +62,40 @@ Public Class Form18
     End Sub
 
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        Form7.Show()
+        Form7.RefreshAndShow()
         Me.Hide()
-
 
     End Sub
 
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-        Form8.Show()
+        Form8.RefreshAndShow()
         Me.Hide()
 
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-        Form9.Show()
+        Form9.RefreshAndShow()
         Me.Hide()
 
     End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-        Form15.Show()
+        Form15.RefreshAndShow()
         Me.Hide()
 
     End Sub
 
     Private Sub Label16_Click(sender As Object, e As EventArgs) Handles Label16.Click
 
-
     End Sub
 
     Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
-        Form19.Show()
+        Form19.RefreshAndShow()
         Me.Hide()
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Form12.Show()
+        Form12.RefreshAndShow()
         Me.Hide()
 
     End Sub
