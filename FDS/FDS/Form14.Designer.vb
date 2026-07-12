@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form14
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,22 +20,22 @@ Partial Class Form14
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CancelBtn = New System.Windows.Forms.Button()
         Me.addUnitBtn = New System.Windows.Forms.Button()
         Me.monthlyTxt = New System.Windows.Forms.TextBox()
         Me.Loclbl = New System.Windows.Forms.Label()
-        Me.AmtTxt = New System.Windows.Forms.TextBox()
-        Me.floorTxt = New System.Windows.Forms.Label()
+        Me.floorTxt = New System.Windows.Forms.TextBox()
+        Me.label = New System.Windows.Forms.Label()
         Me.Typelbl = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.unitNumberTxt = New System.Windows.Forms.TextBox()
-        Me.typeTxt = New System.Windows.Forms.TextBox()
+        Me.typeCmb = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -88,24 +88,24 @@ Partial Class Form14
         Me.Loclbl.TabIndex = 81
         Me.Loclbl.Text = "Monthly Rate"
         '
-        'AmtTxt
-        '
-        Me.AmtTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AmtTxt.Location = New System.Drawing.Point(25, 206)
-        Me.AmtTxt.Multiline = True
-        Me.AmtTxt.Name = "AmtTxt"
-        Me.AmtTxt.Size = New System.Drawing.Size(262, 34)
-        Me.AmtTxt.TabIndex = 80
-        '
         'floorTxt
         '
-        Me.floorTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.floorTxt.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.floorTxt.Location = New System.Drawing.Point(22, 183)
+        Me.floorTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.floorTxt.Location = New System.Drawing.Point(25, 206)
+        Me.floorTxt.Multiline = True
         Me.floorTxt.Name = "floorTxt"
-        Me.floorTxt.Size = New System.Drawing.Size(160, 30)
-        Me.floorTxt.TabIndex = 79
-        Me.floorTxt.Text = "Floor"
+        Me.floorTxt.Size = New System.Drawing.Size(262, 34)
+        Me.floorTxt.TabIndex = 80
+        '
+        'label
+        '
+        Me.label.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.label.Location = New System.Drawing.Point(22, 183)
+        Me.label.Name = "label"
+        Me.label.Size = New System.Drawing.Size(160, 20)
+        Me.label.TabIndex = 79
+        Me.label.Text = "Floor"
         '
         'Typelbl
         '
@@ -169,29 +169,29 @@ Partial Class Form14
         Me.unitNumberTxt.Size = New System.Drawing.Size(262, 34)
         Me.unitNumberTxt.TabIndex = 80
         '
-        'typeTxt
+        'typeCmb
         '
-        Me.typeTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.typeTxt.Location = New System.Drawing.Point(304, 121)
-        Me.typeTxt.Multiline = True
-        Me.typeTxt.Name = "typeTxt"
-        Me.typeTxt.Size = New System.Drawing.Size(274, 34)
-        Me.typeTxt.TabIndex = 82
+        Me.typeCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.typeCmb.FormattingEnabled = True
+        Me.typeCmb.Location = New System.Drawing.Point(307, 122)
+        Me.typeCmb.Name = "typeCmb"
+        Me.typeCmb.Size = New System.Drawing.Size(274, 33)
+        Me.typeCmb.TabIndex = 86
         '
         'Form14
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(637, 473)
+        Me.Controls.Add(Me.typeCmb)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.addUnitBtn)
-        Me.Controls.Add(Me.typeTxt)
         Me.Controls.Add(Me.monthlyTxt)
         Me.Controls.Add(Me.unitNumberTxt)
         Me.Controls.Add(Me.Loclbl)
-        Me.Controls.Add(Me.AmtTxt)
         Me.Controls.Add(Me.floorTxt)
+        Me.Controls.Add(Me.label)
         Me.Controls.Add(Me.Typelbl)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
@@ -207,13 +207,13 @@ Partial Class Form14
     Friend WithEvents addUnitBtn As Button
     Friend WithEvents monthlyTxt As TextBox
     Friend WithEvents Loclbl As Label
-    Friend WithEvents AmtTxt As TextBox
-    Friend WithEvents floorTxt As Label
+    Friend WithEvents floorTxt As TextBox
+    Friend WithEvents label As Label
     Friend WithEvents Typelbl As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents unitNumberTxt As TextBox
-    Friend WithEvents typeTxt As TextBox
+    Friend WithEvents typeCmb As ComboBox
 End Class

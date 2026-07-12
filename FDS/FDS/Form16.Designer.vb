@@ -135,7 +135,7 @@ Partial Class Form16
         Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Typelbl.Location = New System.Drawing.Point(27, 99)
         Me.Typelbl.Name = "Typelbl"
-        Me.Typelbl.Size = New System.Drawing.Size(106, 20)
+        Me.Typelbl.Size = New System.Drawing.Size(269, 20)
         Me.Typelbl.TabIndex = 88
         Me.Typelbl.Text = "Selelct Tenant"
         '

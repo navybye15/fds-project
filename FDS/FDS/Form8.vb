@@ -70,14 +70,6 @@ Public Class Form8
             FullNametxt.Text = row.Cells("Name").Value.ToString()
             contactTxt.Text = row.Cells("Contact").Value.ToString()
 
-            If row.Cells("Lease Start").Value.ToString() <> "" Then
-                LeaseStarttxt.Text = row.Cells("Lease Start").Value.ToString()
-            End If
-
-            If row.Cells("Lease End").Value.ToString() <> "" Then
-                LeaseEndtxt.Text = row.Cells("Lease End").Value.ToString()
-            End If
-
             selectedAccountStatus = row.Cells("Account Status").Value.ToString()
 
             If selectedAccountStatus = "inactive" Then
@@ -139,15 +131,6 @@ Public Class Form8
             cmdTenant.Parameters.AddWithValue("@gov_id", govIdTxt.Text)
             cmdTenant.Parameters.AddWithValue("@tenant_id", selectedTenantId)
             cmdTenant.ExecuteNonQuery()
-
-
-            Dim cmdLease As New MySqlCommand(
-                "UPDATE leases SET lease_start = @lease_start, lease_end = @lease_end " &
-                "WHERE tenant_id = @tenant_id AND status = 'active'", conn)
-            cmdLease.Parameters.AddWithValue("@lease_start", LeaseStarttxt.Text)
-            cmdLease.Parameters.AddWithValue("@lease_end", LeaseEndtxt.Text)
-            cmdLease.Parameters.AddWithValue("@tenant_id", selectedTenantId)
-            cmdLease.ExecuteNonQuery()
 
             conn.Close()
 
@@ -287,8 +270,6 @@ Public Class Form8
         Passwordtxt.Text = ""
         emergencyTxt.Text = ""
         govIdTxt.Text = ""
-        LeaseStarttxt.Text = ""
-        LeaseEndtxt.Text = ""
         selectedTenantId = 0
         selectedAccountStatus = "active"
         deleteBtn.Text = "Delete"
@@ -318,14 +299,6 @@ Public Class Form8
 
     End Sub
 
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub LeaseStarttxt_TextChanged(sender As Object, e As EventArgs) Handles LeaseStarttxt.TextChanged
-
-    End Sub
-
     Private Sub govIdTxt_TextChanged(sender As Object, e As EventArgs) Handles govIdTxt.TextChanged
 
     End Sub
@@ -339,14 +312,6 @@ Public Class Form8
     End Sub
 
     Private Sub Passwordtxt_TextChanged(sender As Object, e As EventArgs) Handles Passwordtxt.TextChanged
-
-    End Sub
-
-    Private Sub Label19_Click(sender As Object, e As EventArgs) Handles Label19.Click
-
-    End Sub
-
-    Private Sub LeaseEndtxt_TextChanged(sender As Object, e As EventArgs) Handles LeaseEndtxt.TextChanged
 
     End Sub
 

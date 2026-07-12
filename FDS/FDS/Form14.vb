@@ -7,6 +7,14 @@ Public Class Form14
             Return
         End If
 
+        Dim monthlyRate As Decimal
+        If Not Decimal.TryParse(monthlyTxt.Text, monthlyRate) Then
+            MessageBox.Show("Monthly Rate must be a valid number. Please enter a valid value.")
+            monthlyTxt.Text = ""
+            monthlyTxt.Focus()
+            Return
+        End If
+
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
         Dim conn As New MySqlConnection(connStr)
 
@@ -17,7 +25,7 @@ Public Class Form14
             Dim cmdUnit As New MySqlCommand(
                 "INSERT INTO units (unit_number, type, floor, monthly_rate, unit_status) VALUES (@unitNumber, @unitType, @unitFloor,@unitMonthly,'available')", conn)
             cmdUnit.Parameters.AddWithValue("@unitNumber", unitNumberTxt.Text)
-            cmdUnit.Parameters.AddWithValue("@unitType", typeTxt.Text)
+            cmdUnit.Parameters.AddWithValue("@unitType", typeCmb.Text)
             cmdUnit.Parameters.AddWithValue("@unitFloor", floorTxt.Text)
             cmdUnit.Parameters.AddWithValue("@unitMonthly", monthlyTxt.Text)
             cmdUnit.ExecuteNonQuery()
@@ -37,8 +45,9 @@ Public Class Form14
 
     Private Sub clearFields()
         unitNumberTxt.Text = ""
-        typeTxt.Text = ""
+        typeCmb.Text = ""
         floorTxt.Text = ""
+        label.Text = ""
         monthlyTxt.Text = ""
     End Sub
 
@@ -48,6 +57,8 @@ Public Class Form14
     End Sub
 
     Private Sub Form14_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        typeCmb.Items.Clear()
+        typeCmb.Items.AddRange({"standard", "superior", "deluxe", "executive room"})
+        typeCmb.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 End Class

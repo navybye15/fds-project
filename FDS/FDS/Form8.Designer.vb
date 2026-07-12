@@ -69,15 +69,11 @@ Partial Class Form8
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.contactTxt = New System.Windows.Forms.TextBox()
         Me.emergencyTxt = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.LeaseEndtxt = New System.Windows.Forms.TextBox()
         Me.govIdTxt = New System.Windows.Forms.TextBox()
-        Me.LeaseStarttxt = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -625,7 +621,6 @@ Partial Class Form8
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Typelbl)
         Me.Panel4.Controls.Add(Me.contactTxt)
         Me.Panel4.Controls.Add(Me.Usernametxt)
@@ -634,12 +629,9 @@ Partial Class Form8
         Me.Panel4.Controls.Add(Me.Passwordtxt)
         Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Monthlylbl)
-        Me.Panel4.Controls.Add(Me.LeaseEndtxt)
         Me.Panel4.Controls.Add(Me.govIdTxt)
-        Me.Panel4.Controls.Add(Me.LeaseStarttxt)
         Me.Panel4.Controls.Add(Me.FullNametxt)
         Me.Panel4.Controls.Add(Me.Label20)
-        Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Controls.Add(Me.UnitNumberlbl)
         Me.Panel4.Controls.Add(Me.deleteBtn)
         Me.Panel4.Controls.Add(Me.saveBtn)
@@ -651,16 +643,6 @@ Partial Class Form8
         Me.Panel4.Size = New System.Drawing.Size(932, 733)
         Me.Panel4.TabIndex = 25
         '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(476, 650)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(106, 20)
-        Me.Label19.TabIndex = 0
-        Me.Label19.Text = "Lease End"
-        '
         'contactTxt
         '
         Me.contactTxt.Location = New System.Drawing.Point(258, 607)
@@ -671,7 +653,7 @@ Partial Class Form8
         '
         'emergencyTxt
         '
-        Me.emergencyTxt.Location = New System.Drawing.Point(702, 673)
+        Me.emergencyTxt.Location = New System.Drawing.Point(258, 673)
         Me.emergencyTxt.Multiline = True
         Me.emergencyTxt.Name = "emergencyTxt"
         Me.emergencyTxt.Size = New System.Drawing.Size(197, 24)
@@ -681,19 +663,11 @@ Partial Class Form8
         '
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label8.Location = New System.Drawing.Point(699, 650)
+        Me.Label8.Location = New System.Drawing.Point(255, 650)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(160, 20)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Emergency Contact"
-        '
-        'LeaseEndtxt
-        '
-        Me.LeaseEndtxt.Location = New System.Drawing.Point(479, 673)
-        Me.LeaseEndtxt.Multiline = True
-        Me.LeaseEndtxt.Name = "LeaseEndtxt"
-        Me.LeaseEndtxt.Size = New System.Drawing.Size(197, 24)
-        Me.LeaseEndtxt.TabIndex = 14
         '
         'govIdTxt
         '
@@ -702,14 +676,6 @@ Partial Class Form8
         Me.govIdTxt.Name = "govIdTxt"
         Me.govIdTxt.Size = New System.Drawing.Size(197, 24)
         Me.govIdTxt.TabIndex = 14
-        '
-        'LeaseStarttxt
-        '
-        Me.LeaseStarttxt.Location = New System.Drawing.Point(258, 673)
-        Me.LeaseStarttxt.Multiline = True
-        Me.LeaseStarttxt.Name = "LeaseStarttxt"
-        Me.LeaseStarttxt.Size = New System.Drawing.Size(197, 24)
-        Me.LeaseStarttxt.TabIndex = 14
         '
         'Label20
         '
@@ -720,16 +686,6 @@ Partial Class Form8
         Me.Label20.Size = New System.Drawing.Size(106, 20)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Government ID"
-        '
-        'Label7
-        '
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(255, 650)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(106, 20)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "Lease Start"
         '
         'Panel2
         '
@@ -813,13 +769,9 @@ Partial Class Form8
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label19 As Label
     Friend WithEvents emergencyTxt As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents LeaseStarttxt As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents contactTxt As TextBox
-    Friend WithEvents LeaseEndtxt As TextBox
     Friend WithEvents govIdTxt As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label6 As Label

@@ -10,6 +10,10 @@ Public Class Form7
         statusCmb.Items.AddRange({"occupied", "maintenance", "available"})
         statusCmb.DropDownStyle = ComboBoxStyle.DropDownList
 
+        typeCmb.Items.Clear()
+        typeCmb.Items.AddRange({"standard", "superior", "deluxe", "executive room"})
+        typeCmb.DropDownStyle = ComboBoxStyle.DropDownList
+
         loadUnits()
     End Sub
 
@@ -58,6 +62,14 @@ Public Class Form7
     Private Sub saveBtn_Click(sender As Object, e As EventArgs) Handles saveBtn.Click
         If UnitsGrid.SelectedRows.Count = 0 Then
             MessageBox.Show("Please select a unit to update.")
+            Return
+        End If
+
+        Dim monthlyRate As Decimal
+        If Not Decimal.TryParse(monthlyRateTxt.Text, monthlyRate) Then
+            MessageBox.Show("Monthly Rate must be a valid number. Please enter a valid value.")
+            monthlyRateTxt.Text = ""
+            monthlyRateTxt.Focus()
             Return
         End If
 

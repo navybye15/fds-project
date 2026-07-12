@@ -79,6 +79,9 @@ Partial Class Form2
         Me.monthlyRentValuelbl = New System.Windows.Forms.Label()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.statuslbl = New System.Windows.Forms.Label()
         Me.depositlbl = New System.Windows.Forms.Label()
@@ -92,9 +95,6 @@ Partial Class Form2
         Me.Label33 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.unitCodeMainlbl = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,7 +298,7 @@ Partial Class Form2
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(151, 18)
         Me.Label34.TabIndex = 9
-        Me.Label34.Text = "Outstanding Report"
+        Me.Label34.Text = "Outstanding Balance"
         '
         'PictureBox2
         '
@@ -797,6 +797,42 @@ Partial Class Form2
         Me.Panel4.Size = New System.Drawing.Size(932, 702)
         Me.Panel4.TabIndex = 7
         '
+        'Label20
+        '
+        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label20.Location = New System.Drawing.Point(362, 262)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(41, 24)
+        Me.Label20.TabIndex = 18
+        Me.Label20.Text = "Staus:"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label9.Location = New System.Drawing.Point(218, 262)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(44, 23)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Deposit"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label8.Location = New System.Drawing.Point(74, 262)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(37, 24)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Rent:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label32
         '
         Me.Label32.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -944,42 +980,6 @@ Partial Class Form2
         Me.unitCodeMainlbl.Size = New System.Drawing.Size(302, 33)
         Me.unitCodeMainlbl.TabIndex = 4
         Me.unitCodeMainlbl.Text = "UNIT CODE"
-        '
-        'Label8
-        '
-        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label8.Location = New System.Drawing.Point(74, 262)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 24)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Rent:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label9.Location = New System.Drawing.Point(218, 262)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(44, 23)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Deposit"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label20
-        '
-        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(89, Byte), Integer))
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label20.Location = New System.Drawing.Point(362, 262)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(41, 24)
-        Me.Label20.TabIndex = 18
-        Me.Label20.Text = "Staus:"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Form2
         '
