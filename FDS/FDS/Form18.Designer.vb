@@ -53,19 +53,30 @@ Partial Class Form18
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.printReceiptBtn = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BillBtn = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Typelbl = New System.Windows.Forms.Label()
+        Me.UnitTxt = New System.Windows.Forms.TextBox()
+        Me.BillingMonthTxt = New System.Windows.Forms.TextBox()
+        Me.Loclbl = New System.Windows.Forms.Label()
+        Me.DatePaymentTxt = New System.Windows.Forms.TextBox()
+        Me.Monthlylbl = New System.Windows.Forms.Label()
+        Me.AmountPaidTxt = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TenantTxt = New System.Windows.Forms.TextBox()
+        Me.UnitNumberlbl = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Moneylbl = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Countlbl = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.MonthYearLbl = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.PaymentsGrid = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -456,6 +467,7 @@ Partial Class Form18
         Me.Panel5.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.printReceiptBtn)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Location = New System.Drawing.Point(-2, -2)
@@ -463,6 +475,17 @@ Partial Class Form18
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(929, 81)
         Me.Panel5.TabIndex = 30
+        '
+        'printReceiptBtn
+        '
+        Me.printReceiptBtn.BackColor = System.Drawing.Color.MediumSeaGreen
+        Me.printReceiptBtn.ForeColor = System.Drawing.Color.PaleGreen
+        Me.printReceiptBtn.Location = New System.Drawing.Point(762, 19)
+        Me.printReceiptBtn.Name = "printReceiptBtn"
+        Me.printReceiptBtn.Size = New System.Drawing.Size(125, 31)
+        Me.printReceiptBtn.TabIndex = 23
+        Me.printReceiptBtn.Text = "Print Receipt"
+        Me.printReceiptBtn.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -521,6 +544,16 @@ Partial Class Form18
         '
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.Typelbl)
+        Me.Panel4.Controls.Add(Me.UnitTxt)
+        Me.Panel4.Controls.Add(Me.BillingMonthTxt)
+        Me.Panel4.Controls.Add(Me.Loclbl)
+        Me.Panel4.Controls.Add(Me.DatePaymentTxt)
+        Me.Panel4.Controls.Add(Me.Monthlylbl)
+        Me.Panel4.Controls.Add(Me.AmountPaidTxt)
+        Me.Panel4.Controls.Add(Me.Label26)
+        Me.Panel4.Controls.Add(Me.TenantTxt)
+        Me.Panel4.Controls.Add(Me.UnitNumberlbl)
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.PaymentsGrid)
         Me.Panel4.Controls.Add(Me.Panel2)
@@ -530,20 +563,139 @@ Partial Class Form18
         Me.Panel4.Size = New System.Drawing.Size(932, 733)
         Me.Panel4.TabIndex = 31
         '
+        'Typelbl
+        '
+        Me.Typelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Typelbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Typelbl.Location = New System.Drawing.Point(252, 606)
+        Me.Typelbl.Name = "Typelbl"
+        Me.Typelbl.Size = New System.Drawing.Size(106, 20)
+        Me.Typelbl.TabIndex = 15
+        Me.Typelbl.Text = "Unit"
+        '
+        'UnitTxt
+        '
+        Me.UnitTxt.Location = New System.Drawing.Point(255, 629)
+        Me.UnitTxt.Multiline = True
+        Me.UnitTxt.Name = "UnitTxt"
+        Me.UnitTxt.ReadOnly = True
+        Me.UnitTxt.Size = New System.Drawing.Size(197, 24)
+        Me.UnitTxt.TabIndex = 19
+        '
+        'BillingMonthTxt
+        '
+        Me.BillingMonthTxt.Location = New System.Drawing.Point(478, 629)
+        Me.BillingMonthTxt.Multiline = True
+        Me.BillingMonthTxt.Name = "BillingMonthTxt"
+        Me.BillingMonthTxt.ReadOnly = True
+        Me.BillingMonthTxt.Size = New System.Drawing.Size(197, 24)
+        Me.BillingMonthTxt.TabIndex = 20
+        '
+        'Loclbl
+        '
+        Me.Loclbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Loclbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Loclbl.Location = New System.Drawing.Point(475, 606)
+        Me.Loclbl.Name = "Loclbl"
+        Me.Loclbl.Size = New System.Drawing.Size(149, 20)
+        Me.Loclbl.TabIndex = 16
+        Me.Loclbl.Text = "Billing Month"
+        '
+        'DatePaymentTxt
+        '
+        Me.DatePaymentTxt.Location = New System.Drawing.Point(699, 629)
+        Me.DatePaymentTxt.Multiline = True
+        Me.DatePaymentTxt.Name = "DatePaymentTxt"
+        Me.DatePaymentTxt.ReadOnly = True
+        Me.DatePaymentTxt.Size = New System.Drawing.Size(197, 24)
+        Me.DatePaymentTxt.TabIndex = 21
+        '
+        'Monthlylbl
+        '
+        Me.Monthlylbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Monthlylbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Monthlylbl.Location = New System.Drawing.Point(696, 606)
+        Me.Monthlylbl.Name = "Monthlylbl"
+        Me.Monthlylbl.Size = New System.Drawing.Size(160, 20)
+        Me.Monthlylbl.TabIndex = 17
+        Me.Monthlylbl.Text = "Date Payment"
+        '
+        'AmountPaidTxt
+        '
+        Me.AmountPaidTxt.Location = New System.Drawing.Point(36, 682)
+        Me.AmountPaidTxt.Multiline = True
+        Me.AmountPaidTxt.Name = "AmountPaidTxt"
+        Me.AmountPaidTxt.ReadOnly = True
+        Me.AmountPaidTxt.Size = New System.Drawing.Size(197, 24)
+        Me.AmountPaidTxt.TabIndex = 22
+        '
+        'Label26
+        '
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label26.Location = New System.Drawing.Point(33, 659)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(106, 20)
+        Me.Label26.TabIndex = 18
+        Me.Label26.Text = "Amount Paid"
+        '
+        'TenantTxt
+        '
+        Me.TenantTxt.Location = New System.Drawing.Point(34, 629)
+        Me.TenantTxt.Multiline = True
+        Me.TenantTxt.Name = "TenantTxt"
+        Me.TenantTxt.ReadOnly = True
+        Me.TenantTxt.Size = New System.Drawing.Size(197, 24)
+        Me.TenantTxt.TabIndex = 22
+        '
+        'UnitNumberlbl
+        '
+        Me.UnitNumberlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UnitNumberlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.UnitNumberlbl.Location = New System.Drawing.Point(31, 606)
+        Me.UnitNumberlbl.Name = "UnitNumberlbl"
+        Me.UnitNumberlbl.Size = New System.Drawing.Size(106, 20)
+        Me.UnitNumberlbl.TabIndex = 18
+        Me.UnitNumberlbl.Text = "Tenant"
+        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Controls.Add(Me.Label19)
         Me.Panel6.Controls.Add(Me.Moneylbl)
         Me.Panel6.Controls.Add(Me.Label22)
         Me.Panel6.Controls.Add(Me.Countlbl)
-        Me.Panel6.Controls.Add(Me.Label19)
         Me.Panel6.Controls.Add(Me.MonthYearLbl)
-        Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Location = New System.Drawing.Point(36, 540)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(863, 48)
         Me.Panel6.TabIndex = 13
+        '
+        'Label9
+        '
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label9.Location = New System.Drawing.Point(81, 13)
+        Me.Label9.Name = "Label9"
+        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label9.Size = New System.Drawing.Size(128, 20)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "payments recorded"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label19
+        '
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label19.Location = New System.Drawing.Point(205, 13)
+        Me.Label19.Name = "Label19"
+        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label19.Size = New System.Drawing.Size(28, 20)
+        Me.Label19.TabIndex = 14
+        Me.Label19.Text = "for"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Moneylbl
         '
@@ -573,7 +725,7 @@ Partial Class Form18
         '
         Me.Countlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Countlbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Countlbl.Location = New System.Drawing.Point(30, 13)
+        Me.Countlbl.Location = New System.Drawing.Point(30, 14)
         Me.Countlbl.Name = "Countlbl"
         Me.Countlbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Countlbl.Size = New System.Drawing.Size(69, 20)
@@ -581,41 +733,17 @@ Partial Class Form18
         Me.Countlbl.Text = ".No"
         Me.Countlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label19.Location = New System.Drawing.Point(217, 13)
-        Me.Label19.Name = "Label19"
-        Me.Label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label19.Size = New System.Drawing.Size(28, 20)
-        Me.Label19.TabIndex = 14
-        Me.Label19.Text = "— "
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'MonthYearLbl
         '
         Me.MonthYearLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthYearLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.MonthYearLbl.Location = New System.Drawing.Point(251, 13)
+        Me.MonthYearLbl.Location = New System.Drawing.Point(230, 13)
         Me.MonthYearLbl.Name = "MonthYearLbl"
         Me.MonthYearLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.MonthYearLbl.Size = New System.Drawing.Size(235, 20)
         Me.MonthYearLbl.TabIndex = 14
         Me.MonthYearLbl.Text = "Month Year"
         Me.MonthYearLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label9
-        '
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(95, 13)
-        Me.Label9.Name = "Label9"
-        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label9.Size = New System.Drawing.Size(116, 20)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "payments recorded"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PaymentsGrid
         '
@@ -651,7 +779,7 @@ Partial Class Form18
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(26, 25)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(195, 30)
+        Me.Label4.Size = New System.Drawing.Size(242, 30)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Payment History"
         '
@@ -691,6 +819,7 @@ Partial Class Form18
         Me.Panel1.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         CType(Me.PaymentsGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
@@ -746,4 +875,15 @@ Partial Class Form18
     Friend WithEvents btnSignOut As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
+    Friend WithEvents Typelbl As Label
+    Friend WithEvents UnitTxt As TextBox
+    Friend WithEvents BillingMonthTxt As TextBox
+    Friend WithEvents Loclbl As Label
+    Friend WithEvents DatePaymentTxt As TextBox
+    Friend WithEvents Monthlylbl As Label
+    Friend WithEvents AmountPaidTxt As TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents TenantTxt As TextBox
+    Friend WithEvents UnitNumberlbl As Label
+    Friend WithEvents printReceiptBtn As Button
 End Class

@@ -727,10 +727,10 @@ Partial Class Form19
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.Labell2)
         Me.Panel6.Controls.Add(Me.Labell4)
         Me.Panel6.Controls.Add(Me.labell1)
         Me.Panel6.Controls.Add(Me.labell6)
-        Me.Panel6.Controls.Add(Me.Labell2)
         Me.Panel6.Location = New System.Drawing.Point(36, 643)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(863, 48)
@@ -755,7 +755,7 @@ Partial Class Form19
         Me.labell1.Location = New System.Drawing.Point(13, 13)
         Me.labell1.Name = "labell1"
         Me.labell1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.labell1.Size = New System.Drawing.Size(192, 20)
+        Me.labell1.Size = New System.Drawing.Size(228, 20)
         Me.labell1.TabIndex = 15
         Me.labell1.Text = "LABEL1"
         Me.labell1.TextAlign = System.Drawing.ContentAlignment.MiddleRight

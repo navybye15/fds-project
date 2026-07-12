@@ -4,6 +4,8 @@ Public Class Form18
 
     Private ReadOnly connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
 
+    Dim selectedPaymentId As Integer = 0
+
     Private Sub Form18_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadPayments()
     End Sub
@@ -19,12 +21,14 @@ Public Class Form18
             conn.Open()
 
             Dim query As String = "SELECT p.payment_id AS 'No.', t.full_name AS 'Tenant', " &
+                                   "un.unit_number AS 'Unit', " &
                                    "b.billing_month AS 'Month Year', " &
                                    "p.amount_paid AS 'Amount Paid', " &
                                    "p.payment_date AS 'Payment Date' " &
                                    "FROM payments p " &
                                    "JOIN bills b ON p.bill_id = b.bill_id " &
                                    "JOIN tenants t ON b.tenant_id = t.tenant_id " &
+                                   "JOIN units un ON b.unit_id = un.unit_id " &
                                    "ORDER BY p.payment_date DESC"
 
             Dim cmd As New MySqlCommand(query, conn)
@@ -53,6 +57,31 @@ Public Class Form18
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub PaymentsGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles PaymentsGrid.CellClick
+        If PaymentsGrid.SelectedRows.Count > 0 Then
+            Dim row = PaymentsGrid.SelectedRows(0)
+
+            selectedPaymentId = Convert.ToInt32(row.Cells("No.").Value)
+
+            TenantTxt.Text = row.Cells("Tenant").Value.ToString()
+            UnitTxt.Text = row.Cells("Unit").Value.ToString()
+            BillingMonthTxt.Text = row.Cells("Month Year").Value.ToString()
+            AmountPaidTxt.Text = row.Cells("Amount Paid").Value.ToString()
+            DatePaymentTxt.Text = Convert.ToDateTime(row.Cells("Payment Date").Value).ToString("yyyy-MM-dd")
+        End If
+    End Sub
+
+    Private Sub printReceiptBtn_Click(sender As Object, e As EventArgs) Handles printReceiptBtn.Click
+        If selectedPaymentId = 0 Then
+            MessageBox.Show("Please select a payment first.")
+            Return
+        End If
+
+        Dim receiptForm As New Form20()
+        receiptForm.paymentId = selectedPaymentId
+        receiptForm.ShowDialog()
     End Sub
 
     Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click

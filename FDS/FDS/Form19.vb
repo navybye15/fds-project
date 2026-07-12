@@ -550,4 +550,8 @@ Public Class Form19
     Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
         Session.SignOut(Me)
     End Sub
+
+    Private Sub Labell2_Click(sender As Object, e As EventArgs) Handles Labell2.Click
+
+    End Sub
 End Class

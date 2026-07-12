@@ -6,6 +6,8 @@ Public Class Form17
 
     Dim billId As Integer
     Dim currentTotalDue As Decimal
+    Dim alreadyPaid As Decimal
+    Dim remainingBalance As Decimal
 
 
     Public Sub New(ByVal passedBillId As Integer)
@@ -44,13 +46,30 @@ Public Class Form17
                 MonthYearlbl.Text = reader("billing_month").ToString()
                 Rentlbl.Text = baseRent.ToString("0.00")
                 Chargelbl.Text = addCharges.ToString("0.00")
-                Totallbl.Text = currentTotalDue.ToString("0.00")
             End If
             reader.Close()
 
+
+            Dim cmdPaid As New MySqlCommand("SELECT SUM(amount_paid) FROM payments WHERE bill_id = @bill_id", conn)
+            cmdPaid.Parameters.AddWithValue("@bill_id", billId)
+            Dim result = cmdPaid.ExecuteScalar()
+
+            If IsDBNull(result) Then
+                alreadyPaid = 0
+            Else
+                alreadyPaid = Convert.ToDecimal(result)
+            End If
+
             conn.Close()
 
-            Paidtxt.Text = currentTotalDue.ToString("0.00")
+
+            remainingBalance = currentTotalDue - alreadyPaid
+
+            partialPayment.Text = alreadyPaid.ToString("0.00")
+            Totallbl.Text = remainingBalance.ToString("0.00")
+
+            Paidtxt.Text = remainingBalance.ToString("0.00")
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -60,6 +79,11 @@ Public Class Form17
         Dim amountPaid As Decimal
         If Not Decimal.TryParse(Paidtxt.Text, amountPaid) OrElse amountPaid <= 0 Then
             MessageBox.Show("Please enter a valid amount.")
+            Return
+        End If
+
+        If amountPaid > remainingBalance Then
+            MessageBox.Show("Amount paid cannot be more than the remaining balance of " & remainingBalance.ToString("0.00") & ".")
             Return
         End If
 
@@ -86,9 +110,17 @@ Public Class Form17
                 cmdPayment.Parameters.AddWithValue("@pay_date", DateTime.Today)
                 cmdPayment.ExecuteNonQuery()
 
+                Dim cmdGetId As New MySqlCommand("SELECT LAST_INSERT_ID()", conn, transaction)
+                Dim newPaymentId As Integer = Convert.ToInt32(cmdGetId.ExecuteScalar())
+
                 transaction.Commit()
 
                 MessageBox.Show("Payment recorded successfully!")
+
+                Dim receiptForm As New Form20()
+                receiptForm.paymentId = newPaymentId
+                receiptForm.ShowDialog()
+
                 Me.Close()
 
 

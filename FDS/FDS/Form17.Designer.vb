@@ -36,6 +36,8 @@ Partial Class Form17
         Me.Chargelbl = New System.Windows.Forms.Label()
         Me.Rentlbl = New System.Windows.Forms.Label()
         Me.Totallbl = New System.Windows.Forms.Label()
+        Me.partialPayment = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,7 +48,7 @@ Partial Class Form17
         '
         'CancelBtn
         '
-        Me.CancelBtn.Location = New System.Drawing.Point(358, 437)
+        Me.CancelBtn.Location = New System.Drawing.Point(358, 540)
         Me.CancelBtn.Name = "CancelBtn"
         Me.CancelBtn.Size = New System.Drawing.Size(107, 27)
         Me.CancelBtn.TabIndex = 116
@@ -57,7 +59,7 @@ Partial Class Form17
         '
         Me.Recordbtn.BackColor = System.Drawing.Color.MediumSeaGreen
         Me.Recordbtn.ForeColor = System.Drawing.Color.PaleGreen
-        Me.Recordbtn.Location = New System.Drawing.Point(481, 433)
+        Me.Recordbtn.Location = New System.Drawing.Point(481, 536)
         Me.Recordbtn.Name = "Recordbtn"
         Me.Recordbtn.Size = New System.Drawing.Size(129, 31)
         Me.Recordbtn.TabIndex = 115
@@ -124,7 +126,7 @@ Partial Class Form17
         '
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(41, 350)
+        Me.Label7.Location = New System.Drawing.Point(41, 421)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(161, 16)
         Me.Label7.TabIndex = 133
@@ -134,7 +136,7 @@ Partial Class Form17
         '
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(41, 264)
+        Me.Label6.Location = New System.Drawing.Point(41, 335)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(161, 25)
         Me.Label6.TabIndex = 131
@@ -143,7 +145,7 @@ Partial Class Form17
         'Paidtxt
         '
         Me.Paidtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Paidtxt.Location = New System.Drawing.Point(44, 292)
+        Me.Paidtxt.Location = New System.Drawing.Point(44, 363)
         Me.Paidtxt.Multiline = True
         Me.Paidtxt.Name = "Paidtxt"
         Me.Paidtxt.Size = New System.Drawing.Size(566, 34)
@@ -157,13 +159,15 @@ Partial Class Form17
         Me.Panel2.Controls.Add(Me.Chargelbl)
         Me.Panel2.Controls.Add(Me.Rentlbl)
         Me.Panel2.Controls.Add(Me.Totallbl)
+        Me.Panel2.Controls.Add(Me.partialPayment)
+        Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(44, 109)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(566, 132)
+        Me.Panel2.Size = New System.Drawing.Size(566, 191)
         Me.Panel2.TabIndex = 109
         '
         'Chargelbl
@@ -199,6 +203,27 @@ Partial Class Form17
         Me.Totallbl.TabIndex = 137
         Me.Totallbl.Text = "Total Due"
         Me.Totallbl.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'partialPayment
+        '
+        Me.partialPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.partialPayment.ForeColor = System.Drawing.Color.Firebrick
+        Me.partialPayment.Location = New System.Drawing.Point(298, 123)
+        Me.partialPayment.Name = "partialPayment"
+        Me.partialPayment.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.partialPayment.Size = New System.Drawing.Size(247, 25)
+        Me.partialPayment.TabIndex = 136
+        Me.partialPayment.Text = "Partial Payment"
+        '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label8.Location = New System.Drawing.Point(13, 122)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(247, 25)
+        Me.Label8.TabIndex = 136
+        Me.Label8.Text = "Partial Payment"
         '
         'Label5
         '
@@ -236,7 +261,7 @@ Partial Class Form17
         Me.Statuscmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Statuscmb.FormattingEnabled = True
         Me.Statuscmb.Items.AddRange(New Object() {"active", "terminated", "expired"})
-        Me.Statuscmb.Location = New System.Drawing.Point(44, 369)
+        Me.Statuscmb.Location = New System.Drawing.Point(44, 440)
         Me.Statuscmb.Name = "Statuscmb"
         Me.Statuscmb.Size = New System.Drawing.Size(566, 33)
         Me.Statuscmb.TabIndex = 140
@@ -245,7 +270,7 @@ Partial Class Form17
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(659, 483)
+        Me.ClientSize = New System.Drawing.Size(659, 582)
         Me.Controls.Add(Me.Statuscmb)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label7)
@@ -280,4 +305,6 @@ Partial Class Form17
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Statuscmb As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents partialPayment As Label
 End Class
