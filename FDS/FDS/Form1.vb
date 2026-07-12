@@ -14,6 +14,39 @@ Public Class Form1
         setEditMode(False)
     End Sub
 
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        checkPendingBilling(Session.CurrentTenantID)
+    End Sub
+
+    Private Sub checkPendingBilling(myTenantId As Integer)
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+        Dim conn As New MySqlConnection(connStr)
+
+        Try
+            conn.Open()
+
+            Dim query As String = "SELECT SUM(base_rent + addtional_charges) AS outstanding " &
+                               "FROM bills WHERE tenant_id = @myTenantId AND status IN ('unpaid', 'partial')"
+
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@myTenantId", myTenantId)
+
+            Dim result = cmd.ExecuteScalar()
+
+            If Not IsDBNull(result) AndAlso result IsNot Nothing Then
+                Dim outstandingAmount As Decimal = Convert.ToDecimal(result)
+                If outstandingAmount > 0 Then
+                    MessageBox.Show("You have a pending bill of ₱" & outstandingAmount.ToString("N2") & ". Please settle it at your earliest convenience.",
+                                     "Pending Billing", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            End If
+
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
     Private Sub loadMyProfile()
         Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
         Dim conn As New MySqlConnection(connStr)

@@ -12,13 +12,10 @@
         CurrentTenantName = Nothing
         CurrentRole = Nothing
 
-
         Dim loginForm As New Form5()
         loginForm.Show()
 
+        currentForm.Close()
 
-        For Each f As Form In Application.OpenForms.Cast(Of Form)().ToList()
-            If f IsNot loginForm Then f.Close()
-        Next
     End Sub
 End Module

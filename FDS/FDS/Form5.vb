@@ -1,5 +1,4 @@
-﻿
-Imports System.Web.UI.WebControls
+﻿Imports System.Web.UI.WebControls
 Imports MySql.Data.MySqlClient
 Public Class Form5
 
@@ -40,19 +39,18 @@ Public Class Form5
 
                 End If
 
+                reader.Close()
+
                 If Session.CurrentRole = "tenant" Then
 
-
-                    Form1.Show()
-                        Me.Hide()
-
-                    ElseIf Session.CurrentRole = "admin" Then
-                        Form6.Show()
                     Me.Hide()
+                    Form1.Show()
 
+                ElseIf Session.CurrentRole = "admin" Then
+                    Me.Hide()
+                    Form6.Show()
 
                 End If
-                reader.Close()
 
             Else
                 MessageBox.Show("Please enter a valid Username or Password")

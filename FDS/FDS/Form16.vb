@@ -48,11 +48,10 @@ Public Class Form16
         monthCmb.Items.Clear()
         Dim baseDate As Date = Date.Today
         For i As Integer = 0 To 5
-            monthCmb.Items.Add(baseDate.AddMonths(i).ToString("MMMM yyyy"))
+            monthCmb.Items.Add(baseDate.AddMonths(i).ToString("yyyy-MM"))
         Next
 
         monthCmb.DropDownStyle = ComboBoxStyle.DropDown
-
     End Sub
 
     Private Sub cboTenant_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tenantCmb.SelectedIndexChanged
