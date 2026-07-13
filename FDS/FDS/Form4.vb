@@ -3,19 +3,16 @@ Public Class Form4
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         Form1.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         Form2.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         Form3.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -33,8 +30,8 @@ Public Class Form4
 
             Dim query As String = "SELECT t.full_name, u.unit_number, u.floor " &
                                    "FROM tenants t " &
-                                   "JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
-                                   "JOIN units u ON u.unit_id = l.unit_id " &
+                                   "LEFT JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
+                                   "LEFT JOIN units u ON u.unit_id = l.unit_id " &
                                    "WHERE t.tenant_id = @myTenantId"
 
             Dim cmd As New MySqlCommand(query, conn)
@@ -43,11 +40,21 @@ Public Class Form4
             Dim reader = cmd.ExecuteReader()
 
             If reader.Read() Then
-                unitCodelbl.Text = reader("unit_number").ToString()
-                unitFloorlbl.Text = "Floor " & reader("floor").ToString()
-
                 TenantNamelbl.Text = reader("full_name").ToString()
-                Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
+
+                If Not IsDBNull(reader("unit_number")) Then
+                    unitCodelbl.Text = reader("unit_number").ToString()
+                    Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
+                Else
+                    unitCodelbl.Text = "N/A"
+                    Unitlbl.Text = "Tenant · No Unit"
+                End If
+
+                If Not IsDBNull(reader("floor")) Then
+                    unitFloorlbl.Text = "Floor " & reader("floor").ToString()
+                Else
+                    unitFloorlbl.Text = "Floor N/A"
+                End If
             End If
 
             reader.Close()
@@ -77,10 +84,10 @@ Public Class Form4
 
             Dim result = cmd.ExecuteScalar()
 
-            If result.ToString() = "" Then
+            If result Is Nothing OrElse IsDBNull(result) Then
                 outstandinglbl.Text = "₱0.00"
             Else
-                outstandinglbl.Text = "₱" & result.ToString()
+                outstandinglbl.Text = "₱" & Convert.ToDecimal(result).ToString("N2")
             End If
 
             conn.Close()
@@ -160,10 +167,10 @@ Public Class Form4
 
             Dim result = cmd.ExecuteScalar()
 
-            If result.ToString() = "" Then
+            If result Is Nothing OrElse IsDBNull(result) Then
                 securityDepositlbl.Text = "₱0.00"
             Else
-                securityDepositlbl.Text = "₱" & result.ToString()
+                securityDepositlbl.Text = "₱" & Convert.ToDecimal(result).ToString("N2")
             End If
 
             conn.Close()
@@ -193,7 +200,6 @@ Public Class Form4
             Dim dt As New DataTable()
             adapter.Fill(dt)
 
-
             dt.Columns("payment_date").ColumnName = "Payment Date"
             dt.Columns("amount_paid").ColumnName = "Amount Paid"
             dt.Columns("billing_month").ColumnName = "Billing Month"
@@ -207,31 +213,12 @@ Public Class Form4
         End Try
     End Sub
 
-    Private Sub btnSignOut_Click(sender As Object, e As EventArgs)
-        Session.SignOut(Me)
-    End Sub
-
-    Private Sub Unitlbl_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TenantNamelbl_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label15_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label17_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
         Session.SignOut(Me)
+    End Sub
+
+    Private Sub Label21_Click(sender As Object, e As EventArgs) Handles Label21.Click
+        Form21.Show()
+        Me.Hide()
     End Sub
 End Class

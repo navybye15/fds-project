@@ -34,20 +34,15 @@ Partial Class Form2
         Me.btnSignOut = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.securityDepositlbl = New System.Windows.Forms.Label()
         Me.leaseExpirationlbl = New System.Windows.Forms.Label()
         Me.paymentHistorylbl = New System.Windows.Forms.Label()
         Me.outstandinglbl = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -57,7 +52,6 @@ Partial Class Form2
         Me.unitCodelbl = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -93,18 +87,25 @@ Partial Class Form2
         Me.securityDepositValuelbl = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.unitCodeMainlbl = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,6 +114,7 @@ Partial Class Form2
         Me.Panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Label21)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -246,17 +248,6 @@ Partial Class Form2
         Me.Label17.TabIndex = 18
         Me.Label17.Text = "Tenant Portal"
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
-        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 19
-        Me.PictureBox8.TabStop = False
-        '
         'Panel3
         '
         Me.Panel3.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -299,19 +290,6 @@ Partial Class Form2
         Me.Label34.Size = New System.Drawing.Size(151, 18)
         Me.Label34.TabIndex = 9
         Me.Label34.Text = "Outstanding Balance"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
-        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
         '
         'securityDepositlbl
         '
@@ -379,32 +357,6 @@ Partial Class Form2
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "Lease Ends"
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
-        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
-        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 0
-        Me.PictureBox3.TabStop = False
-        '
         'Label18
         '
         Me.Label18.BackColor = System.Drawing.SystemColors.Menu
@@ -415,19 +367,6 @@ Partial Class Form2
         Me.Label18.Size = New System.Drawing.Size(151, 18)
         Me.Label18.TabIndex = 3
         Me.Label18.Text = "Last Payment"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
-        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 0
-        Me.PictureBox4.TabStop = False
         '
         'Label14
         '
@@ -519,18 +458,6 @@ Partial Class Form2
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(283, 100)
         Me.Label6.TabIndex = 3
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.FDS.My.Resources.Resources.rentalhouse1
-        Me.PictureBox1.Location = New System.Drawing.Point(19, 22)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(283, 244)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'Label22
         '
@@ -957,6 +884,102 @@ Partial Class Form2
         Me.Label33.TabIndex = 9
         Me.Label33.Text = "Security Deposit"
         '
+        'unitCodeMainlbl
+        '
+        Me.unitCodeMainlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.unitCodeMainlbl.Font = New System.Drawing.Font("Goudy Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.unitCodeMainlbl.ForeColor = System.Drawing.Color.White
+        Me.unitCodeMainlbl.Location = New System.Drawing.Point(71, 187)
+        Me.unitCodeMainlbl.Name = "unitCodeMainlbl"
+        Me.unitCodeMainlbl.Size = New System.Drawing.Size(302, 33)
+        Me.unitCodeMainlbl.TabIndex = 4
+        Me.unitCodeMainlbl.Text = "UNIT CODE"
+        '
+        'Label21
+        '
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label21.Location = New System.Drawing.Point(486, 21)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(136, 20)
+        Me.Label21.TabIndex = 8
+        Me.Label21.Text = "Change Password"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.PictureBox8.Image = Global.FDS.My.Resources.Resources.ISA_RMS_LOGO
+        Me.PictureBox8.Location = New System.Drawing.Point(32, 2)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(68, 62)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = Global.FDS.My.Resources.Resources.BALANCE_LOGO
+        Me.PictureBox2.Location = New System.Drawing.Point(54, 306)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox5.Image = Global.FDS.My.Resources.Resources.SECURITY_LOGO
+        Me.PictureBox5.Location = New System.Drawing.Point(54, 567)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Image = Global.FDS.My.Resources.Resources.CALENDAR_LOGO
+        Me.PictureBox3.Location = New System.Drawing.Point(54, 393)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.SystemColors.Menu
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Image = Global.FDS.My.Resources.Resources.HISTORY_LOGO
+        Me.PictureBox4.Location = New System.Drawing.Point(54, 474)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(30, 35)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 0
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.FDS.My.Resources.Resources.rentalhouse1
+        Me.PictureBox1.Location = New System.Drawing.Point(19, 22)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(283, 244)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.White
@@ -969,17 +992,6 @@ Partial Class Form2
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 9
         Me.PictureBox7.TabStop = False
-        '
-        'unitCodeMainlbl
-        '
-        Me.unitCodeMainlbl.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.unitCodeMainlbl.Font = New System.Drawing.Font("Goudy Old Style", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.unitCodeMainlbl.ForeColor = System.Drawing.Color.White
-        Me.unitCodeMainlbl.Location = New System.Drawing.Point(71, 187)
-        Me.unitCodeMainlbl.Name = "unitCodeMainlbl"
-        Me.unitCodeMainlbl.Size = New System.Drawing.Size(302, 33)
-        Me.unitCodeMainlbl.TabIndex = 4
-        Me.unitCodeMainlbl.Text = "UNIT CODE"
         '
         'Form2
         '
@@ -996,14 +1008,14 @@ Partial Class Form2
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1081,4 +1093,5 @@ Partial Class Form2
     Friend WithEvents Label8 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label21 As Label
 End Class

@@ -31,6 +31,7 @@ Partial Class Form1
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -216,6 +217,7 @@ Partial Class Form1
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label21)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -235,6 +237,16 @@ Partial Class Form1
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(1249, 1)
         Me.Label5.TabIndex = 2
+        '
+        'Label21
+        '
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label21.Location = New System.Drawing.Point(489, 21)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(136, 20)
+        Me.Label21.TabIndex = 1
+        Me.Label21.Text = "Change Password"
         '
         'Label4
         '
@@ -1320,4 +1332,5 @@ Partial Class Form1
     Friend WithEvents btnSignOut As Label
     Friend WithEvents TenantNamelbl As Label
     Friend WithEvents Unitlbl As Label
+    Friend WithEvents Label21 As Label
 End Class

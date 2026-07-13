@@ -2,29 +2,24 @@
 
 Public Class Form2
 
-
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         Form1.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         Form3.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
         Form4.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadLeaseDetails()
     End Sub
-
 
     Private Sub loadLeaseDetails()
         Dim myTenantId = Session.CurrentTenantID
@@ -38,8 +33,8 @@ Public Class Form2
                                    "u.unit_number, u.type, u.floor, u.monthly_rate, u.unit_status, " &
                                    "l.lease_start, l.lease_end, l.monthly_rent, l.security_deposit, l.status " &
                                    "FROM tenants t " &
-                                   "JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
-                                   "JOIN units u ON u.unit_id = l.unit_id " &
+                                   "LEFT JOIN leases l ON t.tenant_id = l.tenant_id AND l.status = 'active' " &
+                                   "LEFT JOIN units u ON u.unit_id = l.unit_id " &
                                    "WHERE t.tenant_id = @myTenantId"
 
             Dim cmd As New MySqlCommand(query, conn)
@@ -49,34 +44,70 @@ Public Class Form2
 
             If reader.Read() Then
 
-                unitCodelbl.Text = reader("unit_number")
-                unitFloorlbl.Text = "Floor " & reader("floor").ToString()
+                TenantNamelbl.Text = reader("full_name").ToString()
 
+                ' Unit info - may guard kung walang unit
+                If Not IsDBNull(reader("unit_number")) Then
+                    unitCodelbl.Text = reader("unit_number").ToString()
+                    unitCodeMainlbl.Text = reader("unit_number").ToString()
+                    unitValuelbl.Text = reader("unit_number").ToString()
+                    Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
+                Else
+                    unitCodelbl.Text = "N/A"
+                    unitCodeMainlbl.Text = "N/A"
+                    unitValuelbl.Text = "N/A"
+                    Unitlbl.Text = "Tenant · No Unit"
+                End If
 
-                unitCodeMainlbl.Text = reader("unit_number")
-                contractDatelbl.Text = reader("lease_start").ToString() & " to " & reader("lease_end").ToString()
+                If Not IsDBNull(reader("floor")) Then
+                    unitFloorlbl.Text = "Floor " & reader("floor").ToString()
+                Else
+                    unitFloorlbl.Text = "Floor N/A"
+                End If
 
+                ' Lease dates
+                If Not IsDBNull(reader("lease_start")) AndAlso Not IsDBNull(reader("lease_end")) Then
+                    contractDatelbl.Text = reader("lease_start").ToString() & " to " & reader("lease_end").ToString()
+                    leaseStartValuelbl.Text = reader("lease_start").ToString()
+                    leaseEndValuelbl.Text = reader("lease_end").ToString()
+                    leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
+                Else
+                    contractDatelbl.Text = "No active lease"
+                    leaseStartValuelbl.Text = "N/A"
+                    leaseEndValuelbl.Text = "N/A"
+                    leaseExpirationlbl.Text = "N/A"
+                End If
 
-                rentPricelbl.Text = "₱" & reader("monthly_rent").ToString()
-                depositlbl.Text = "₱" & reader("security_deposit").ToString()
-                statuslbl.Text = reader("status").ToString()
+                ' Rent
+                If Not IsDBNull(reader("monthly_rent")) Then
+                    rentPricelbl.Text = "₱" & Convert.ToDecimal(reader("monthly_rent")).ToString("N2")
+                    monthlyRentValuelbl.Text = "₱" & Convert.ToDecimal(reader("monthly_rent")).ToString("N2")
+                Else
+                    rentPricelbl.Text = "₱0.00"
+                    monthlyRentValuelbl.Text = "₱0.00"
+                End If
 
+                ' Security deposit
+                If Not IsDBNull(reader("security_deposit")) Then
+                    depositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
+                    securityDepositValuelbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
+                    securityDepositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
+                Else
+                    depositlbl.Text = "₱0.00"
+                    securityDepositValuelbl.Text = "₱0.00"
+                    securityDepositlbl.Text = "₱0.00"
+                End If
+
+                ' Status
+                If Not IsDBNull(reader("status")) Then
+                    statuslbl.Text = reader("status").ToString()
+                    contractStatusValuelbl.Text = reader("status").ToString()
+                Else
+                    statuslbl.Text = "No Active Lease"
+                    contractStatusValuelbl.Text = "No Active Lease"
+                End If
 
                 tenantValuelbl.Text = reader("full_name").ToString()
-                unitValuelbl.Text = reader("unit_number").ToString()
-                leaseStartValuelbl.Text = reader("lease_start").ToString()
-                leaseEndValuelbl.Text = reader("lease_end").ToString()
-                monthlyRentValuelbl.Text = "₱" & reader("monthly_rent").ToString()
-                securityDepositValuelbl.Text = "₱" & reader("security_deposit").ToString()
-                contractStatusValuelbl.Text = reader("status").ToString()
-
-                TenantNamelbl.Text = reader("full_name").ToString()
-                Unitlbl.Text = "Tenant · Unit " & reader("unit_number").ToString()
-
-                leaseExpirationlbl.Text = Convert.ToDateTime(reader("lease_end")).ToString("MMM dd, yyyy")
-
-
-                securityDepositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
             End If
 
             reader.Close()
@@ -104,10 +135,10 @@ Public Class Form2
 
             Dim result = cmd.ExecuteScalar()
 
-            If result.ToString() = "" Then
+            If result Is Nothing OrElse IsDBNull(result) Then
                 outstandinglbl.Text = "₱0.00"
             Else
-                outstandinglbl.Text = "₱" & result.ToString()
+                outstandinglbl.Text = "₱" & Convert.ToDecimal(result).ToString("N2")
             End If
 
             conn.Close()
@@ -147,31 +178,12 @@ Public Class Form2
         End Try
     End Sub
 
-    Private Sub btnSignOut_Click(sender As Object, e As EventArgs)
-        Session.SignOut(Me)
-    End Sub
-
-    Private Sub Unitlbl_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TenantNamelbl_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label15_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label17_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub PictureBox8_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
         Session.SignOut(Me)
+    End Sub
+
+    Private Sub Label21_Click(sender As Object, e As EventArgs) Handles Label21.Click
+        Form21.Show()
+        Me.Hide()
     End Sub
 End Class

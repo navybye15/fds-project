@@ -1,23 +1,40 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class Form3
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Form1.Show()
-        Me.Hide()
+
+Public Class Form21
+    Private Sub saveBtn_Click(sender As Object, e As EventArgs) Handles saveBtn.Click
+        If String.IsNullOrWhiteSpace(currentPassword.Text) OrElse String.IsNullOrWhiteSpace(newPassword.Text) Then
+            MessageBox.Show("Please fill up Current Password or New Password.")
+            Return
+        End If
+
+        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;Convert Zero Datetime=True;Allow Zero Datetime=True;"
+        Dim conn As New MySqlConnection(connStr)
+
+        Try
+            conn.Open()
+
+            Dim cmd As New MySqlCommand(
+                "UPDATE users SET password = @newpassword " &
+                "WHERE user_id = @user_id", conn)
+            cmd.Parameters.AddWithValue("@newpassword", newPassword.Text)
+            cmd.Parameters.AddWithValue("@user_id", Session.CurrentUserID)
+            cmd.ExecuteNonQuery()
+
+            conn.Close()
+
+            MessageBox.Show("Your password has been updated!")
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        Form2.Show()
-        Me.Hide()
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Session.SignOut(Me)
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        Form4.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form21_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadSidebarInfo()
-        loadBillingHistory()
     End Sub
 
     Private Sub loadSidebarInfo()
@@ -179,45 +196,23 @@ Public Class Form3
         End Try
     End Sub
 
-    Private Sub loadBillingHistory()
-        Dim myTenantId = Session.CurrentTenantID
-        Dim connStr As String = "Server=localhost;Port=3306;Database=isarms_db;Uid=root;Pwd=;"
-        Dim conn As New MySqlConnection(connStr)
-
-        Try
-            conn.Open()
-
-            Dim query As String = "SELECT billing_month, base_rent, addtional_charges, due_date, status " &
-                                   "FROM bills WHERE tenant_id = @myTenantId " &
-                                   "ORDER BY due_date DESC"
-
-            Dim cmd As New MySqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@myTenantId", myTenantId)
-
-            Dim adapter As New MySqlDataAdapter(cmd)
-            Dim dt As New DataTable()
-            adapter.Fill(dt)
-
-            dt.Columns("billing_month").ColumnName = "Billing Month"
-            dt.Columns("base_rent").ColumnName = "Base Rent"
-            dt.Columns("addtional_charges").ColumnName = "Additional Charges"
-            dt.Columns("due_date").ColumnName = "Due Date"
-            dt.Columns("status").ColumnName = "Status"
-
-            BillingHistoryGrid.DataSource = dt
-
-            conn.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Form2.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub btnSignOut_Click_1(sender As Object, e As EventArgs) Handles btnSignOut.Click
-        Session.SignOut(Me)
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        Form1.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub Label21_Click(sender As Object, e As EventArgs) Handles Label21.Click
-        Form21.Show()
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        Form3.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Form4.Show()
         Me.Hide()
     End Sub
 End Class

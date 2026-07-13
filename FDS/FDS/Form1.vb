@@ -262,4 +262,26 @@ Public Class Form1
     Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
 
     End Sub
+
+    Private Sub UnitNumberlbl_Click(sender As Object, e As EventArgs) Handles UnitNumberlbl.Click
+
+    End Sub
+
+    Private Sub FullNametxt_TextChanged(sender As Object, e As EventArgs) Handles FullNametxt.TextChanged
+
+    End Sub
+
+    Private Sub contactTxt_TextChanged(sender As Object, e As EventArgs) Handles contactTxt.TextChanged
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub Label21_Click(sender As Object, e As EventArgs) Handles Label21.Click
+        Form21.Show()
+        Me.Hide()
+
+    End Sub
 End Class
