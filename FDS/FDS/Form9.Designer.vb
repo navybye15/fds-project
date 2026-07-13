@@ -35,7 +35,11 @@ Partial Class Form9
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.renewStartPicker = New System.Windows.Forms.DateTimePicker()
+        Me.renewEndPicker = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.LeasesGrid = New System.Windows.Forms.DataGridView()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.totalLeasesLbl = New System.Windows.Forms.Label()
@@ -62,10 +66,7 @@ Partial Class Form9
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.renewStartPicker = New System.Windows.Forms.DateTimePicker()
-        Me.renewEndPicker = New System.Windows.Forms.DateTimePicker()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.expireBtn = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         CType(Me.LeasesGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -87,9 +88,9 @@ Partial Class Form9
         '
         Me.renewBtn.BackColor = System.Drawing.Color.SeaGreen
         Me.renewBtn.ForeColor = System.Drawing.Color.MistyRose
-        Me.renewBtn.Location = New System.Drawing.Point(643, 528)
+        Me.renewBtn.Location = New System.Drawing.Point(443, 528)
         Me.renewBtn.Name = "renewBtn"
-        Me.renewBtn.Size = New System.Drawing.Size(125, 31)
+        Me.renewBtn.Size = New System.Drawing.Size(149, 31)
         Me.renewBtn.TabIndex = 18
         Me.renewBtn.Text = "Renew"
         Me.renewBtn.UseVisualStyleBackColor = False
@@ -158,11 +159,11 @@ Partial Class Form9
         '
         Me.endBtn.BackColor = System.Drawing.Color.Firebrick
         Me.endBtn.ForeColor = System.Drawing.Color.MistyRose
-        Me.endBtn.Location = New System.Drawing.Point(774, 528)
+        Me.endBtn.Location = New System.Drawing.Point(594, 528)
         Me.endBtn.Name = "endBtn"
-        Me.endBtn.Size = New System.Drawing.Size(125, 31)
+        Me.endBtn.Size = New System.Drawing.Size(149, 31)
         Me.endBtn.TabIndex = 19
-        Me.endBtn.Text = "End"
+        Me.endBtn.Text = "Mark as Terminated"
         Me.endBtn.UseVisualStyleBackColor = False
         '
         'Label25
@@ -212,6 +213,7 @@ Partial Class Form9
         Me.Panel4.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.renewStartPicker)
+        Me.Panel4.Controls.Add(Me.expireBtn)
         Me.Panel4.Controls.Add(Me.endBtn)
         Me.Panel4.Controls.Add(Me.renewEndPicker)
         Me.Panel4.Controls.Add(Me.renewBtn)
@@ -219,11 +221,41 @@ Partial Class Form9
         Me.Panel4.Controls.Add(Me.LeasesGrid)
         Me.Panel4.Controls.Add(Me.Label19)
         Me.Panel4.Controls.Add(Me.Panel2)
-        Me.Panel4.Location = New System.Drawing.Point(317, 85)
+        Me.Panel4.Location = New System.Drawing.Point(318, 85)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(932, 733)
         Me.Panel4.TabIndex = 28
+        '
+        'renewStartPicker
+        '
+        Me.renewStartPicker.CustomFormat = ""
+        Me.renewStartPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.renewStartPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.renewStartPicker.Location = New System.Drawing.Point(35, 548)
+        Me.renewStartPicker.Name = "renewStartPicker"
+        Me.renewStartPicker.Size = New System.Drawing.Size(171, 30)
+        Me.renewStartPicker.TabIndex = 59
+        '
+        'renewEndPicker
+        '
+        Me.renewEndPicker.CustomFormat = ""
+        Me.renewEndPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.renewEndPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.renewEndPicker.Location = New System.Drawing.Point(225, 548)
+        Me.renewEndPicker.Name = "renewEndPicker"
+        Me.renewEndPicker.Size = New System.Drawing.Size(171, 30)
+        Me.renewEndPicker.TabIndex = 58
+        '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(32, 525)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(117, 20)
+        Me.Label6.TabIndex = 57
+        Me.Label6.Text = "Lease Start"
         '
         'LeasesGrid
         '
@@ -241,6 +273,16 @@ Partial Class Form9
         Me.LeasesGrid.RowTemplate.Height = 24
         Me.LeasesGrid.Size = New System.Drawing.Size(863, 381)
         Me.LeasesGrid.TabIndex = 12
+        '
+        'Label19
+        '
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label19.Location = New System.Drawing.Point(222, 525)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(111, 20)
+        Me.Label19.TabIndex = 56
+        Me.Label19.Text = "Lease End"
         '
         'Panel2
         '
@@ -564,45 +606,16 @@ Partial Class Form9
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'renewStartPicker
+        'expireBtn
         '
-        Me.renewStartPicker.CustomFormat = ""
-        Me.renewStartPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.renewStartPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.renewStartPicker.Location = New System.Drawing.Point(263, 552)
-        Me.renewStartPicker.Name = "renewStartPicker"
-        Me.renewStartPicker.Size = New System.Drawing.Size(171, 30)
-        Me.renewStartPicker.TabIndex = 59
-        '
-        'renewEndPicker
-        '
-        Me.renewEndPicker.CustomFormat = ""
-        Me.renewEndPicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.renewEndPicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.renewEndPicker.Location = New System.Drawing.Point(453, 552)
-        Me.renewEndPicker.Name = "renewEndPicker"
-        Me.renewEndPicker.Size = New System.Drawing.Size(171, 30)
-        Me.renewEndPicker.TabIndex = 58
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(260, 529)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 20)
-        Me.Label6.TabIndex = 57
-        Me.Label6.Text = "Lease Start"
-        '
-        'Label19
-        '
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label19.Location = New System.Drawing.Point(450, 529)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(80, 20)
-        Me.Label19.TabIndex = 56
-        Me.Label19.Text = "Lease End"
+        Me.expireBtn.BackColor = System.Drawing.Color.Firebrick
+        Me.expireBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.expireBtn.Location = New System.Drawing.Point(745, 528)
+        Me.expireBtn.Name = "expireBtn"
+        Me.expireBtn.Size = New System.Drawing.Size(149, 31)
+        Me.expireBtn.TabIndex = 19
+        Me.expireBtn.Text = "Mark as Expired"
+        Me.expireBtn.UseVisualStyleBackColor = False
         '
         'Form9
         '
@@ -677,4 +690,5 @@ Partial Class Form9
     Friend WithEvents renewEndPicker As DateTimePicker
     Friend WithEvents Label6 As Label
     Friend WithEvents Label19 As Label
+    Friend WithEvents expireBtn As Button
 End Class

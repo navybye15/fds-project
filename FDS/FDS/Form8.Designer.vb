@@ -393,7 +393,7 @@ Partial Class Form8
         Me.Label25.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.Label25.Location = New System.Drawing.Point(58, 202)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(93, 20)
+        Me.Label25.Size = New System.Drawing.Size(153, 20)
         Me.Label25.TabIndex = 12
         Me.Label25.Text = "Dashboard"
         '

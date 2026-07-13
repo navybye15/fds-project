@@ -330,7 +330,7 @@ Public Class Form8
     End Sub
 
     Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click
-        Form6.Show()
+        Form6.RefreshAndShow()
         Me.Hide()
 
     End Sub
@@ -368,5 +368,9 @@ Public Class Form8
 
     Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
         Session.SignOut(Me)
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

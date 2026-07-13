@@ -124,6 +124,7 @@ Partial Class Form5
         Me.passwordtxt.Location = New System.Drawing.Point(482, 449)
         Me.passwordtxt.Multiline = True
         Me.passwordtxt.Name = "passwordtxt"
+        Me.passwordtxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.passwordtxt.Size = New System.Drawing.Size(269, 30)
         Me.passwordtxt.TabIndex = 13
         '

@@ -69,7 +69,7 @@ Public Class Form19
         labell1.Visible = True
         Labell2.Visible = True
         labell6.Visible = False
-        Labell4.Visible = False
+        Labell4.Visible = True
         perTenantCmb.Visible = False
 
         LoadMonthlyCollectionReport()
@@ -213,6 +213,17 @@ Public Class Form19
 
             labell1.Text = "Total Due: ₱" & totalDue.ToString("#,##0.00")
             Labell2.Text = "Total Collected: ₱" & totalCollected.ToString("#,##0.00")
+
+            Dim cmdNetIncome As New MySqlCommand(
+            "SELECT IFNULL(SUM(amount), 0) FROM expenses " &
+            "WHERE expense_date BETWEEN @fromdate AND @todate", conn)
+            cmdNetIncome.Parameters.AddWithValue("@fromdate", fromD)
+            cmdNetIncome.Parameters.AddWithValue("@todate", toD)
+            Dim totalExpensesforthatmonth As Decimal = cmdNetIncome.ExecuteScalar()
+
+            Dim netIncome As Decimal = totalCollected - totalExpensesforthatmonth
+
+            Labell4.Text = "Net Income: ₱" & (netIncome).ToString("#,##0.00")
 
             conn.Close()
 

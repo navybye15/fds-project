@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Form6
-
+    Public Sub RefreshAndShow()
+        loadDashboard()
+        Me.Show()
+    End Sub
     Private Sub Form6_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button1.Enabled = False
         Button2.Enabled = False
@@ -26,7 +29,7 @@ Public Class Form6
 
 
 
-            Dim cmdActive As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE status = 'active'", conn)
+            Dim cmdActive As New MySqlCommand("SELECT COUNT(*) FROM leases WHERE status = 'Active' AND CURDATE() BETWEEN lease_start AND lease_end", conn)
             activeTenantsLbl.Text = cmdActive.ExecuteScalar().ToString() & " Active Tenants"
 
 
@@ -75,8 +78,9 @@ Public Class Form6
                                "FROM leases l " &
                                "JOIN tenants t ON l.tenant_id = t.tenant_id " &
                                "JOIN units u ON l.unit_id = u.unit_id " &
-                               "ORDER BY l.lease_start DESC " &
-                               "LIMIT 5"
+                               "WHERE l.status = 'active' " &
+                               "ORDER BY l.lease_start DESC "
+
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)

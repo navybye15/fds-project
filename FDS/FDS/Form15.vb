@@ -60,26 +60,9 @@ Public Class Form15
             UnitTxt.Text = row.Cells("Unit").Value.ToString()
             BRTxt.Text = row.Cells("Base Rent").Value.ToString()
             AddChargeTxt.Text = row.Cells("Add. Charges").Value.ToString()
+            TotalTxt.Text = row.Cells("Total Due").Value.ToString()
             DateTxt.Text = Convert.ToDateTime(row.Cells("Due Date").Value).ToString("yyyy-MM-dd")
             StatusTxt.Text = row.Cells("Status").Value.ToString()
-
-            Dim totalDue As Decimal = Convert.ToDecimal(row.Cells("Total Due").Value)
-
-            Dim conn As New MySqlConnection(connStr)
-            conn.Open()
-
-            Dim cmd As New MySqlCommand("SELECT SUM(amount_paid) FROM payments WHERE bill_id = @bill_id", conn)
-            cmd.Parameters.AddWithValue("@bill_id", selectedBillId)
-            Dim result = cmd.ExecuteScalar()
-
-            conn.Close()
-
-            Dim amountPaid As Decimal = 0
-            If Not IsDBNull(result) Then
-                amountPaid = Convert.ToDecimal(result)
-            End If
-
-            TotalTxt.Text = (totalDue - amountPaid).ToString("0.00")
         End If
     End Sub
 

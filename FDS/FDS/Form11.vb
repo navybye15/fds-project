@@ -34,12 +34,8 @@ Public Class Form11
         Try
             conn.Open()
 
-            Dim query As String
-            If category = "Maintenance" Then
-                query = "SELECT unit_id, unit_number FROM units WHERE unit_status = 'maintenance' ORDER BY unit_number"
-            Else
-                query = "SELECT unit_id, unit_number FROM units WHERE unit_status <> 'maintenance' ORDER BY unit_number"
-            End If
+            Dim query As String = "SELECT unit_id, unit_number FROM units WHERE unit_status <> 'maintenance' ORDER BY unit_number"
+
 
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)
@@ -130,6 +126,10 @@ Public Class Form11
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class

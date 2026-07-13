@@ -531,7 +531,7 @@ Partial Class Form6
         Me.collectedLbl.ForeColor = System.Drawing.Color.Black
         Me.collectedLbl.Location = New System.Drawing.Point(756, 213)
         Me.collectedLbl.Name = "collectedLbl"
-        Me.collectedLbl.Size = New System.Drawing.Size(100, 22)
+        Me.collectedLbl.Size = New System.Drawing.Size(129, 22)
         Me.collectedLbl.TabIndex = 12
         Me.collectedLbl.Text = "TOTAL"
         '
@@ -542,7 +542,7 @@ Partial Class Form6
         Me.unpaidBillsLbl.ForeColor = System.Drawing.Color.Black
         Me.unpaidBillsLbl.Location = New System.Drawing.Point(541, 213)
         Me.unpaidBillsLbl.Name = "unpaidBillsLbl"
-        Me.unpaidBillsLbl.Size = New System.Drawing.Size(100, 22)
+        Me.unpaidBillsLbl.Size = New System.Drawing.Size(130, 22)
         Me.unpaidBillsLbl.TabIndex = 12
         Me.unpaidBillsLbl.Text = "TOTAL"
         '
@@ -553,7 +553,7 @@ Partial Class Form6
         Me.activeTenantsTotalLbl.ForeColor = System.Drawing.Color.Black
         Me.activeTenantsTotalLbl.Location = New System.Drawing.Point(325, 213)
         Me.activeTenantsTotalLbl.Name = "activeTenantsTotalLbl"
-        Me.activeTenantsTotalLbl.Size = New System.Drawing.Size(100, 22)
+        Me.activeTenantsTotalLbl.Size = New System.Drawing.Size(128, 22)
         Me.activeTenantsTotalLbl.TabIndex = 12
         Me.activeTenantsTotalLbl.Text = "TOTAL"
         '
@@ -564,7 +564,7 @@ Partial Class Form6
         Me.totalUnitsLbl.ForeColor = System.Drawing.Color.Black
         Me.totalUnitsLbl.Location = New System.Drawing.Point(110, 213)
         Me.totalUnitsLbl.Name = "totalUnitsLbl"
-        Me.totalUnitsLbl.Size = New System.Drawing.Size(100, 22)
+        Me.totalUnitsLbl.Size = New System.Drawing.Size(120, 22)
         Me.totalUnitsLbl.TabIndex = 12
         Me.totalUnitsLbl.Text = "TOTAL"
         '

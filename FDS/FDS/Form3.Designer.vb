@@ -181,6 +181,7 @@ Partial Class Form3
         Me.BillingHistoryGrid.AllowUserToDeleteRows = False
         Me.BillingHistoryGrid.AllowUserToResizeColumns = False
         Me.BillingHistoryGrid.AllowUserToResizeRows = False
+        Me.BillingHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BillingHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BillingHistoryGrid.Location = New System.Drawing.Point(46, 111)
         Me.BillingHistoryGrid.Name = "BillingHistoryGrid"

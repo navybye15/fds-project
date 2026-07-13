@@ -227,7 +227,7 @@ Public Class Form7
     End Sub
 
     Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click
-        Form6.Show()
+        Form6.RefreshAndShow()
         Me.Hide()
 
     End Sub
