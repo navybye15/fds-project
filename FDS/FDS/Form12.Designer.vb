@@ -843,7 +843,7 @@ Partial Class Form12
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1253, 858)
+        Me.ClientSize = New System.Drawing.Size(1248, 818)
         Me.Controls.Add(Me.UnitCmb)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.DescriptionTxt)
@@ -878,6 +878,8 @@ Partial Class Form12
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form12"
         Me.Text = "Form12"
         Me.Panel3.ResumeLayout(False)

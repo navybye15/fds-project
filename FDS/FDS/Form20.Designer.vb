@@ -317,6 +317,8 @@ Partial Class Form20
         Me.Controls.Add(Me.unitNumber)
         Me.Controls.Add(Me.floorTxt)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximumSize = New System.Drawing.Size(464, 647)
+        Me.MinimumSize = New System.Drawing.Size(464, 647)
         Me.Name = "Form20"
         Me.Text = "Form20"
         Me.Panel1.ResumeLayout(False)

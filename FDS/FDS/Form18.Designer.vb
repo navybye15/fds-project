@@ -803,6 +803,8 @@ Partial Class Form18
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form18"
         Me.Text = "Form18"
         Me.Panel3.ResumeLayout(False)

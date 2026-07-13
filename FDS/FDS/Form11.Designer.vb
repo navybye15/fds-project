@@ -242,6 +242,8 @@ Partial Class Form11
         Me.Controls.Add(Me.Typelbl)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
+        Me.MaximumSize = New System.Drawing.Size(655, 520)
+        Me.MinimumSize = New System.Drawing.Size(655, 520)
         Me.Name = "Form11"
         Me.Text = "Form11"
         Me.Panel1.ResumeLayout(False)

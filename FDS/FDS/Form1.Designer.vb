@@ -1209,6 +1209,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.Panel2.ResumeLayout(False)

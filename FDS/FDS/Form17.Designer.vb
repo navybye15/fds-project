@@ -85,7 +85,7 @@ Partial Class Form17
         '
         Me.MonthYearlbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthYearlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.MonthYearlbl.Location = New System.Drawing.Point(224, 45)
+        Me.MonthYearlbl.Location = New System.Drawing.Point(195, 45)
         Me.MonthYearlbl.Name = "MonthYearlbl"
         Me.MonthYearlbl.Size = New System.Drawing.Size(241, 18)
         Me.MonthYearlbl.TabIndex = 13
@@ -95,9 +95,9 @@ Partial Class Form17
         '
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label3.Location = New System.Drawing.Point(187, 45)
+        Me.Label3.Location = New System.Drawing.Point(171, 45)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(15, 18)
+        Me.Label3.Size = New System.Drawing.Size(31, 18)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "-"
         '
@@ -118,7 +118,7 @@ Partial Class Form17
         Me.Tenantlbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Tenantlbl.Location = New System.Drawing.Point(25, 45)
         Me.Tenantlbl.Name = "Tenantlbl"
-        Me.Tenantlbl.Size = New System.Drawing.Size(169, 18)
+        Me.Tenantlbl.Size = New System.Drawing.Size(143, 18)
         Me.Tenantlbl.TabIndex = 0
         Me.Tenantlbl.Text = "Tenant"
         '
@@ -279,6 +279,8 @@ Partial Class Form17
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.Recordbtn)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximumSize = New System.Drawing.Size(677, 629)
+        Me.MinimumSize = New System.Drawing.Size(677, 629)
         Me.Name = "Form17"
         Me.Text = "Form17"
         Me.Panel1.ResumeLayout(False)

@@ -706,6 +706,8 @@ Partial Class Form8
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form8"
         Me.Text = "Form8"
         CType(Me.TenantsGrid, System.ComponentModel.ISupportInitialize).EndInit()

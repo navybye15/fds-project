@@ -559,6 +559,8 @@ Partial Class Form3
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.Panel1.ResumeLayout(False)

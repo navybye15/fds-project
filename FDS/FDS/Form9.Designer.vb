@@ -36,6 +36,7 @@ Partial Class Form9
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.renewStartPicker = New System.Windows.Forms.DateTimePicker()
+        Me.expireBtn = New System.Windows.Forms.Button()
         Me.renewEndPicker = New System.Windows.Forms.DateTimePicker()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LeasesGrid = New System.Windows.Forms.DataGridView()
@@ -66,7 +67,6 @@ Partial Class Form9
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.expireBtn = New System.Windows.Forms.Button()
         Me.Panel4.SuspendLayout()
         CType(Me.LeasesGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -236,6 +236,17 @@ Partial Class Form9
         Me.renewStartPicker.Name = "renewStartPicker"
         Me.renewStartPicker.Size = New System.Drawing.Size(171, 30)
         Me.renewStartPicker.TabIndex = 59
+        '
+        'expireBtn
+        '
+        Me.expireBtn.BackColor = System.Drawing.Color.Firebrick
+        Me.expireBtn.ForeColor = System.Drawing.Color.MistyRose
+        Me.expireBtn.Location = New System.Drawing.Point(745, 528)
+        Me.expireBtn.Name = "expireBtn"
+        Me.expireBtn.Size = New System.Drawing.Size(149, 31)
+        Me.expireBtn.TabIndex = 19
+        Me.expireBtn.Text = "Mark as Expired"
+        Me.expireBtn.UseVisualStyleBackColor = False
         '
         'renewEndPicker
         '
@@ -606,17 +617,6 @@ Partial Class Form9
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
         '
-        'expireBtn
-        '
-        Me.expireBtn.BackColor = System.Drawing.Color.Firebrick
-        Me.expireBtn.ForeColor = System.Drawing.Color.MistyRose
-        Me.expireBtn.Location = New System.Drawing.Point(745, 528)
-        Me.expireBtn.Name = "expireBtn"
-        Me.expireBtn.Size = New System.Drawing.Size(149, 31)
-        Me.expireBtn.TabIndex = 19
-        Me.expireBtn.Text = "Mark as Expired"
-        Me.expireBtn.UseVisualStyleBackColor = False
-        '
         'Form9
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -625,6 +625,8 @@ Partial Class Form9
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form9"
         Me.Text = "Form9"
         Me.Panel4.ResumeLayout(False)

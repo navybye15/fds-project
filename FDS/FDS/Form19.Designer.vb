@@ -75,10 +75,10 @@ Partial Class Form19
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Labell2 = New System.Windows.Forms.Label()
         Me.Labell4 = New System.Windows.Forms.Label()
         Me.labell1 = New System.Windows.Forms.Label()
         Me.labell6 = New System.Windows.Forms.Label()
-        Me.Labell2 = New System.Windows.Forms.Label()
         Me.ReportsGrid = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.perTenantCmb = New System.Windows.Forms.ComboBox()
@@ -736,6 +736,18 @@ Partial Class Form19
         Me.Panel6.Size = New System.Drawing.Size(863, 48)
         Me.Panel6.TabIndex = 13
         '
+        'Labell2
+        '
+        Me.Labell2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Labell2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Labell2.Location = New System.Drawing.Point(204, 13)
+        Me.Labell2.Name = "Labell2"
+        Me.Labell2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Labell2.Size = New System.Drawing.Size(207, 20)
+        Me.Labell2.TabIndex = 13
+        Me.Labell2.Text = "LABEL2"
+        Me.Labell2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Labell4
         '
         Me.Labell4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -771,18 +783,6 @@ Partial Class Form19
         Me.labell6.TabIndex = 14
         Me.labell6.Text = "LABEL3"
         Me.labell6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Labell2
-        '
-        Me.Labell2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Labell2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Labell2.Location = New System.Drawing.Point(204, 13)
-        Me.Labell2.Name = "Labell2"
-        Me.Labell2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Labell2.Size = New System.Drawing.Size(207, 20)
-        Me.Labell2.TabIndex = 13
-        Me.Labell2.Text = "LABEL2"
-        Me.Labell2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ReportsGrid
         '
@@ -861,6 +861,8 @@ Partial Class Form19
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form19"
         Me.Text = "Form19"
         Me.Panel3.ResumeLayout(False)

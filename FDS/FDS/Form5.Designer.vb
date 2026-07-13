@@ -170,6 +170,8 @@ Partial Class Form5
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
+        Me.MaximumSize = New System.Drawing.Size(1266, 865)
+        Me.MinimumSize = New System.Drawing.Size(1266, 865)
         Me.Name = "Form5"
         Me.Text = "Form5"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

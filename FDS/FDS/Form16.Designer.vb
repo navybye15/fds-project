@@ -292,6 +292,8 @@ Partial Class Form16
         Me.Controls.Add(Me.Typelbl)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
+        Me.MaximumSize = New System.Drawing.Size(673, 604)
+        Me.MinimumSize = New System.Drawing.Size(673, 604)
         Me.Name = "Form16"
         Me.Text = "Form16"
         Me.Panel1.ResumeLayout(False)
