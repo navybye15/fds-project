@@ -46,7 +46,7 @@ Public Class Form2
 
                 TenantNamelbl.Text = reader("full_name").ToString()
 
-                ' Unit info - may guard kung walang unit
+
                 If Not IsDBNull(reader("unit_number")) Then
                     unitCodelbl.Text = reader("unit_number").ToString()
                     unitCodeMainlbl.Text = reader("unit_number").ToString()
@@ -65,7 +65,7 @@ Public Class Form2
                     unitFloorlbl.Text = "Floor N/A"
                 End If
 
-                ' Lease dates
+
                 If Not IsDBNull(reader("lease_start")) AndAlso Not IsDBNull(reader("lease_end")) Then
                     contractDatelbl.Text = reader("lease_start").ToString() & " to " & reader("lease_end").ToString()
                     leaseStartValuelbl.Text = reader("lease_start").ToString()
@@ -78,7 +78,6 @@ Public Class Form2
                     leaseExpirationlbl.Text = "N/A"
                 End If
 
-                ' Rent
                 If Not IsDBNull(reader("monthly_rent")) Then
                     rentPricelbl.Text = "₱" & Convert.ToDecimal(reader("monthly_rent")).ToString("N2")
                     monthlyRentValuelbl.Text = "₱" & Convert.ToDecimal(reader("monthly_rent")).ToString("N2")
@@ -87,7 +86,7 @@ Public Class Form2
                     monthlyRentValuelbl.Text = "₱0.00"
                 End If
 
-                ' Security deposit
+
                 If Not IsDBNull(reader("security_deposit")) Then
                     depositlbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
                     securityDepositValuelbl.Text = "₱" & Convert.ToDecimal(reader("security_deposit")).ToString("N2")
@@ -98,7 +97,8 @@ Public Class Form2
                     securityDepositlbl.Text = "₱0.00"
                 End If
 
-                ' Status
+
+
                 If Not IsDBNull(reader("status")) Then
                     statuslbl.Text = reader("status").ToString()
                     contractStatusValuelbl.Text = reader("status").ToString()
