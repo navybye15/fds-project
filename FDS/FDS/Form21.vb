@@ -13,12 +13,26 @@ Public Class Form21
         Try
             conn.Open()
 
-            Dim cmd As New MySqlCommand(
+            Dim checkCmd As New MySqlCommand(
+                "SELECT password FROM users WHERE user_id = @user_id", conn)
+            checkCmd.Parameters.AddWithValue("@user_id", Session.CurrentUserID)
+
+            Dim currrentPassword As String = checkCmd.ExecuteScalar().ToString
+
+            If currentPassword.Text <> currrentPassword Then
+                MessageBox.Show("Incorrect Password! Please input valid password")
+                Return
+                conn.Close()
+            Else
+                Dim cmd As New MySqlCommand(
                 "UPDATE users SET password = @newpassword " &
                 "WHERE user_id = @user_id", conn)
-            cmd.Parameters.AddWithValue("@newpassword", newPassword.Text)
-            cmd.Parameters.AddWithValue("@user_id", Session.CurrentUserID)
-            cmd.ExecuteNonQuery()
+                cmd.Parameters.AddWithValue("@newpassword", newPassword.Text)
+                cmd.Parameters.AddWithValue("@user_id", Session.CurrentUserID)
+                cmd.ExecuteNonQuery()
+            End If
+
+
 
             conn.Close()
 

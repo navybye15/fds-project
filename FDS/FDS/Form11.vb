@@ -33,8 +33,13 @@ Public Class Form11
 
         Try
             conn.Open()
+            Dim query As String = ""
+            If CategoryCmb.Text = "Maintenance" Then
+                query = "SELECT unit_id, unit_number FROM units WHERE unit_status = 'Maintenance'  ORDER BY unit_number"
+            Else
+                query = "SELECT unit_id, unit_number FROM units WHERE unit_status <> 'Maintenance' ORDER BY unit_number"
+            End If
 
-            Dim query As String = "SELECT unit_id, unit_number FROM units WHERE unit_status <> 'maintenance' ORDER BY unit_number"
 
 
             Dim cmd As New MySqlCommand(query, conn)
@@ -54,18 +59,6 @@ Public Class Form11
             UnitCmb.DisplayMember = "unit_number"
             UnitCmb.ValueMember = "unit_id"
 
-            If preselectUnitId.HasValue Then
-                Dim foundIndex As Integer = -1
-                For i As Integer = 0 To dt.Rows.Count - 1
-                    If Not IsDBNull(dt.Rows(i)("unit_id")) AndAlso Convert.ToInt32(dt.Rows(i)("unit_id")) = preselectUnitId.Value Then
-                        foundIndex = i
-                        Exit For
-                    End If
-                Next
-                UnitCmb.SelectedIndex = If(foundIndex >= 0, foundIndex, 0)
-            Else
-                UnitCmb.SelectedIndex = 0
-            End If
 
         Catch ex As Exception
             MessageBox.Show("Error loading units: " & ex.Message)

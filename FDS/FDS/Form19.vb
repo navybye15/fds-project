@@ -12,6 +12,7 @@ Public Class Form19
 
 
     Private Sub Form19_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Fromdate.Value = New Date(Now.Year, Now.Month, 1)
         Todate.Value = Now.Date
 
@@ -565,4 +566,6 @@ Public Class Form19
     Private Sub Labell2_Click(sender As Object, e As EventArgs) Handles Labell2.Click
 
     End Sub
+
+
 End Class
